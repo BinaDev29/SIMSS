@@ -1,0 +1,40 @@
+import { NextResponse } from "next/server";
+import { AuthService } from "@/lib/auth";
+
+export async function GET() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Dashboard/stats`, {
+      headers: {
+        ...AuthService.getAuthHeaders(),
+      },
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Failed to retrieve dashboard stats from the backend",
+        },
+        { status: response.status }
+      );
+    }
+
+    const data = await response.json();
+
+    return NextResponse.json({
+      success: true,
+      data: data,
+      message: "Dashboard stats retrieved successfully",
+    });
+  } catch (error) {
+    console.error("Error in API route:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Failed to retrieve dashboard stats",
+      },
+      { status: 500 }
+    );
+  }
+}
