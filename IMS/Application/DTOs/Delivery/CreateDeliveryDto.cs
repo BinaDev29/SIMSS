@@ -9,6 +9,7 @@ namespace Application.DTOs.Delivery
         public required DateTime DeliveryDate { get; set; }
         public required int CustomerId { get; set; }
         public required int DeliveredByEmployeeId { get; set; }
+        public required int OutwardTransactionId { get; set; }
         public string? Status { get; set; }
         public ICollection<CreateDeliveryDetailDto> DeliveryDetails { get; set; } = new List<CreateDeliveryDetailDto>();
     }

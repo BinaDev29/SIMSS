@@ -1,9 +1,10 @@
-﻿using Application.CQRS.Employees.Commands.CreateEmployee;
+using Application.CQRS.Employees.Commands.CreateEmployee;
 using Application.CQRS.Employees.Commands.DeleteEmployee;
 using Application.CQRS.Employees.Commands.UpdateEmployee;
 using Application.CQRS.Employees.Queries.GetEmployeeById;
 using Application.CQRS.Employees.Queries.GetEmployeeList;
 using Application.DTOs.Employee;
+using Application.DTOs.Common;
 using Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +20,10 @@ namespace API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployees(CancellationToken cancellationToken)
+        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployees([FromQuery] EmployeeQueryParameters parameters, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetEmployeeListQuery(), cancellationToken);
+            var query = new GetEmployeeListQuery { Parameters = parameters };
+            var result = await mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 

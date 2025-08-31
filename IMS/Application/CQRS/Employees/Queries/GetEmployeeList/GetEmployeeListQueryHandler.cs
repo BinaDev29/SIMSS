@@ -1,13 +1,11 @@
-﻿using Application.Contracts;
+using MediatR;
+using Application.Contracts;
 using Application.DTOs.Employee;
 using AutoMapper;
-using MediatR;
-using System.Collections.Generic;
 
 namespace Application.CQRS.Employees.Queries.GetEmployeeList
 {
-    public class GetEmployeeListQueryHandler(IEmployeeRepository employeeRepository, IMapper mapper)
-        : IRequestHandler<GetEmployeeListQuery, List<EmployeeDto>>
+    public class GetEmployeeListQueryHandler(IGenericRepository<Domain.Models.Employee> employeeRepository, IMapper mapper) : IRequestHandler<GetEmployeeListQuery, List<EmployeeDto>>
     {
         public async Task<List<EmployeeDto>> Handle(GetEmployeeListQuery request, CancellationToken cancellationToken)
         {

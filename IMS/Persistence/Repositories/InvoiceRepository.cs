@@ -1,29 +1,71 @@
-﻿// Persistence/Repositories/InvoiceRepository.cs
+// Persistence/Repositories/InvoiceRepository.cs
 using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Persistence;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class InvoiceRepository(SIMSDbContext dbContext) : GenericRepository<Invoice>(dbContext), IInvoiceRepository
+    public class InvoiceRepository(SIMSDbContext context) : GenericRepository<Invoice>(context), IInvoiceRepository
     {
-        public async Task<Invoice?> GetLastInvoiceAsync(CancellationToken cancellationToken)
+        private new readonly SIMSDbContext _context = context;
+
+        public async Task<Application.Contracts.IDbContextTransaction> BeginTransactionAsync()
         {
-            return await DbContext.Invoices
-                .OrderByDescending(i => i.InvoiceNumber)
-                .FirstOrDefaultAsync(cancellationToken);
+            var transaction = await _context.Database.BeginTransactionAsync();
+            return new DbContextTransactionWrapper(transaction);
         }
 
-        // ይህን ዘዴ ለመጠቀም IGenericRepository ውስጥ መገለጽ አለበት።
-        // This method should be defined in IGenericRepository to be accessible here.
-        public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+        public async Task<Invoice?> GetInvoiceWithDetailsAsync(int id, CancellationToken cancellationToken)
         {
-            return await DbContext.Database.BeginTransactionAsync(cancellationToken);
+            return await _context.Invoices
+                .Include(x => x.Customer)
+                .Include(x => x.InvoiceDetails)
+                    .ThenInclude(x => x.Item)
+                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+        }
+
+        public Task GetPagedInvoicesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Application.Contracts.IDbContextTransaction> IInvoiceRepository.BeginTransactionAsync()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class DbContextTransactionWrapper : Application.Contracts.IDbContextTransaction
+    {
+        private readonly Application.Contracts.IDbContextTransaction _transaction;
+        private Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction;
+
+        public DbContextTransactionWrapper(Application.Contracts.IDbContextTransaction transaction)
+        {
+            _transaction = transaction;
+        }
+
+        public DbContextTransactionWrapper(Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction)
+        {
+            this.transaction = transaction;
+        }
+
+        public void Commit()
+        {
+            _transaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            _transaction.Rollback();
+        }
+
+        public void Dispose()
+        {
+            _transaction.Dispose();
         }
     }
 }

@@ -1,14 +1,18 @@
-﻿using Application.Contracts;
-using Application.CQRS.Transactions.Commands.CreateReturnTransaction;
+﻿using MediatR;
+using Application.Contracts;
+using Application.DTOs.Transaction;
 using Application.DTOs.Transaction.Validators;
 using Application.Responses;
+using Application.Services;
 using AutoMapper;
-using Domain.Models;
-using MediatR;
+using System.Transactions;
 
-namespace Application.CQRS.ReturnTransactions.Commands.CreateReturnTransaction
+namespace Application.CQRS.Transactions.Commands.CreateReturnTransaction
 {
-    public class CreateReturnTransactionCommandHandler(IReturnTransactionRepository returnTransactionRepository, IItemRepository itemRepository, IMapper mapper)
+    public class CreateReturnTransactionCommandHandler(
+        IReturnTransactionRepository returnTransactionRepository,
+        IGodownInventoryService godownInventoryService,
+        IMapper mapper)
         : IRequestHandler<CreateReturnTransactionCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(CreateReturnTransactionCommand request, CancellationToken cancellationToken)
@@ -25,20 +29,33 @@ namespace Application.CQRS.ReturnTransactions.Commands.CreateReturnTransaction
                 return response;
             }
 
-            var returnTransaction = mapper.Map<ReturnTransaction>(request.ReturnTransactionDto);
-            await returnTransactionRepository.AddAsync(returnTransaction, cancellationToken);
-
-            // Update item stock by adding the returned quantity
-            var item = await itemRepository.GetByIdAsync(returnTransaction.ItemId, cancellationToken);
-            if (item != null)
+            // 💡 ሁሉንም ኦፕሬሽኖች በአንድ ትራንስአክሽን ውስጥ ያጠቃልላል
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
             {
-                item.StockQuantity += returnTransaction.Quantity;
-                await itemRepository.UpdateAsync(item, cancellationToken);
+                var returnTransaction = mapper.Map<Domain.Models.ReturnTransaction>(request.ReturnTransactionDto);
+                var addedTransaction = await returnTransactionRepository.AddAsync(returnTransaction, cancellationToken);
+
+                // 💡 የ GodownInventoryን መጠን ይጨምራል
+                await godownInventoryService.UpdateInventoryQuantity(
+                    addedTransaction.GodownId,
+                    addedTransaction.ItemId,
+                    addedTransaction.Quantity,
+                    cancellationToken);
+
+                scope.Complete();
+
+                response.Success = true;
+                response.Message = "Return Transaction created and inventory updated successfully.";
+                response.Id = addedTransaction.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Return Transaction creation failed.";
+                response.Errors = new List<string> { ex.Message };
             }
 
-            response.Success = true;
-            response.Message = "Return Transaction created successfully.";
-            response.Id = returnTransaction.Id;
             return response;
         }
     }

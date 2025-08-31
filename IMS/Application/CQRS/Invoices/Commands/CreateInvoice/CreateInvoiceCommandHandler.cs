@@ -1,14 +1,20 @@
-﻿using MediatR;
+using MediatR;
 using Application.Contracts;
+using Application.DTOs.Invoice;
 using Application.DTOs.Invoice.Validators;
 using Application.Responses;
 using AutoMapper;
+using Application.Services;
 using Domain.Models;
-using Application.DTOs.Invoice;
+using System.Transactions;
 
 namespace Application.CQRS.Invoices.Commands.CreateInvoice
 {
-    public class CreateInvoiceCommandHandler(IInvoiceRepository invoiceRepository, IItemRepository itemRepository, IInvoiceDetailRepository invoiceDetailRepository, IMapper mapper)
+    public class CreateInvoiceCommandHandler(
+        IInvoiceRepository invoiceRepository,
+        IGodownInventoryService godownInventoryService,
+        IInvoiceDetailRepository invoiceDetailRepository,
+        IMapper mapper)
         : IRequestHandler<CreateInvoiceCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(CreateInvoiceCommand request, CancellationToken cancellationToken)
@@ -25,45 +31,55 @@ namespace Application.CQRS.Invoices.Commands.CreateInvoice
                 return response;
             }
 
-            // Check if Items in invoice details exist and if there is enough stock
-            foreach (var detail in request.InvoiceDto.InvoiceDetails)
-            {
-                var item = await itemRepository.GetByIdAsync(detail.ItemId, cancellationToken);
-                if (item == null)
-                {
-                    response.Success = false;
-                    response.Message = $"Item with ID {detail.ItemId} not found.";
-                    return response;
-                }
-                if (item.StockQuantity < detail.Quantity)
-                {
-                    response.Success = false;
-                    response.Message = $"Not enough stock for item {item.ItemName}. Available: {item.StockQuantity}, Requested: {detail.Quantity}";
-                    return response;
-                }
-            }
-
-            var invoice = mapper.Map<Domain.Models.Invoice>(request.InvoiceDto);
-            var addedInvoice = await invoiceRepository.AddAsync(invoice, cancellationToken);
-
+            // Check if sufficient stock exists
             foreach (var detailDto in request.InvoiceDto.InvoiceDetails)
             {
-                var invoiceDetail = mapper.Map<Domain.Models.InvoiceDetail>(detailDto);
-                invoiceDetail.InvoiceId = addedInvoice.Id; // Associate with the newly created invoice
-                await invoiceDetailRepository.AddAsync(invoiceDetail, cancellationToken);
+                var hasSufficientStock = await godownInventoryService.CheckSufficientStock(
+                    detailDto.ItemId,
+                    detailDto.GodownId,
+                    detailDto.Quantity,
+                    cancellationToken);
 
-                // Update item stock
-                var item = await itemRepository.GetByIdAsync(detailDto.ItemId, cancellationToken);
-                if (item != null)
+                if (!hasSufficientStock)
                 {
-                    item.StockQuantity -= detailDto.Quantity;
-                    await itemRepository.UpdateAsync(item, cancellationToken);
+                    response.Success = false;
+                    response.Message = $"Insufficient stock for item with ID {detailDto.ItemId} in godown {detailDto.GodownId}.";
+                    return response;
                 }
             }
 
-            response.Success = true;
-            response.Message = "Invoice created successfully.";
-            response.Id = addedInvoice.Id;
+            // Execute all operations in a transaction
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                var invoice = mapper.Map<Domain.Models.Invoice>(request.InvoiceDto);
+                var addedInvoice = await invoiceRepository.AddAsync(invoice, cancellationToken);
+
+                foreach (var detailDto in request.InvoiceDto.InvoiceDetails)
+                {
+                    var invoiceDetail = mapper.Map<Domain.Models.InvoiceDetail>(detailDto);
+                    invoiceDetail.InvoiceId = addedInvoice.Id;
+                    await invoiceDetailRepository.AddAsync(invoiceDetail, cancellationToken);
+
+                    // Update inventory using the service
+                    await godownInventoryService.UpdateInventoryQuantity(
+                        invoiceDetail.GodownId,
+                        invoiceDetail.ItemId,
+                        -invoiceDetail.Quantity,
+                        cancellationToken);
+                }
+
+                scope.Complete();
+                response.Success = true;
+                response.Message = "Invoice created successfully.";
+                response.Id = addedInvoice.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Invoice creation failed.";
+                response.Errors = [ex.Message];
+            }
 
             return response;
         }

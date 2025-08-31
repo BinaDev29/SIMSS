@@ -4,7 +4,7 @@ using Application.Responses;
 
 namespace Application.CQRS.Transactions.Commands.DeleteOutwardTransaction
 {
-    public class DeleteOutwardTransactionCommandHandler(IOutwardTransactionRepository outwardTransactionRepository, IItemRepository itemRepository)
+    public class DeleteOutwardTransactionCommandHandler(IOutwardTransactionRepository outwardTransactionRepository)
         : IRequestHandler<DeleteOutwardTransactionCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(DeleteOutwardTransactionCommand request, CancellationToken cancellationToken)
@@ -19,18 +19,9 @@ namespace Application.CQRS.Transactions.Commands.DeleteOutwardTransaction
                 return response;
             }
 
-            // Revert stock change
-            var item = await itemRepository.GetByIdAsync(transactionToDelete.ItemId, cancellationToken);
-            if (item != null)
-            {
-                item.StockQuantity += transactionToDelete.QuantityDelivered;
-                await itemRepository.UpdateAsync(item, cancellationToken);
-            }
-
-            await outwardTransactionRepository.DeleteAsync(transactionToDelete, cancellationToken);
-
-            response.Success = true;
-            response.Message = "Outward Transaction deleted successfully.";
+            // 💡 Deleting transactions is not allowed to maintain historical data integrity.
+            response.Success = false;
+            response.Message = "Deleting outward transactions is not allowed to maintain historical data integrity.";
             return response;
         }
     }

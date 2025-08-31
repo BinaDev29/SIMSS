@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Application.Contracts;
 using Application.Responses;
+using System;
 
 namespace Application.CQRS.Deliveries.Commands.DeleteDelivery
 {
@@ -19,10 +20,9 @@ namespace Application.CQRS.Deliveries.Commands.DeleteDelivery
                 return response;
             }
 
-            await deliveryRepository.DeleteAsync(delivery, cancellationToken);
-
-            response.Success = true;
-            response.Message = "Delivery deleted successfully.";
+            // 💡 የመላኪያ መረጃን መሰረዝ የለብንም። የዳታ ታሪክን ለመጠበቅ ሁኔታውን (Status) መለወጥ እንችላለን።
+            response.Success = false;
+            response.Message = "Deleting delivery records is not allowed to maintain data integrity. Consider updating the delivery status instead.";
             return response;
         }
     }

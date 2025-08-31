@@ -10,7 +10,7 @@ namespace Application.Contracts
         Task<T?> GetByIdAsync(int id, CancellationToken cancellationToken);
         Task<IReadOnlyList<T>> GetAllAsync(CancellationToken cancellationToken);
         Task<T> AddAsync(T entity, CancellationToken cancellationToken);
-        Task UpdateAsync(T entity, CancellationToken cancellationToken);
-        Task DeleteAsync(T entity, CancellationToken cancellationToken);
+        Task Update(T entity, CancellationToken cancellationToken);
+        Task Delete(T entity, CancellationToken cancellationToken);
     }
 }

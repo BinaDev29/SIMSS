@@ -1,10 +1,12 @@
 ﻿using MediatR;
 using Application.Contracts;
 using Application.Responses;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.Transactions.Commands.DeleteInwardTransaction
 {
-    public class DeleteInwardTransactionCommandHandler(IInwardTransactionRepository inwardTransactionRepository, IItemRepository itemRepository)
+    public class DeleteInwardTransactionCommandHandler(IInwardTransactionRepository inwardTransactionRepository)
         : IRequestHandler<DeleteInwardTransactionCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(DeleteInwardTransactionCommand request, CancellationToken cancellationToken)
@@ -19,18 +21,9 @@ namespace Application.CQRS.Transactions.Commands.DeleteInwardTransaction
                 return response;
             }
 
-            // Revert stock change
-            var item = await itemRepository.GetByIdAsync(transactionToDelete.ItemId, cancellationToken);
-            if (item != null)
-            {
-                item.StockQuantity -= transactionToDelete.QuantityReceived;
-                await itemRepository.UpdateAsync(item, cancellationToken);
-            }
-
-            await inwardTransactionRepository.DeleteAsync(transactionToDelete, cancellationToken);
-
-            response.Success = true;
-            response.Message = "Inward Transaction deleted successfully.";
+            // 💡 ግብይቶችን መሰረዝ አይፈቀድም
+            response.Success = false;
+            response.Message = "Deleting inward transactions is not allowed to maintain historical data integrity.";
             return response;
         }
     }

@@ -2,8 +2,10 @@
 using Application.DTOs.Item.Validators;
 using Application.Responses;
 using AutoMapper;
-using Domain.Models;
 using MediatR;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.Items.Commands.CreateItem
 {
@@ -21,6 +23,15 @@ namespace Application.CQRS.Items.Commands.CreateItem
                 response.Success = false;
                 response.Message = "Item creation failed due to validation errors.";
                 response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
+                return response;
+            }
+
+            // 💡 ተመሳሳይ ስም ወይም ኮድ ያለው እቃ መኖሩን ማረጋገጥ
+            var itemExists = await itemRepository.GetItemByNameOrCodeAsync(request.ItemDto.ItemName, request.ItemDto.ItemCode, cancellationToken);
+            if (itemExists != null)
+            {
+                response.Success = false;
+                response.Message = "An item with this name or code already exists.";
                 return response;
             }
 

@@ -33,7 +33,7 @@ namespace Application.CQRS.Customers.Commands.UpdateCustomer
             }
 
             mapper.Map(request.CustomerDto, customer);
-            await customerRepository.UpdateAsync(customer, cancellationToken);
+            await customerRepository.Update(customer, cancellationToken);
 
             response.Success = true;
             response.Message = "Customer updated successfully.";

@@ -33,7 +33,7 @@ namespace Application.CQRS.DeliveryDetails.Commands.UpdateDeliveryDetail
             }
 
             mapper.Map(request.DeliveryDetailDto, deliveryDetail);
-            await deliveryDetailRepository.UpdateAsync(deliveryDetail, cancellationToken);
+            await deliveryDetailRepository.Update(deliveryDetail, cancellationToken);
 
             response.Success = true;
             response.Message = "DeliveryDetail updated successfully.";

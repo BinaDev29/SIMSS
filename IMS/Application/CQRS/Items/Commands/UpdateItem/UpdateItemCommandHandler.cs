@@ -37,7 +37,7 @@ namespace Application.CQRS.Items.Commands.UpdateItem
             }
 
             mapper.Map(request.ItemDto, item);
-            await itemRepository.UpdateAsync(item, cancellationToken);
+            await itemRepository.Update(item, cancellationToken);
 
             response.Success = true;
             response.Message = "Item updated successfully.";

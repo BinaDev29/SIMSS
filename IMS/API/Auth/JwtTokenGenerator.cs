@@ -1,19 +1,33 @@
-﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace API.Auth
 {
-    public class JwtTokenGenerator(IConfiguration configuration)
+    public class JwtTokenGenerator
     {
         private static readonly JwtSecurityTokenHandler _tokenHandler = new();
-        private readonly string _jwtKey = configuration["Jwt:Key"] ?? throw new ArgumentNullException("Jwt:Key is not configured.");
-        private readonly string _jwtIssuer = configuration["Jwt:Issuer"] ?? throw new ArgumentNullException("Jwt:Issuer is not configured.");
-        private readonly string _jwtAudience = configuration["Jwt:Audience"] ?? throw new ArgumentNullException("Jwt:Audience is not configured.");
+        private readonly string _jwtKey;
+        private readonly string? _jwtIssuer;
+        private readonly string? _jwtAudience;
+
+        public JwtTokenGenerator(IConfiguration configuration)
+        {
+            ArgumentNullException.ThrowIfNull(configuration);
+            _jwtKey = configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is not configured.");
+            _jwtIssuer = configuration["Jwt:Issuer"];
+            _jwtAudience = configuration["Jwt:Audience"];
+        }
 
         public string GenerateToken(string username, string role)
         {
+            if (string.IsNullOrWhiteSpace(username))
+                throw new ArgumentException("Username cannot be null or empty.", nameof(username));
+            
+            if (string.IsNullOrWhiteSpace(role))
+                throw new ArgumentException("Role cannot be null or empty.", nameof(role));
+
             var claims = new Claim[]
             {
                 new(ClaimTypes.NameIdentifier, username),

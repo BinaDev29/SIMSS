@@ -1,14 +1,20 @@
-﻿using Application.Contracts;
-using Application.CQRS.Transactions.Commands.CreateInwardTransaction;
+﻿using MediatR;
+using Application.Contracts;
+using Application.DTOs.Transaction;
 using Application.DTOs.Transaction.Validators;
 using Application.Responses;
+using Application.Services;
 using AutoMapper;
-using Domain.Models;
-using MediatR;
+using System.Transactions;
 
-namespace Application.CQRS.InwardTransactions.Commands.CreateInwardTransaction
+namespace Application.CQRS.Transactions.Commands.CreateInwardTransaction
 {
-    public class CreateInwardTransactionCommandHandler(IInwardTransactionRepository inwardTransactionRepository, IItemRepository itemRepository, IMapper mapper)
+    public class CreateInwardTransactionCommandHandler(
+        IInwardTransactionRepository inwardTransactionRepository,
+        IItemRepository itemRepository,
+        IGodownRepository godownRepository,
+        IGodownInventoryService godownInventoryService,
+        IMapper mapper)
         : IRequestHandler<CreateInwardTransactionCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(CreateInwardTransactionCommand request, CancellationToken cancellationToken)
@@ -25,20 +31,43 @@ namespace Application.CQRS.InwardTransactions.Commands.CreateInwardTransaction
                 return response;
             }
 
-            var inwardTransaction = mapper.Map<InwardTransaction>(request.InwardTransactionDto);
-            await inwardTransactionRepository.AddAsync(inwardTransaction, cancellationToken);
-
-            // Update item stock
-            var item = await itemRepository.GetByIdAsync(inwardTransaction.ItemId, cancellationToken);
-            if (item != null)
+            // 💡 እቃው እና መጋዘኑ መኖራቸውን ያረጋግጣል
+            var itemExists = await itemRepository.GetByIdAsync(request.InwardTransactionDto.ItemId, cancellationToken) != null;
+            var godownExists = await godownRepository.GetByIdAsync(request.InwardTransactionDto.GodownId, cancellationToken) != null;
+            if (!itemExists || !godownExists)
             {
-                item.StockQuantity += inwardTransaction.QuantityReceived;
-                await itemRepository.UpdateAsync(item, cancellationToken);
+                response.Success = false;
+                response.Message = "Invalid Item ID or Godown ID.";
+                return response;
             }
 
-            response.Success = true;
-            response.Message = "Inward Transaction created successfully.";
-            response.Id = inwardTransaction.Id;
+            // 💡 ሁሉንም ኦፕሬሽኖች በአንድ ትራንስአክሽን ውስጥ ያጠቃልላል
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                var inwardTransaction = mapper.Map<Domain.Models.InwardTransaction>(request.InwardTransactionDto);
+                var addedTransaction = await inwardTransactionRepository.AddAsync(inwardTransaction, cancellationToken);
+
+                // 💡 የ GodownInventoryን መጠን ይጨምራል
+                await godownInventoryService.UpdateInventoryQuantity(
+                    addedTransaction.GodownId,
+                    addedTransaction.ItemId,
+                    addedTransaction.QuantityReceived,
+                    cancellationToken);
+
+                scope.Complete();
+
+                response.Success = true;
+                response.Message = "Inward Transaction created and inventory updated successfully.";
+                response.Id = addedTransaction.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Inward Transaction creation failed.";
+                response.Errors = new List<string> { ex.Message };
+            }
+
             return response;
         }
     }

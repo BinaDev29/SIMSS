@@ -1,5 +1,4 @@
-﻿using Application.CQRS.OutwardTransactions.Commands.CreateOutwardTransaction;
-using Application.CQRS.OutwardTransactions.Commands.UpdateOutwardTransaction;
+﻿using Application.CQRS.OutwardTransactions.Commands.UpdateOutwardTransaction;
 using Application.CQRS.Transactions.Commands.CreateOutwardTransaction;
 using Application.CQRS.Transactions.Commands.DeleteOutwardTransaction;
 using Application.CQRS.Transactions.Queries.GetOutwardTransactionById;

@@ -1,10 +1,12 @@
 ﻿using MediatR;
 using Application.Contracts;
 using Application.Responses;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.Transactions.Commands.DeleteReturnTransaction
 {
-    public class DeleteReturnTransactionCommandHandler(IReturnTransactionRepository returnTransactionRepository, IItemRepository itemRepository)
+    public class DeleteReturnTransactionCommandHandler(IReturnTransactionRepository returnTransactionRepository)
         : IRequestHandler<DeleteReturnTransactionCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(DeleteReturnTransactionCommand request, CancellationToken cancellationToken)
@@ -19,18 +21,9 @@ namespace Application.CQRS.Transactions.Commands.DeleteReturnTransaction
                 return response;
             }
 
-            // Revert stock change
-            var item = await itemRepository.GetByIdAsync(transactionToDelete.ItemId, cancellationToken);
-            if (item != null)
-            {
-                item.StockQuantity -= transactionToDelete.Quantity;
-                await itemRepository.UpdateAsync(item, cancellationToken);
-            }
-
-            await returnTransactionRepository.DeleteAsync(transactionToDelete, cancellationToken);
-
-            response.Success = true;
-            response.Message = "Return Transaction deleted successfully.";
+            // 💡 ግብይቶችን መሰረዝ አይፈቀድም
+            response.Success = false;
+            response.Message = "Deleting return transactions is not allowed to maintain historical data integrity.";
             return response;
         }
     }

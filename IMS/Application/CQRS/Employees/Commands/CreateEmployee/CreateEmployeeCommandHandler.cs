@@ -4,6 +4,9 @@ using Application.DTOs.Employee.Validators;
 using Application.Responses;
 using AutoMapper;
 using Domain.Models;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.Employees.Commands.CreateEmployee
 {
@@ -21,6 +24,15 @@ namespace Application.CQRS.Employees.Commands.CreateEmployee
                 response.Success = false;
                 response.Message = "Employee creation failed due to validation errors.";
                 response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
+                return response;
+            }
+
+            // 💡 ተመሳሳይ ኢሜል ያለው ሰራተኛ መኖሩን ያረጋግጣል
+            var employeeExists = await employeeRepository.GetEmployeeByEmailAsync(request.EmployeeDto.Email, cancellationToken);
+            if (employeeExists != null)
+            {
+                response.Success = false;
+                response.Message = "An employee with this email address already exists.";
                 return response;
             }
 

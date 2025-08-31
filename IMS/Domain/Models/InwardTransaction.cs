@@ -7,6 +7,8 @@ namespace Domain.Models
 {
     public class InwardTransaction : BaseDomainEntity
     {
+
+
         public required int GodownId { get; set; }
         public virtual Godown? Godown { get; set; }
 
@@ -20,5 +22,6 @@ namespace Domain.Models
         public required DateTime InwardDate { get; set; }
         public string? Source { get; set; }
         public string? InvoiceNumber { get; set; }
+        public int EmployeeId { get; set; }
     }
 }

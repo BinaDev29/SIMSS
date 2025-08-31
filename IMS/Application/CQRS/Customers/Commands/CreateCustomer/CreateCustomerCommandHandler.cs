@@ -1,14 +1,12 @@
-﻿using MediatR;
+using MediatR;
 using Application.Contracts;
 using Application.DTOs.Customer.Validators;
 using Application.Responses;
 using AutoMapper;
-using Domain.Models;
 
 namespace Application.CQRS.Customers.Commands.CreateCustomer
 {
-    public class CreateCustomerCommandHandler(ICustomerRepository customerRepository, IMapper mapper)
-        : IRequestHandler<CreateCustomerCommand, BaseCommandResponse>
+    public class CreateCustomerCommandHandler(ICustomerRepository customerRepository, IMapper mapper) : IRequestHandler<CreateCustomerCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
@@ -21,6 +19,15 @@ namespace Application.CQRS.Customers.Commands.CreateCustomer
                 response.Success = false;
                 response.Message = "Customer creation failed due to validation errors.";
                 response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
+                return response;
+            }
+
+            // Check if customer with same email exists
+            var customerExists = await customerRepository.GetCustomerByEmailAsync(request.CustomerDto.Email, cancellationToken);
+            if (customerExists != null)
+            {
+                response.Success = false;
+                response.Message = "A customer with this email address already exists.";
                 return response;
             }
 

@@ -1,5 +1,4 @@
-﻿using Application.CQRS.InwardTransactions.Commands.CreateInwardTransaction;
-using Application.CQRS.InwardTransactions.Commands.UpdateInwardTransaction;
+﻿using Application.CQRS.InwardTransactions.Commands.UpdateInwardTransaction;
 using Application.CQRS.Transactions.Commands.CreateInwardTransaction;
 using Application.CQRS.Transactions.Commands.DeleteInwardTransaction;
 using Application.CQRS.Transactions.Queries.GetInwardTransactionById;

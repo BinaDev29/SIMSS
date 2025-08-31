@@ -1,4 +1,4 @@
-﻿// Application/Contracts/IDeliveryDetailRepository.cs
+// Application/Contracts/IDeliveryDetailRepository.cs
 using Domain.Models;
 using System.Collections.Generic;
 using System.Threading;
@@ -8,6 +8,8 @@ namespace Application.Contracts
 {
     public interface IDeliveryDetailRepository : IGenericRepository<DeliveryDetail>
     {
-        Task<IEnumerable<DeliveryDetail>> GetByDeliveryIdAsync(int deliveryId, CancellationToken cancellationToken);
+        Task<DeliveryDetail?> GetDeliveryDetailWithDetailsAsync(int id, CancellationToken cancellationToken);
+        Task<IReadOnlyList<DeliveryDetail>> GetByDeliveryIdAsync(int deliveryId, CancellationToken cancellationToken);
+        Task AddAsync(DeliveryDetail deliveryDetail, object cancellationationToken);
     }
 }

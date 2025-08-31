@@ -1,11 +1,12 @@
-﻿// GetInwardTransactionListQuery.cs
 using MediatR;
 using Application.DTOs.Transaction;
-using System.Collections.Generic;
+using Application.DTOs.Common;
+using Application.Responses;
 
 namespace Application.CQRS.Transactions.Queries.GetInwardTransactionList
 {
-    public class GetInwardTransactionListQuery : IRequest<List<InwardTransactionDto>>
+    public class GetInwardTransactionListQuery : IRequest<PagedResponse<InwardTransactionDto>>
     {
+        public required InwardTransactionQueryParameters Parameters { get; set; }
     }
 }

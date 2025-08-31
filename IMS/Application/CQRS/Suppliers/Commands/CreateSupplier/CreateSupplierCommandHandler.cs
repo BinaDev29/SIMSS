@@ -1,9 +1,9 @@
-﻿using Application.Contracts;
+﻿using MediatR;
+using Application.Contracts;
+using Application.DTOs.Supplier;
 using Application.DTOs.Supplier.Validators;
 using Application.Responses;
 using AutoMapper;
-using Domain.Models;
-using MediatR;
 
 namespace Application.CQRS.Suppliers.Commands.CreateSupplier
 {
@@ -21,6 +21,15 @@ namespace Application.CQRS.Suppliers.Commands.CreateSupplier
                 response.Success = false;
                 response.Message = "Supplier creation failed due to validation errors.";
                 response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
+                return response;
+            }
+
+            // 💡 ተመሳሳይ ስም ያለው አቅራቢ መኖሩን ማረጋገጥ
+            var supplierExists = await supplierRepository.GetSupplierByNameAsync(request.SupplierDto.SupplierName, cancellationToken);
+            if (supplierExists != null)
+            {
+                response.Success = false;
+                response.Message = "A supplier with this name already exists.";
                 return response;
             }
 

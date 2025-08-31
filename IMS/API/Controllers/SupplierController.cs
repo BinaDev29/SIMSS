@@ -1,9 +1,10 @@
-﻿using Application.CQRS.Suppliers.Commands.CreateSupplier;
+using Application.CQRS.Suppliers.Commands.CreateSupplier;
 using Application.CQRS.Suppliers.Commands.UpdateSupplier;
 using Application.CQRS.Suppliers.Commands.DeleteSupplier;
 using Application.CQRS.Suppliers.Queries.GetSupplierById;
 using Application.CQRS.Suppliers.Queries.GetSupplierList;
 using Application.DTOs.Supplier;
+using Application.DTOs.Common;
 using Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +20,10 @@ namespace API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<SupplierDto>>> GetAll(CancellationToken cancellationToken)
+        public async Task<ActionResult<IEnumerable<SupplierDto>>> GetAll([FromQuery] SupplierQueryParameters parameters, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetSupplierListQuery(), cancellationToken);
+            var query = new GetSupplierListQuery { Parameters = parameters };
+            var result = await mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 

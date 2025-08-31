@@ -1,18 +1,34 @@
 ﻿using Application.Contracts;
 using Application.DTOs.Item;
+using Application.Responses;
+using Application.DTOs.Common;
 using AutoMapper;
 using MediatR;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.Items.Queries.GetItemList
 {
     public class GetItemListQueryHandler(IItemRepository itemRepository, IMapper mapper)
-        : IRequestHandler<GetItemListQuery, List<ItemDto>>
+        : IRequestHandler<GetItemListQuery, PagedResponse<ItemDto>>
     {
-        public async Task<List<ItemDto>> Handle(GetItemListQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResponse<ItemDto>> Handle(GetItemListQuery request, CancellationToken cancellationToken)
         {
-            var items = await itemRepository.GetAllAsync(cancellationToken);
-            return mapper.Map<List<ItemDto>>(items);
+            // 💡 በገጽ የተከፋፈለ እና የተጣራ የእቃዎች ዝርዝር ያመጣል
+            var pagedResult = await itemRepository.GetPagedItemsAsync(
+                request.Parameters.PageNumber,
+                request.Parameters.PageSize,
+                request.Parameters.SearchTerm,
+                cancellationToken);
+
+            var itemDtos = mapper.Map<List<ItemDto>>(pagedResult.Items);
+
+            return new PagedResponse<ItemDto>(
+                itemDtos,
+                pagedResult.TotalCount,
+                pagedResult.PageNumber,
+                pagedResult.PageSize);
         }
     }
 }

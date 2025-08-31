@@ -33,7 +33,7 @@ namespace Application.CQRS.InvoiceDetails.Commands.UpdateInvoiceDetail
             }
 
             mapper.Map(request.InvoiceDetailDto, invoiceDetail);
-            await invoiceDetailRepository.UpdateAsync(invoiceDetail, cancellationToken);
+            await invoiceDetailRepository.Update(invoiceDetail, cancellationToken);
 
             response.Success = true;
             response.Message = "Invoice detail updated successfully.";

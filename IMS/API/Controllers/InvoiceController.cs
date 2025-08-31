@@ -1,9 +1,10 @@
-﻿using Application.CQRS.Invoices.Commands.CreateInvoice;
+using Application.CQRS.Invoices.Commands.CreateInvoice;
 using Application.CQRS.Invoices.Commands.DeleteInvoice;
 using Application.CQRS.Invoices.Commands.UpdateInvoice;
 using Application.CQRS.Invoices.Queries.GetInvoiceById;
 using Application.CQRS.Invoices.Queries.GetInvoiceList;
 using Application.DTOs.Invoice;
+using Application.DTOs.Common;
 using Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,9 +17,10 @@ namespace API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<InvoiceDto>>> GetAll(CancellationToken cancellationToken)
+        public async Task<ActionResult<IEnumerable<InvoiceDto>>> GetAll([FromQuery] InvoiceQueryParameters parameters, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetInvoiceListQuery(), cancellationToken);
+            var query = new GetInvoiceListQuery { Parameters = parameters };
+            var result = await mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 

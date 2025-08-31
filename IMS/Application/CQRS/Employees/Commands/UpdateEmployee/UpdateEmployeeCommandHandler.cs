@@ -33,7 +33,7 @@ namespace Application.CQRS.Employees.Commands.UpdateEmployee
             }
 
             mapper.Map(request.EmployeeDto, employee);
-            await employeeRepository.UpdateAsync(employee, cancellationToken);
+            await employeeRepository.Update(employee, cancellationToken);
 
             response.Success = true;
             response.Message = "Employee updated successfully.";

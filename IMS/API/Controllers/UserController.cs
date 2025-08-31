@@ -1,10 +1,10 @@
-﻿using Application.CQRS.User.Commands.CreateUser;
+using Application.CQRS.User.Commands.CreateUser;
 using Application.CQRS.User.Commands.DeleteUser;
 using Application.CQRS.User.Queries.GetUserById;
 using Application.CQRS.User.Queries.GetUserList;
 using Application.CQRS.User.Commands.UpdateUser;
-
 using Application.DTOs.User;
+using Application.DTOs.Common;
 using Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,9 +20,10 @@ namespace API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<UserDto>>> GetAll(CancellationToken cancellationToken)
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetAll([FromQuery] UserQueryParameters parameters, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetUserListQuery(), cancellationToken);
+            var query = new GetUserListQuery { Parameters = parameters };
+            var result = await mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 

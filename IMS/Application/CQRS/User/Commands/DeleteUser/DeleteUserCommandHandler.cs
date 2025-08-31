@@ -15,14 +15,16 @@ namespace Application.CQRS.User.Commands.DeleteUser
             if (user == null)
             {
                 response.Success = false;
-                response.Message = "User not found for deletion.";
+                response.Message = "User not found for deactivation.";
                 return response;
             }
 
-            await userRepository.DeleteAsync(user, cancellationToken);
+            // 💡 የተጠቃሚውን ሁኔታ ወደ ስራ የማያገለግል (Deactivate) ይቀይራል
+            user.IsActive = false;
+            await userRepository.Update(user, cancellationToken);
 
             response.Success = true;
-            response.Message = "User deleted successfully.";
+            response.Message = "User deactivated successfully.";
             return response;
         }
     }

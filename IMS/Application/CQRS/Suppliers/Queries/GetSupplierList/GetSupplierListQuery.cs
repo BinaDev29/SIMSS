@@ -1,11 +1,12 @@
-﻿// GetSupplierListQuery.cs
-using Application.DTOs.Supplier;
 using MediatR;
-using System.Collections.Generic;
+using Application.DTOs.Supplier;
+using Application.DTOs.Common;
+using Application.Responses;
 
 namespace Application.CQRS.Suppliers.Queries.GetSupplierList
 {
-    public class GetSupplierListQuery : IRequest<List<SupplierDto>>
+    public class GetSupplierListQuery : IRequest<PagedResponse<SupplierDto>>
     {
+        public required SupplierQueryParameters Parameters { get; set; }
     }
 }

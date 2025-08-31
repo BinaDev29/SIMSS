@@ -1,18 +1,31 @@
 ﻿using MediatR;
 using Application.Contracts;
 using Application.DTOs.User;
+using Application.Responses;
+using Application.DTOs.Common;
 using AutoMapper;
-using System.Collections.Generic;
 
 namespace Application.CQRS.User.Queries.GetUserList
 {
     public class GetUserListQueryHandler(IUserRepository userRepository, IMapper mapper)
-        : IRequestHandler<GetUserListQuery, List<UserDto>>
+        : IRequestHandler<GetUserListQuery, PagedResponse<UserDto>>
     {
-        public async Task<List<UserDto>> Handle(GetUserListQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResponse<UserDto>> Handle(GetUserListQuery request, CancellationToken cancellationToken)
         {
-            var users = await userRepository.GetAllAsync(cancellationToken);
-            return mapper.Map<List<UserDto>>(users);
+            // 💡 በገጽ የተከፋፈለ እና የተጣራ የተጠቃሚዎች ዝርዝር ያመጣል
+            var pagedResult = await userRepository.GetPagedUsersAsync(
+                request.Parameters.PageNumber,
+                request.Parameters.PageSize,
+                request.Parameters.SearchTerm,
+                cancellationToken);
+
+            var userDtos = mapper.Map<List<UserDto>>(pagedResult.Items);
+
+            return new PagedResponse<UserDto>(
+                userDtos,
+                pagedResult.TotalCount,
+                pagedResult.PageNumber,
+                pagedResult.PageSize);
         }
     }
 }

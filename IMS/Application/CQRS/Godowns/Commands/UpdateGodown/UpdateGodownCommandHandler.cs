@@ -33,7 +33,7 @@ namespace Application.CQRS.Godowns.Commands.UpdateGodown
             }
 
             mapper.Map(request.GodownDto, godown);
-            await godownRepository.UpdateAsync(godown, cancellationToken);
+            await godownRepository.Update(godown, cancellationToken);
 
             response.Success = true;
             response.Message = "Godown updated successfully.";

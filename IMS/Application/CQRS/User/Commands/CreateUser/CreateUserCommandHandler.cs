@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Application.Contracts;
+using Application.DTOs.User;
 using Application.DTOs.User.Validators;
 using Application.Responses;
 using AutoMapper;
-using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace Application.CQRS.User.Commands.CreateUser
@@ -28,15 +28,21 @@ namespace Application.CQRS.User.Commands.CreateUser
                 return response;
             }
 
-            // DTOን ወደ User Entity ይቀይራል
+            // 💡 ተመሳሳይ የተጠቃሚ ስም ወይም ኢሜይል መኖሩን ማረጋገጥ
+            var userExists = await userRepository.GetUserByUsernameAsync(request.UserDto.Username, cancellationToken);
+            if (userExists != null)
+            {
+                response.Success = false;
+                response.Message = "A user with this username or email already exists.";
+                return response;
+            }
+
             var user = mapper.Map<Domain.Models.User>(request.UserDto);
 
-            // የይለፍ ቃሉን መስጠር (Hash) እና ለ PasswordHash መስጠት
+            // 💡 የይለፍ ቃሉን መስጠር (Hash)
             user.PasswordHash = passwordHasher.HashPassword(user, request.UserDto.PasswordHash);
 
-            // የ Role መረጃን ከ DTO ወደ Entity ያስተላልፋል
             user.Role = request.UserDto.Role;
-
             var addedUser = await userRepository.AddAsync(user, cancellationToken);
 
             response.Success = true;

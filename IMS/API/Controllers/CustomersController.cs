@@ -1,9 +1,10 @@
-﻿using Application.CQRS.Customers.Commands.CreateCustomer;
+using Application.CQRS.Customers.Commands.CreateCustomer;
 using Application.CQRS.Customers.Commands.DeleteCustomer;
 using Application.CQRS.Customers.Commands.UpdateCustomer;
 using Application.CQRS.Customers.Queries.GetCustomerById;
 using Application.CQRS.Customers.Queries.GetCustomerList;
 using Application.DTOs.Customer;
+using Application.DTOs.Common;
 using Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,10 @@ namespace API.Controllers
         // GET: api/customers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAll(CancellationToken cancellationToken)
+        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAll([FromQuery] CustomerQueryParameters parameters, CancellationToken cancellationToken)
         {
-            var result = await mediator.Send(new GetCustomerListQuery(), cancellationToken);
+            var query = new GetCustomerListQuery { Parameters = parameters };
+            var result = await mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 

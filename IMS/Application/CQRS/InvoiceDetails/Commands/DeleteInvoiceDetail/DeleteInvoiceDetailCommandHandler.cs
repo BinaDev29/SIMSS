@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Application.Contracts;
 using Application.Responses;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.InvoiceDetails.Commands.DeleteInvoiceDetail
 {
@@ -19,10 +21,9 @@ namespace Application.CQRS.InvoiceDetails.Commands.DeleteInvoiceDetail
                 return response;
             }
 
-            await invoiceDetailRepository.DeleteAsync(invoiceDetail, cancellationToken);
-
-            response.Success = true;
-            response.Message = "Invoice detail deleted successfully.";
+            // 💡 የክፍያ መጠየቂያ ዝርዝሮችን መሰረዝ የፋይናንስ መዝገቦችን ስለሚጎዳ አይፈቀድም።
+            response.Success = false;
+            response.Message = "Deleting invoice details is not allowed to maintain financial data integrity.";
             return response;
         }
     }

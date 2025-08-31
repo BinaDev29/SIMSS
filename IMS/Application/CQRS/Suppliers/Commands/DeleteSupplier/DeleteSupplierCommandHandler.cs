@@ -4,7 +4,9 @@ using Application.Responses;
 
 namespace Application.CQRS.Suppliers.Commands.DeleteSupplier
 {
-    public class DeleteSupplierCommandHandler(ISupplierRepository supplierRepository)
+    public class DeleteSupplierCommandHandler(
+        ISupplierRepository supplierRepository,
+        IInwardTransactionRepository inwardTransactionRepository)
         : IRequestHandler<DeleteSupplierCommand, BaseCommandResponse>
     {
         public async Task<BaseCommandResponse> Handle(DeleteSupplierCommand request, CancellationToken cancellationToken)
@@ -19,8 +21,16 @@ namespace Application.CQRS.Suppliers.Commands.DeleteSupplier
                 return response;
             }
 
-            await supplierRepository.DeleteAsync(supplier, cancellationToken);
+            // 💡 አቅራቢው ከገቢ ግብይቶች ጋር የተገናኘ መሆኑን ማረጋገጥ
+            var hasInwardTransactions = await inwardTransactionRepository.HasTransactionsBySupplierIdAsync(request.Id, cancellationToken);
+            if (hasInwardTransactions)
+            {
+                response.Success = false;
+                response.Message = "Cannot delete supplier because they are associated with transactions.";
+                return response;
+            }
 
+            await supplierRepository.Delete(supplier, cancellationToken);
             response.Success = true;
             response.Message = "Supplier deleted successfully.";
             return response;

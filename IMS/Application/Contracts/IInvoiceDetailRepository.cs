@@ -1,4 +1,5 @@
 ﻿// Application/Contracts/IInvoiceDetailRepository.cs
+using Application.DTOs.Common;
 using Domain.Models;
 using System.Collections.Generic;
 using System.Threading;
@@ -8,7 +9,9 @@ namespace Application.Contracts
 {
     public interface IInvoiceDetailRepository : IGenericRepository<InvoiceDetail>
     {
-        Task<List<InvoiceDetail>> GetInvoiceDetailsByInvoiceIdAsync(int invoiceId, CancellationToken cancellationToken);
-        Task DeleteRangeAsync(ICollection<InvoiceDetail> invoiceDetails, CancellationToken cancellationToken);
+        Task<bool> HasDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken);
+        Task<PagedResult<InvoiceDetail>> GetPagedInvoiceDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        Task<IReadOnlyList<InvoiceDetail>> GetInvoiceDetailsByInvoiceIdAsync(int invoiceId, CancellationToken cancellationToken);
+        Task DeleteRangeAsync(IEnumerable<InvoiceDetail> entities, CancellationToken cancellationToken);
     }
 }
