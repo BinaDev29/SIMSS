@@ -9,6 +9,7 @@ namespace Application.Contracts
     public interface IUserRepository : IGenericRepository<User>
     {
         Task<User?> GetUserByUsernameAsync(string username, CancellationToken cancellationToken);
+        Task<bool> IsUsernameUniqueAsync(string username, CancellationToken cancellationToken);
         Task<PagedResult<User>> GetPagedUsersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
     }
 }

@@ -8,8 +8,8 @@ namespace Application.Contracts
 {
     public interface ICustomerRepository : IGenericRepository<Customer>
     {
-        Task<Customer?> GetCustomerByEmailAsync(string email, CancellationToken cancellationToken);
-        Task GetCustomerWithDetailsAsync(int id, CancellationToken cancellationToken);
+        Task<Customer?> GetCustomerByNameAsync(string name, CancellationToken cancellationToken);
+        Task<bool> HasTransactionsByCustomerIdAsync(int customerId, CancellationToken cancellationToken);
         Task<PagedResult<Customer>> GetPagedCustomersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
     }
 }

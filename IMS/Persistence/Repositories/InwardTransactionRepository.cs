@@ -1,48 +1,75 @@
-﻿// Persistence/Repositories/InwardTransactionRepository.cs
+// Persistence/Repositories/InwardTransactionRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class InwardTransactionRepository(SIMSDbContext dbContext) : GenericRepository<InwardTransaction>(dbContext), IInwardTransactionRepository
+    public class InwardTransactionRepository : GenericRepository<InwardTransaction>, IInwardTransactionRepository
     {
-        private new readonly SIMSDbContext _context = dbContext;
+        private readonly SIMSDbContext _context;
 
-        public async Task<bool> HasTransactionsByItemIdAsync(int itemId, CancellationToken cancellationToken)
+        public InwardTransactionRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            return await _context.InwardTransactions.AnyAsync(t => t.ItemId == itemId, cancellationToken);
+            _context = dbContext;
         }
 
-        public async Task<bool> HasTransactionsBySupplierIdAsync(int supplierId, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<InwardTransaction>> GetTransactionsByGodownAsync(int godownId, CancellationToken cancellationToken)
         {
-            return await _context.InwardTransactions.AnyAsync(t => t.SupplierId == supplierId, cancellationToken);
+            return await _context.InwardTransactions
+                .Include(it => it.Item)
+                .Include(it => it.Supplier)
+                .Where(it => it.GodownId == godownId)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task<PagedResult<InwardTransaction>> GetPagedInwardTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<InwardTransaction>> GetTransactionsByItemAsync(int itemId, CancellationToken cancellationToken)
         {
-            var query = _context.Set<InwardTransaction>().AsQueryable();
+            return await _context.InwardTransactions
+                .Include(it => it.Godown)
+                .Include(it => it.Supplier)
+                .Where(it => it.ItemId == itemId)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<IReadOnlyList<InwardTransaction>> GetTransactionsBySupplierAsync(int supplierId, CancellationToken cancellationToken)
+        {
+            return await _context.InwardTransactions
+                .Include(it => it.Item)
+                .Include(it => it.Godown)
+                .Where(it => it.SupplierId == supplierId)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<PagedResult<InwardTransaction>> GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            var query = _context.Set<InwardTransaction>()
+                .Include(it => it.Item)
+                .Include(it => it.Godown)
+                .Include(it => it.Supplier)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Include(it => it.Item)
-                             .Include(it => it.Supplier)
-                             .Where(it => it.Item!.ItemName.Contains(searchTerm));
-            }
-            else
-            {
-                query = query.Include(it => it.Item)
-                             .Include(it => it.Supplier);
+                query = query.Where(it => it.Item!.ItemName.Contains(searchTerm) || 
+                                         it.Supplier!.SupplierName.Contains(searchTerm) ||
+                                         it.InvoiceNumber!.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
 
             return new PagedResult<InwardTransaction>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<InwardTransaction>> IInwardTransactionRepository.GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

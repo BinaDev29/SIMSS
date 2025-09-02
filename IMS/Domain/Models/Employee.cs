@@ -1,4 +1,4 @@
-﻿// Employee.cs
+// Employee.cs
 using Domain.Common;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -20,7 +20,7 @@ namespace Domain.Models
         public string? JobTitle { get; set; }
         public string? Department { get; set; }
         public bool IsActive { get; set; } = true;
-        public decimal? Salary { get; set; } // Salary ን ጨምረናል
+        public decimal? Salary { get; set; }
 
         public required int UserId { get; set; }
         public virtual User? User { get; set; }

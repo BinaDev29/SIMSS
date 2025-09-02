@@ -12,7 +12,7 @@ namespace Persistence
         {
             // Register DbContext
             services.AddDbContext<SIMSDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("InventoryConnectionString")));
 
             // Register Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork>();

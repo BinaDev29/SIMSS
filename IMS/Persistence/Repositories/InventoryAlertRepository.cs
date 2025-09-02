@@ -2,8 +2,6 @@
 using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,21 +19,57 @@ namespace Persistence.Repositories
         public async Task<IReadOnlyList<InventoryAlert>> GetActiveAlertsAsync(CancellationToken cancellationToken)
         {
             return await _context.InventoryAlerts
-                .Where(a => a.IsActive)
-                .Include(a => a.Item)
-                .Include(a => a.Godown)
+                .Include(ia => ia.Item)
+                .Include(ia => ia.Godown)
+                .Where(ia => ia.IsActive && !ia.IsAcknowledged)
+                .OrderByDescending(ia => ia.AlertDate)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task AcknowledgeAlertAsync(int alertId, string acknowledgedBy, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<InventoryAlert>> GetAlertsByTypeAsync(string alertType, CancellationToken cancellationToken)
         {
-            var alert = await _context.InventoryAlerts.FindAsync(new object[] { alertId }, cancellationToken);
-            if (alert != null)
+            return await _context.InventoryAlerts
+                .Include(ia => ia.Item)
+                .Include(ia => ia.Godown)
+                .Where(ia => ia.AlertType == alertType)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<IReadOnlyList<InventoryAlert>> GetAlertsByItemAsync(int itemId, CancellationToken cancellationToken)
+        {
+            return await _context.InventoryAlerts
+                .Include(ia => ia.Godown)
+                .Where(ia => ia.ItemId == itemId)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<PagedResult<InventoryAlert>> GetPagedAlertsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            var query = _context.Set<InventoryAlert>()
+                .Include(ia => ia.Item)
+                .Include(ia => ia.Godown)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
             {
-                alert.IsAcknowledged = true;
-                alert.AcknowledgedBy = acknowledgedBy;
-                alert.AcknowledgedDate = DateTime.UtcNow;
+                query = query.Where(ia => ia.Item!.ItemName.Contains(searchTerm) || 
+                                         ia.AlertType.Contains(searchTerm) ||
+                                         ia.Message.Contains(searchTerm));
             }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query
+                .OrderByDescending(ia => ia.AlertDate)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
+
+            return new PagedResult<InventoryAlert>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<InventoryAlert>> IInventoryAlertRepository.GetPagedAlertsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

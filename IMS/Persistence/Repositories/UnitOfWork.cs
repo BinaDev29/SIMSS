@@ -1,4 +1,4 @@
-﻿// Persistence/Repositories/UnitOfWork.cs
+// Persistence/Repositories/UnitOfWork.cs
 using Application.Contracts;
 using System;
 using System.Threading;
@@ -13,6 +13,8 @@ namespace Persistence.Repositories
         public UnitOfWork(SIMSDbContext dbContext)
         {
             _dbContext = dbContext;
+            
+            // Core Business Repositories
             CustomerRepository = new CustomerRepository(dbContext);
             DeliveryRepository = new DeliveryRepository(dbContext);
             DeliveryDetailRepository = new DeliveryDetailRepository(dbContext);
@@ -27,8 +29,22 @@ namespace Persistence.Repositories
             ReturnTransactionRepository = new ReturnTransactionRepository(dbContext);
             SupplierRepository = new SupplierRepository(dbContext);
             UserRepository = new UserRepository(dbContext);
+            
+            // Enhanced Feature Repositories
+            InventoryReportRepository = new InventoryReportRepository(dbContext);
+            NotificationRepository = new NotificationRepository(dbContext);
+            AuditLogRepository = new AuditLogRepository(dbContext);
+            AlertRuleRepository = new AlertRuleRepository(dbContext);
+            BatchOperationRepository = new BatchOperationRepository(dbContext);
+            
+            // Smart Inventory Management Repositories
+            InventoryAlertRepository = new InventoryAlertRepository(dbContext);
+            InventoryAnalyticsRepository = new InventoryAnalyticsRepository(dbContext);
+            DemandForecastRepository = new DemandForecastRepository(dbContext);
+            SmartReorderRepository = new SmartReorderRepository(dbContext);
         }
 
+        // Core Business Repositories
         public ICustomerRepository CustomerRepository { get; }
         public IDeliveryRepository DeliveryRepository { get; }
         public IDeliveryDetailRepository DeliveryDetailRepository { get; }
@@ -44,23 +60,18 @@ namespace Persistence.Repositories
         public ISupplierRepository SupplierRepository { get; }
         public IUserRepository UserRepository { get; }
 
-        public IInventoryReportRepository InventoryReportRepository => throw new NotImplementedException();
+        // Enhanced Feature Repositories
+        public IInventoryReportRepository InventoryReportRepository { get; }
+        public INotificationRepository NotificationRepository { get; }
+        public IAuditLogRepository AuditLogRepository { get; }
+        public IAlertRuleRepository AlertRuleRepository { get; }
+        public IBatchOperationRepository BatchOperationRepository { get; }
 
-        public INotificationRepository NotificationRepository => throw new NotImplementedException();
-
-        public IAuditLogRepository AuditLogRepository => throw new NotImplementedException();
-
-        public IAlertRuleRepository AlertRuleRepository => throw new NotImplementedException();
-
-        public IBatchOperationRepository BatchOperationRepository => throw new NotImplementedException();
-
-        public IInventoryAlertRepository InventoryAlertRepository => throw new NotImplementedException();
-
-        public IInventoryAnalyticsRepository InventoryAnalyticsRepository => throw new NotImplementedException();
-
-        public IDemandForecastRepository DemandForecastRepository => throw new NotImplementedException();
-
-        public ISmartReorderRepository SmartReorderRepository => throw new NotImplementedException();
+        // Smart Inventory Management Repositories
+        public IInventoryAlertRepository InventoryAlertRepository { get; }
+        public IInventoryAnalyticsRepository InventoryAnalyticsRepository { get; }
+        public IDemandForecastRepository DemandForecastRepository { get; }
+        public ISmartReorderRepository SmartReorderRepository { get; }
 
         public async Task CommitAsync(CancellationToken cancellationToken)
         {

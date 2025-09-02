@@ -1,41 +1,44 @@
-﻿// Persistence/Repositories/EmployeeRepository.cs
+// Persistence/Repositories/EmployeeRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class EmployeeRepository(SIMSDbContext dbContext) : GenericRepository<Employee>(dbContext), IEmployeeRepository
+    public class EmployeeRepository : GenericRepository<Employee>, IEmployeeRepository
     {
-        public async Task<Employee?> GetEmployeeByEmailAsync(string email, CancellationToken cancellationToken)
+        private readonly SIMSDbContext _context;
+
+        public EmployeeRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            return await _dbContext.Employees.FirstOrDefaultAsync(e => e.Email == email, cancellationToken);
+            _context = dbContext;
         }
 
-        public async Task<bool> HasTransactionsByEmployeeIdAsync(int employeeId, CancellationToken cancellationToken)
+        public async Task<Employee?> GetEmployeeByUserIdAsync(int userId, CancellationToken cancellationToken)
         {
-            // Assuming employee is related to all transaction types
-            return await _dbContext.InwardTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken) ||
-                   await _dbContext.OutwardTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken) ||
-                   await _dbContext.ReturnTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken);
+            return await _context.Employees
+                .Include(e => e.User)
+                .FirstOrDefaultAsync(e => e.UserId == userId, cancellationToken);
         }
 
         public async Task<PagedResult<Employee>> GetPagedEmployeesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            var query = _dbContext.Set<Employee>().AsQueryable();
+            var query = _context.Set<Employee>()
+                .Include(e => e.User)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(e => e.FirstName.Contains(searchTerm) || e.LastName.Contains(searchTerm) || e.Email.Contains(searchTerm));
+                query = query.Where(e => e.FirstName.Contains(searchTerm) || 
+                                        e.LastName.Contains(searchTerm) || 
+                                        e.Email!.Contains(searchTerm) ||
+                                        e.JobTitle!.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
             var items = await query
-                .OrderBy(e => e.FirstName)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync(cancellationToken);
@@ -43,9 +46,32 @@ namespace Persistence.Repositories
             return new PagedResult<Employee>(items, totalCount, pageNumber, pageSize);
         }
 
-        public async Task<Employee?> GetEmployeeWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<Employee>> GetActiveEmployeesAsync(CancellationToken cancellationToken)
         {
-            return await _dbContext.Employees.Include(e => e.User).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            return await _context.Employees
+                .Where(e => e.IsActive)
+                .Include(e => e.User)
+                .ToListAsync(cancellationToken);
+        }
+
+        public Task<Employee?> GetEmployeeByEmailAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> HasTransactionsByEmployeeIdAsync(int employeeId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Application.DTOs.Common.PagedResult<Employee>> IEmployeeRepository.GetPagedEmployeesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Employee?> GetEmployeeWithDetailsAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

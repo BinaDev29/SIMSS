@@ -2,65 +2,76 @@
 using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class OutwardTransactionRepository(SIMSDbContext context) : GenericRepository<OutwardTransaction>(context), IOutwardTransactionRepository
+    public class OutwardTransactionRepository : GenericRepository<OutwardTransaction>, IOutwardTransactionRepository
     {
-        private new readonly SIMSDbContext _context = context;
+        private readonly SIMSDbContext _context;
 
-        public async Task<IReadOnlyList<OutwardTransaction>> GetTransactionsByCustomerIdAsync(int customerId, CancellationToken cancellationToken)
+        public OutwardTransactionRepository(SIMSDbContext dbContext) : base(dbContext)
+        {
+            _context = dbContext;
+        }
+
+        public async Task<IReadOnlyList<OutwardTransaction>> GetTransactionsByGodownAsync(int godownId, CancellationToken cancellationToken)
         {
             return await _context.OutwardTransactions
-                .Where(x => x.CustomerId == customerId)
-                .Include(x => x.Customer)
-                .Include(x => x.Item)
+                .Include(ot => ot.Item)
+                .Include(ot => ot.Customer)
+                .Include(ot => ot.Employee)
+                .Where(ot => ot.GodownId == godownId)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<IReadOnlyList<OutwardTransaction>> GetTransactionsByDateRangeAsync(DateTime startDate, DateTime endDate, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<OutwardTransaction>> GetTransactionsByItemAsync(int itemId, CancellationToken cancellationToken)
         {
             return await _context.OutwardTransactions
-                .Where(x => x.OutwardDate >= startDate && x.OutwardDate <= endDate)
-                .Include(x => x.Customer)
-                .Include(x => x.Item)
+                .Include(ot => ot.Godown)
+                .Include(ot => ot.Customer)
+                .Include(ot => ot.Employee)
+                .Where(ot => ot.ItemId == itemId)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<bool> HasTransactionsByCustomerIdAsync(int customerId, CancellationToken cancellationToken)
-        {
-            return await _context.OutwardTransactions.AnyAsync(x => x.CustomerId == customerId, cancellationToken);
-        }
-
-        public async Task<OutwardTransaction?> GetTransactionWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<OutwardTransaction>> GetTransactionsByCustomerAsync(int customerId, CancellationToken cancellationToken)
         {
             return await _context.OutwardTransactions
-                .Include(x => x.Customer)
-                .Include(x => x.Item)
-                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+                .Include(ot => ot.Item)
+                .Include(ot => ot.Godown)
+                .Include(ot => ot.Employee)
+                .Where(ot => ot.CustomerId == customerId)
+                .ToListAsync(cancellationToken);
         }
 
-        public Task<bool> HasTransactionsByCustomerId(int id)
+        public async Task<PagedResult<OutwardTransaction>> GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var query = _context.Set<OutwardTransaction>()
+                .Include(ot => ot.Item)
+                .Include(ot => ot.Godown)
+                .Include(ot => ot.Customer)
+                .Include(ot => ot.Employee)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                query = query.Where(ot => ot.Item!.ItemName.Contains(searchTerm) || 
+                                         ot.Customer!.CustomerName.Contains(searchTerm) ||
+                                         ot.InvoiceNumber.Contains(searchTerm));
+            }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
+
+            return new PagedResult<OutwardTransaction>(items, totalCount, pageNumber, pageSize);
         }
 
-        public Task GetPagedOutwardTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> HasTransactionsByItemIdAsync(int id, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> HasTransactionsByEmployeeIdAsync(int id, CancellationToken cancellationToken)
+        Task<Application.DTOs.Common.PagedResult<OutwardTransaction>> IOutwardTransactionRepository.GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

@@ -37,7 +37,7 @@ namespace Application.Services
                 Items = items.Select(x => new ItemReportDto
                 {
                     ItemName = x.ItemName,
-                    Quantity = x.Quantity,
+                    Quantity = (int)x.Quantity,
                     Price = x.Price,
                     TotalValue = x.Price * x.Quantity,
                     IsLowStock = x.Quantity < x.MinimumStockLevel

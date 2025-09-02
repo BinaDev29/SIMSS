@@ -1,21 +1,24 @@
-﻿// Persistence/Repositories/InventoryAlertRepository.cs
-using Domain.Models;
+// Persistence/Repositories/PagedResult.cs
+using System.Collections.Generic;
 
 namespace Persistence.Repositories
 {
     public class PagedResult<T>
     {
-        private List<InventoryAlert> items;
-        private int totalCount;
-        private int pageNumber;
-        private int pageSize;
+        public List<T> Items { get; set; }
+        public int TotalCount { get; set; }
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
+        public int TotalPages => (int)Math.Ceiling((double)TotalCount / PageSize);
+        public bool HasPreviousPage => PageNumber > 1;
+        public bool HasNextPage => PageNumber < TotalPages;
 
-        public PagedResult(List<InventoryAlert> items, int totalCount, int pageNumber, int pageSize)
+        public PagedResult(List<T> items, int totalCount, int pageNumber, int pageSize)
         {
-            this.items = items;
-            this.totalCount = totalCount;
-            this.pageNumber = pageNumber;
-            this.pageSize = pageSize;
+            Items = items;
+            TotalCount = totalCount;
+            PageNumber = pageNumber;
+            PageSize = pageSize;
         }
     }
 }

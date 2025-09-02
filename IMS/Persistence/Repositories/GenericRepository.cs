@@ -1,5 +1,6 @@
 // Persistence/Repositories/GenericRepository.cs
 using Application.Contracts;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading;
@@ -43,6 +44,11 @@ namespace Persistence.Repositories
         {
             _dbContext.Set<T>().Remove(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
+        }
+
+        public Task UpdateAsync(Notification notification, CancellationToken none)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// ReturnTransaction.cs
+// ReturnTransaction.cs
 using Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 using System;

@@ -1,4 +1,4 @@
-﻿// Supplier.cs
+// Supplier.cs
 using Domain.Common;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

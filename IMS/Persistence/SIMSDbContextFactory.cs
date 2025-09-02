@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.IO;
 
 namespace Persistence
@@ -10,22 +9,18 @@ namespace Persistence
     {
         public SIMSDbContext CreateDbContext(string[] args)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
+            var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false)
-                .AddJsonFile(
-                    $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
-                    optional: true
-                )
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("appsettings.Development.json", optional: true)
                 .Build();
 
-            var connectionString = configuration.GetConnectionString("InventoryConnectionString")
-                ?? throw new InvalidOperationException("Connection string 'InventoryConnectionString' not found in appsettings.json");
+            var optionsBuilder = new DbContextOptionsBuilder<SIMSDbContext>();
+            var connectionString = configuration.GetConnectionString("InventoryConnectionString");
+            
+            optionsBuilder.UseSqlServer(connectionString);
 
-            var builder = new DbContextOptionsBuilder<SIMSDbContext>();
-            builder.UseSqlServer(connectionString);
-
-            return new SIMSDbContext(builder.Options);
+            return new SIMSDbContext(optionsBuilder.Options);
         }
     }
 }

@@ -3,120 +3,44 @@
   "WorkspaceRootPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\delivery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\delivery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Migrations\\20250902091804_IntialCreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Persistence\\Migrations\\20250902091804_IntialCreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\deliveryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\deliveryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\deliverydetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\deliverydetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Migrations\\20250902091620_IntialCreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Persistence\\Migrations\\20250902091620_IntialCreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\dtos\\customer\\validators\\updatecustomervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\dtos\\customer\\validators\\updatecustomervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\batchoperationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\batchoperationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\dtos\\customer\\validators\\createcustomervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\dtos\\customer\\validators\\createcustomervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\batchoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\batchoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\dtos\\customer\\updatecustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\dtos\\customer\\updatecustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\alertrulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\alertrulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\dtos\\customer\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\dtos\\customer\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\auditlogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\auditlogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\dtos\\customer\\createcustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\dtos\\customer\\createcustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\inventoryalertrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\inventoryalertrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\contracts\\idemandforecastrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\contracts\\idemandforecastrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\smartreorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\smartreorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\returntransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\returntransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\godownrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\godownrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\godowninventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\godowninventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\contracts\\ialertrulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\contracts\\ialertrulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\outwardtransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\outwardtransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\inwardtransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\inwardtransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\invoicedetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\invoicedetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\inventoryreportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\inventoryreportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\inventoryanalyticsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\inventoryanalyticsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\repositories\\demandforecastrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\demandforecastrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\simsdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -127,96 +51,8 @@
       "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\simsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\persistence\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D008B61-08B9-4C57-8E81-30CDE5649363}|Persistence\\Persistence.csproj|solutionrelative:persistence\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\godown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\godown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\smartreorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\smartreorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\returntransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\returntransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\outwardtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\outwardtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\inwardtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\inwardtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\invoicedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\invoicedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\inventoryreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\inventoryreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\inventoryanalytics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\inventoryanalytics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\inventoryalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\inventoryalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\godowninventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\godowninventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\demandforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\demandforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\deliverydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\deliverydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\models\\alertrule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\models\\alertrule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\domain\\common\\basedomainentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EEAF3C6-816E-45CB-B5B7-3F6820BCD6B5}|Domain\\Domain.csproj|solutionrelative:domain\\common\\basedomainentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4B3E588-252C-4867-BC4D-53FB950D19B1}|API\\API.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B4B3E588-252C-4867-BC4D-53FB950D19B1}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -226,717 +62,180 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BatchOperationRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\BatchOperationRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\BatchOperationRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\BatchOperationRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\BatchOperationRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAcwBcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:34.843Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\CustomerRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\CustomerRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\CustomerRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20250902091804_IntialCreation.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Migrations\\20250902091804_IntialCreation.cs",
+              "RelativeDocumentMoniker": "Persistence\\Migrations\\20250902091804_IntialCreation.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Migrations\\20250902091804_IntialCreation.cs",
+              "RelativeToolTip": "Persistence\\Migrations\\20250902091804_IntialCreation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:42.74Z",
+              "WhenOpened": "2025-09-02T09:18:05.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DeliveryDetailRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DeliveryDetailRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\DeliveryDetailRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DeliveryDetailRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\DeliveryDetailRepository.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowEEAAAAAAAAAAAAAAA==",
+              "Title": "20250902091620_IntialCreation.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Migrations\\20250902091620_IntialCreation.cs",
+              "RelativeDocumentMoniker": "Persistence\\Migrations\\20250902091620_IntialCreation.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Migrations\\20250902091620_IntialCreation.cs",
+              "RelativeToolTip": "Persistence\\Migrations\\20250902091620_IntialCreation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:45.55Z",
+              "WhenOpened": "2025-09-02T09:16:21.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateCustomerValidator.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
+              "RelativeToolTip": "Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T09:13:26.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateCustomerValidator.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
+              "RelativeToolTip": "Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T09:13:24.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DeliveryRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DeliveryRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\DeliveryRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DeliveryRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\DeliveryRepository.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:48.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Delivery.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Delivery.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Delivery.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Delivery.cs",
-              "RelativeToolTip": "Domain\\Models\\Delivery.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA9wBAAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:15:03.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BatchOperation.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\BatchOperation.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\BatchOperation.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\BatchOperation.cs",
-              "RelativeToolTip": "Domain\\Models\\BatchOperation.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:00.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AlertRuleRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\AlertRuleRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\AlertRuleRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\AlertRuleRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\AlertRuleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:27.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuditLogRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\AuditLogRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\AuditLogRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\AuditLogRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\AuditLogRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:31.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "InventoryAlertRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryAlertRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\InventoryAlertRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryAlertRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\InventoryAlertRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T11:52:14.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SmartReorderRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\SmartReorderRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\SmartReorderRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\SmartReorderRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\SmartReorderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:30:47.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ReturnTransactionRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\ReturnTransactionRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\ReturnTransactionRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\ReturnTransactionRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\ReturnTransactionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:30:36.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GodownRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GodownRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\GodownRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GodownRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\GodownRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:49:21.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GodownInventoryRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GodownInventoryRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\GodownInventoryRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GodownInventoryRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\GodownInventoryRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAqwDUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:48:55.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\GenericRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:47:59.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IAlertRuleRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IAlertRuleRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Contracts\\IAlertRuleRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IAlertRuleRepository.cs",
-              "RelativeToolTip": "Application\\Contracts\\IAlertRuleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:47:35.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\UserRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAxwCMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:31:32.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\UnitOfWork.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\UnitOfWork.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAmwEoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:31:20.035Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SupplierRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\SupplierRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\SupplierRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\SupplierRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\SupplierRepository.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAxwCgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:31:02.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PagedResult.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\PagedResult.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\PagedResult.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\PagedResult.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\PagedResult.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:30:24.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OutwardTransactionRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\OutwardTransactionRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\OutwardTransactionRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\OutwardTransactionRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\OutwardTransactionRepository.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAuwEMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:30:04.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ItemRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\ItemRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\ItemRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\ItemRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\ItemRepository.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAxwDIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:29:09.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "InwardTransactionRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InwardTransactionRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\InwardTransactionRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InwardTransactionRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\InwardTransactionRepository.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwC8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:28:58.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "InvoiceRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InvoiceRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\InvoiceRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InvoiceRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\InvoiceRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAuwDwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:28:39.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "NotificationRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\NotificationRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\NotificationRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\NotificationRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\NotificationRepository.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAwE8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:25:21.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "InvoiceDetailRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InvoiceDetailRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\InvoiceDetailRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InvoiceDetailRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\InvoiceDetailRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAQwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:28:27.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "InventoryReportRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryReportRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\InventoryReportRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryReportRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\InventoryReportRepository.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T04:28:12.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "InventoryAnalyticsRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryAnalyticsRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\InventoryAnalyticsRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryAnalyticsRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\InventoryAnalyticsRepository.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:25.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "EmployeeRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\EmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\EmployeeRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\EmployeeRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\EmployeeRepository.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAwDIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:47:32.692Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "DemandForecastRepository.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DemandForecastRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\DemandForecastRepository.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DemandForecastRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\DemandForecastRepository.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAwGgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:46:05.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SIMSDbContext.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContext.cs",
-              "RelativeDocumentMoniker": "Persistence\\SIMSDbContext.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContext.cs",
-              "RelativeToolTip": "Persistence\\SIMSDbContext.cs",
-              "ViewState": "AgIAALYAAAAAAAAAAAAAwMoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:09.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "PersistenceServiceRegistration.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\PersistenceServiceRegistration.cs",
-              "RelativeDocumentMoniker": "Persistence\\PersistenceServiceRegistration.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\PersistenceServiceRegistration.cs",
-              "RelativeToolTip": "Persistence\\PersistenceServiceRegistration.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAQwDYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:15.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "SIMSDbContextFactory.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContextFactory.cs",
-              "RelativeDocumentMoniker": "Persistence\\SIMSDbContextFactory.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContextFactory.cs",
-              "RelativeToolTip": "Persistence\\SIMSDbContextFactory.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwB4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:23:12.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Godown.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Godown.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Godown.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Godown.cs",
-              "RelativeToolTip": "Domain\\Models\\Godown.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:15:47.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "User.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\User.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\User.cs",
-              "RelativeToolTip": "Domain\\Models\\User.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:18:28.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Supplier.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Supplier.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Supplier.cs",
-              "RelativeToolTip": "Domain\\Models\\Supplier.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAUwBQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:18:16.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "SmartReorder.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\SmartReorder.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\SmartReorder.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\SmartReorder.cs",
-              "RelativeToolTip": "Domain\\Models\\SmartReorder.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAIwC0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:18:07.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "ReturnTransaction.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\ReturnTransaction.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\ReturnTransaction.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\ReturnTransaction.cs",
-              "RelativeToolTip": "Domain\\Models\\ReturnTransaction.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAywBgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:18:00.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "OutwardTransaction.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\OutwardTransaction.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\OutwardTransaction.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\OutwardTransaction.cs",
-              "RelativeToolTip": "Domain\\Models\\OutwardTransaction.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA0wCAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:17:50.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Notification.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Notification.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Notification.cs",
-              "RelativeToolTip": "Domain\\Models\\Notification.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA1wBcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:17:41.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Item.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Item.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Item.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Item.cs",
-              "RelativeToolTip": "Domain\\Models\\Item.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAADwvyQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:17:31.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "InwardTransaction.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InwardTransaction.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\InwardTransaction.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InwardTransaction.cs",
-              "RelativeToolTip": "Domain\\Models\\InwardTransaction.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA0wB8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:17:21.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "InvoiceDetail.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InvoiceDetail.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\InvoiceDetail.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InvoiceDetail.cs",
-              "RelativeToolTip": "Domain\\Models\\InvoiceDetail.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:17:12.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Invoice.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Invoice.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Invoice.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Invoice.cs",
-              "RelativeToolTip": "Domain\\Models\\Invoice.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAIwBwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:17:00.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "InventoryReport.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryReport.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\InventoryReport.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryReport.cs",
-              "RelativeToolTip": "Domain\\Models\\InventoryReport.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:16:45.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "InventoryAnalytics.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryAnalytics.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\InventoryAnalytics.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryAnalytics.cs",
-              "RelativeToolTip": "Domain\\Models\\InventoryAnalytics.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAywDUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:16:36.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "InventoryAlert.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryAlert.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\InventoryAlert.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryAlert.cs",
-              "RelativeToolTip": "Domain\\Models\\InventoryAlert.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAIwCYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:16:08.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "GodownInventory.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\GodownInventory.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\GodownInventory.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\GodownInventory.cs",
-              "RelativeToolTip": "Domain\\Models\\GodownInventory.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAUwA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:15:57.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Employee.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Employee.cs",
-              "RelativeToolTip": "Domain\\Models\\Employee.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAywCAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:15:38.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "DemandForecast.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\DemandForecast.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\DemandForecast.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\DemandForecast.cs",
-              "RelativeToolTip": "Domain\\Models\\DemandForecast.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAywC0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:15:22.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "DeliveryDetail.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\DeliveryDetail.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\DeliveryDetail.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\DeliveryDetail.cs",
-              "RelativeToolTip": "Domain\\Models\\DeliveryDetail.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA0wBQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:15:12.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
               "Title": "Customer.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Customer.cs",
               "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Customer.cs",
               "RelativeToolTip": "Domain\\Models\\Customer.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADwvxYAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T03:14:54.669Z",
+              "WhenOpened": "2025-09-02T09:12:16.037Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "AuditLog.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\AuditLog.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\AuditLog.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\AuditLog.cs",
-              "RelativeToolTip": "Domain\\Models\\AuditLog.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAADwvygAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "UpdateCustomerDto.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:22:58.873Z",
+              "WhenOpened": "2025-09-02T09:13:21.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "AlertRule.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\AlertRule.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\AlertRule.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\AlertRule.cs",
-              "RelativeToolTip": "Domain\\Models\\AlertRule.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBIAAAABAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "CustomerDto.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\CustomerDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\CustomerDto.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\CustomerDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Customer\\CustomerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:22:54.47Z",
+              "WhenOpened": "2025-09-02T09:13:18.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "BaseDomainEntity.cs",
-              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Common\\BaseDomainEntity.cs",
-              "RelativeDocumentMoniker": "Domain\\Common\\BaseDomainEntity.cs",
-              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Common\\BaseDomainEntity.cs",
-              "RelativeToolTip": "Domain\\Common\\BaseDomainEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "CreateCustomerDto.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\CreateCustomerDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\CreateCustomerDto.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\CreateCustomerDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Customer\\CreateCustomerDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T02:22:29.597Z",
+              "WhenOpened": "2025-09-02T09:12:50.388Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDemandForecastRepository.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IDemandForecastRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Contracts\\IDemandForecastRepository.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IDemandForecastRepository.cs",
+              "RelativeToolTip": "Application\\Contracts\\IDemandForecastRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:51:27.928Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PersistenceServiceRegistration.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\PersistenceServiceRegistration.cs",
+              "RelativeDocumentMoniker": "Persistence\\PersistenceServiceRegistration.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\PersistenceServiceRegistration.cs",
+              "RelativeToolTip": "Persistence\\PersistenceServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:45:25.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SIMSDbContextFactory.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContextFactory.cs",
+              "RelativeDocumentMoniker": "Persistence\\SIMSDbContextFactory.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContextFactory.cs",
+              "RelativeToolTip": "Persistence\\SIMSDbContextFactory.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBIAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:44:49.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SIMSDbContext.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContext.cs",
+              "RelativeDocumentMoniker": "Persistence\\SIMSDbContext.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\SIMSDbContext.cs",
+              "RelativeToolTip": "Persistence\\SIMSDbContext.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:44:42.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "API\\appsettings.json",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\API\\appsettings.json",
+              "RelativeToolTip": "API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-02T08:43:46.397Z",
+              "EditorCaption": ""
             }
           ]
         }

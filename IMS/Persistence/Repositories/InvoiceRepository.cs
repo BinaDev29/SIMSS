@@ -2,60 +2,72 @@
 using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class InvoiceRepository(SIMSDbContext context) : GenericRepository<Invoice>(context), IInvoiceRepository
+    public class InvoiceRepository : GenericRepository<Invoice>, IInvoiceRepository
     {
-        private new readonly SIMSDbContext _context = context;
+        private readonly SIMSDbContext _context;
 
-        public async Task<Application.Contracts.IDbContextTransaction> BeginTransactionAsync()
+        public InvoiceRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            var transaction = await _context.Database.BeginTransactionAsync();
-            return new DbContextTransactionWrapper(transaction);
+            _context = dbContext;
         }
 
-        public async Task<Invoice?> GetInvoiceWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public async Task<Invoice?> GetInvoiceByNumberAsync(string invoiceNumber, CancellationToken cancellationToken)
         {
             return await _context.Invoices
-                .Include(x => x.Customer)
-                .Include(x => x.InvoiceDetails)
-                    .ThenInclude(x => x.Item)
-                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+                .Include(i => i.Customer)
+                .Include(i => i.Employee)
+                .Include(i => i.InvoiceDetails)
+                    .ThenInclude(id => id.Item)
+                .FirstOrDefaultAsync(i => i.InvoiceNumber == invoiceNumber, cancellationToken);
         }
 
-        public Task GetPagedInvoicesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<Invoice>> GetInvoicesByCustomerAsync(int customerId, CancellationToken cancellationToken)
         {
-            // Implementation placeholder
-            return Task.CompletedTask;
-        }
-    }
-
-    public class DbContextTransactionWrapper : Application.Contracts.IDbContextTransaction
-    {
-        private readonly Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction _transaction;
-
-        public DbContextTransactionWrapper(Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction)
-        {
-            _transaction = transaction;
+            return await _context.Invoices
+                .Include(i => i.Customer)
+                .Include(i => i.Employee)
+                .Where(i => i.CustomerId == customerId)
+                .ToListAsync(cancellationToken);
         }
 
-        public void Commit()
+        public async Task<IReadOnlyList<Invoice>> GetUnpaidInvoicesAsync(CancellationToken cancellationToken)
         {
-            _transaction.Commit();
+            return await _context.Invoices
+                .Include(i => i.Customer)
+                .Where(i => !i.IsPaid)
+                .ToListAsync(cancellationToken);
         }
 
-        public void Rollback()
+        public async Task<PagedResult<Invoice>> GetPagedInvoicesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            _transaction.Rollback();
+            var query = _context.Set<Invoice>()
+                .Include(i => i.Customer)
+                .Include(i => i.Employee)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                query = query.Where(i => i.InvoiceNumber.Contains(searchTerm) || 
+                                        i.Customer!.CustomerName.Contains(searchTerm));
+            }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
+
+            return new PagedResult<Invoice>(items, totalCount, pageNumber, pageSize);
         }
 
-        public void Dispose()
+        Task<Application.DTOs.Common.PagedResult<Invoice>> IInvoiceRepository.GetPagedInvoicesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            _transaction.Dispose();
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,9 +9,8 @@ namespace Application.Contracts
 {
     public interface IInvoiceDetailRepository : IGenericRepository<InvoiceDetail>
     {
-        Task<bool> HasDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken);
-        Task<PagedResult<InvoiceDetail>> GetPagedInvoiceDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
-        Task<IReadOnlyList<InvoiceDetail>> GetInvoiceDetailsByInvoiceIdAsync(int invoiceId, CancellationToken cancellationToken);
-        Task DeleteRangeAsync(IEnumerable<InvoiceDetail> entities, CancellationToken cancellationToken);
+        Task<IReadOnlyList<InvoiceDetail>> GetDetailsByInvoiceAsync(int invoiceId, CancellationToken cancellationToken);
+        Task<IReadOnlyList<InvoiceDetail>> GetDetailsByItemAsync(int itemId, CancellationToken cancellationToken);
+        Task<PagedResult<InvoiceDetail>> GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
     }
 }

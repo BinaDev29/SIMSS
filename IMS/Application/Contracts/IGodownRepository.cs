@@ -8,7 +8,8 @@ namespace Application.Contracts
 {
     public interface IGodownRepository : IGenericRepository<Godown>
     {
-        Task<Godown?> GetGodownByNameOrCodeAsync(string name, string code, CancellationToken cancellationToken);
+        Task<Godown?> GetGodownByNameAsync(string name, CancellationToken cancellationToken);
+        Task<bool> HasInventoryByGodownIdAsync(int godownId, CancellationToken cancellationToken);
         Task<PagedResult<Godown>> GetPagedGodownsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
     }
 }

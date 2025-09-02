@@ -1,10 +1,7 @@
-﻿// Persistence/Repositories/InvoiceDetailRepository.cs
+// Persistence/Repositories/InvoiceDetailRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,52 +9,57 @@ namespace Persistence.Repositories
 {
     public class InvoiceDetailRepository : GenericRepository<InvoiceDetail>, IInvoiceDetailRepository
     {
-        private readonly SIMSDbContext _dbContext;
+        private readonly SIMSDbContext _context;
 
         public InvoiceDetailRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
+            _context = dbContext;
         }
 
-        public async Task<bool> HasDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<InvoiceDetail>> GetDetailsByInvoiceAsync(int invoiceId, CancellationToken cancellationToken)
         {
-            return await _dbContext.InvoiceDetails.AnyAsync(id => id.ItemId == itemId, cancellationToken);
-        }
-
-        public async Task<IReadOnlyList<InvoiceDetail>> GetInvoiceDetailsByInvoiceIdAsync(int invoiceId, CancellationToken cancellationToken)
-        {
-            return await _dbContext.InvoiceDetails
+            return await _context.InvoiceDetails
+                .Include(id => id.Item)
+                .Include(id => id.Godown)
                 .Where(id => id.InvoiceId == invoiceId)
-                .AsNoTracking()
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task DeleteRangeAsync(IEnumerable<InvoiceDetail> entities, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<InvoiceDetail>> GetDetailsByItemAsync(int itemId, CancellationToken cancellationToken)
         {
-            _dbContext.Set<InvoiceDetail>().RemoveRange(entities);
-            await Task.CompletedTask; // Or use _dbContext.SaveChangesAsync() if you want to save changes
+            return await _context.InvoiceDetails
+                .Include(id => id.Invoice)
+                    .ThenInclude(i => i!.Customer)
+                .Where(id => id.ItemId == itemId)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task<PagedResult<InvoiceDetail>> GetPagedInvoiceDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        public async Task<PagedResult<InvoiceDetail>> GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            var query = _dbContext.Set<InvoiceDetail>().AsQueryable();
+            var query = _context.Set<InvoiceDetail>()
+                .Include(id => id.Invoice)
+                .Include(id => id.Item)
+                .Include(id => id.Godown)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Include(id => id.Item)
-                             .Include(id => id.Godown)
-                             .Where(id => id.Item!.ItemName.Contains(searchTerm) || id.Godown!.GodownName.Contains(searchTerm));
-            }
-            else
-            {
-                query = query.Include(id => id.Item)
-                             .Include(id => id.Godown);
+                query = query.Where(id => id.Item!.ItemName.Contains(searchTerm) || 
+                                         id.Invoice!.InvoiceNumber.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
 
             return new PagedResult<InvoiceDetail>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<InvoiceDetail>> IInvoiceDetailRepository.GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

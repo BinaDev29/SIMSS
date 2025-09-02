@@ -1,10 +1,7 @@
 // Persistence/Repositories/DeliveryDetailRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,47 +16,50 @@ namespace Persistence.Repositories
             _context = dbContext;
         }
 
-        public async Task<IReadOnlyList<DeliveryDetail>> GetDetailsByDeliveryIdAsync(int deliveryId, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<DeliveryDetail>> GetDetailsByDeliveryAsync(int deliveryId, CancellationToken cancellationToken)
         {
             return await _context.DeliveryDetails
-                .Where(dd => dd.DeliveryId == deliveryId)
                 .Include(dd => dd.Item)
                 .Include(dd => dd.Godown)
-                .AsNoTracking()
+                .Where(dd => dd.DeliveryId == deliveryId)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<bool> HasDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<DeliveryDetail>> GetDetailsByItemAsync(int itemId, CancellationToken cancellationToken)
         {
-            return await _context.DeliveryDetails.AnyAsync(dd => dd.ItemId == itemId, cancellationToken);
+            return await _context.DeliveryDetails
+                .Include(dd => dd.Delivery)
+                    .ThenInclude(d => d!.Customer)
+                .Where(dd => dd.ItemId == itemId)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task DeleteRangeAsync(IEnumerable<DeliveryDetail> entities, CancellationToken cancellationToken)
+        public async Task<PagedResult<DeliveryDetail>> GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            _context.DeliveryDetails.RemoveRange(entities);
-            await _context.SaveChangesAsync(cancellationToken);
-        }
-
-        public async Task<PagedResult<DeliveryDetail>> GetPagedDeliveryDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
-        {
-            var query = _context.DeliveryDetails.AsQueryable();
+            var query = _context.Set<DeliveryDetail>()
+                .Include(dd => dd.Delivery)
+                .Include(dd => dd.Item)
+                .Include(dd => dd.Godown)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Include(dd => dd.Item)
-                             .Include(dd => dd.Godown)
-                             .Where(dd => dd.Item!.ItemName.Contains(searchTerm) || dd.Godown!.GodownName.Contains(searchTerm));
-            }
-            else
-            {
-                query = query.Include(dd => dd.Item)
-                             .Include(dd => dd.Godown);
+                query = query.Where(dd => dd.Item!.ItemName.Contains(searchTerm) || 
+                                         dd.Delivery!.TrackingNumber.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
 
             return new PagedResult<DeliveryDetail>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<DeliveryDetail>> IDeliveryDetailRepository.GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

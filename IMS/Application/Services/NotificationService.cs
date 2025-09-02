@@ -46,7 +46,7 @@ namespace Application.Services
             if (notification != null && notification.UserId == userId)
             {
                 notification.IsRead = true;
-                await notificationRepository.Update(notification, CancellationToken.None);
+                await notificationRepository.UpdateAsync(notification, CancellationToken.None);
                 return true;
             }
             return false;
@@ -61,7 +61,7 @@ namespace Application.Services
                 if (notification != null)
                 {
                     notification.IsRead = true;
-                    await notificationRepository.Update(notification, CancellationToken.None);
+                    await notificationRepository.UpdateAsync(notification, CancellationToken.None);
                 }
             }
             return true;
@@ -78,7 +78,7 @@ namespace Application.Services
             var notification = await notificationRepository.GetByIdAsync(notificationId, CancellationToken.None);
             if (notification != null && notification.UserId == userId)
             {
-                await notificationRepository.Delete(notification, CancellationToken.None);
+                await notificationRepository.DeleteAsync(notification, CancellationToken.None);
                 return true;
             }
             return false;

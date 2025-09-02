@@ -1,4 +1,6 @@
 // Application/Contracts/IUnitOfWork.cs
+using Application.DTOs.Common;
+using Domain.Models;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,4 +40,6 @@ namespace Application.Contracts
 
         Task CommitAsync(CancellationToken cancellationToken);
     }
+
+    
 }

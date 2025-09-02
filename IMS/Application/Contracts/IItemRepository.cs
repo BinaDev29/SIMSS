@@ -1,6 +1,7 @@
 ﻿// Application/Contracts/IItemRepository.cs
 using Application.DTOs.Common;
 using Domain.Models;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,5 +14,7 @@ namespace Application.Contracts
         Task<bool> HasTransactionsByItemIdAsync(int itemId, CancellationToken cancellationToken);
         Task<bool> HasInvoiceDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken);
         Task<PagedResult<Item>> GetPagedItemsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        Task<IReadOnlyList<Item>> GetLowStockItemsAsync(CancellationToken cancellationToken);
+        Task<IReadOnlyList<Item>> GetItemsByCategoryAsync(string category, CancellationToken cancellationToken);
     }
 }

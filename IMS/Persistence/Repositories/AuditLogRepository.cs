@@ -2,8 +2,6 @@
 using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,34 +16,63 @@ namespace Persistence.Repositories
             _context = dbContext;
         }
 
-        public async Task<IReadOnlyList<AuditLog>> GetAllLogsAsync(CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<AuditLog>> GetLogsByEntityAsync(string entityName, string entityId, CancellationToken cancellationToken)
         {
             return await _context.AuditLogs
-                .OrderByDescending(a => a.Timestamp)
+                .Where(al => al.EntityName == entityName && al.EntityId == entityId)
+                .OrderByDescending(al => al.Timestamp)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<AuditLog?> GetLogByIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<AuditLog>> GetLogsByUserAsync(string userId, CancellationToken cancellationToken)
         {
-            return await _context.AuditLogs.FindAsync(new object[] { id }, cancellationToken);
+            return await _context.AuditLogs
+                .Where(al => al.UserId == userId)
+                .OrderByDescending(al => al.Timestamp)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task AddLogAsync(AuditLog log, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<AuditLog>> GetLogsByActionAsync(string action, CancellationToken cancellationToken)
         {
-            await _context.AuditLogs.AddAsync(log, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
+            return await _context.AuditLogs
+                .Where(al => al.Action == action)
+                .OrderByDescending(al => al.Timestamp)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task UpdateLogAsync(AuditLog log, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<AuditLog>> GetLogsByDateRangeAsync(DateTime fromDate, DateTime toDate, CancellationToken cancellationToken)
         {
-            _context.Entry(log).State = EntityState.Modified;
-            await _context.SaveChangesAsync(cancellationToken);
+            return await _context.AuditLogs
+                .Where(al => al.Timestamp >= fromDate && al.Timestamp <= toDate)
+                .OrderByDescending(al => al.Timestamp)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task DeleteLogAsync(AuditLog log, CancellationToken cancellationToken)
+        public async Task<PagedResult<AuditLog>> GetPagedLogsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            _context.AuditLogs.Remove(log);
-            await _context.SaveChangesAsync(cancellationToken);
+            var query = _context.Set<AuditLog>().AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                query = query.Where(al => al.EntityName.Contains(searchTerm) || 
+                                         al.Action.Contains(searchTerm) ||
+                                         al.UserName.Contains(searchTerm) ||
+                                         al.Details.Contains(searchTerm));
+            }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query
+                .OrderByDescending(al => al.Timestamp)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
+
+            return new PagedResult<AuditLog>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<AuditLog>> IAuditLogRepository.GetPagedLogsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

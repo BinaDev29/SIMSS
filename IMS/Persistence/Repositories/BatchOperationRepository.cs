@@ -2,8 +2,6 @@
 using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,34 +16,55 @@ namespace Persistence.Repositories
             _context = dbContext;
         }
 
-        public async Task<IReadOnlyList<BatchOperation>> GetAllBatchOperationsAsync(CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<BatchOperation>> GetOperationsByTypeAsync(string operationType, CancellationToken cancellationToken)
         {
             return await _context.BatchOperations
-                .OrderByDescending(b => b.StartedAt)
+                .Where(bo => bo.OperationType == operationType)
+                .OrderByDescending(bo => bo.CreatedDate)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<BatchOperation?> GetBatchOperationByIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<BatchOperation>> GetOperationsByStatusAsync(string status, CancellationToken cancellationToken)
         {
-            return await _context.BatchOperations.FindAsync(new object[] { id }, cancellationToken);
+            return await _context.BatchOperations
+                .Where(bo => bo.Status == status)
+                .OrderByDescending(bo => bo.CreatedDate)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task AddBatchOperationAsync(BatchOperation batchOperation, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<BatchOperation>> GetOperationsByUserAsync(string userId, CancellationToken cancellationToken)
         {
-            await _context.BatchOperations.AddAsync(batchOperation, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
+            return await _context.BatchOperations
+                .Where(bo => bo.InitiatedBy == userId)
+                .OrderByDescending(bo => bo.CreatedDate)
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task UpdateBatchOperationAsync(BatchOperation batchOperation, CancellationToken cancellationToken)
+        public async Task<PagedResult<BatchOperation>> GetPagedOperationsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            _context.Entry(batchOperation).State = EntityState.Modified;
-            await _context.SaveChangesAsync(cancellationToken);
+            var query = _context.Set<BatchOperation>().AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                query = query.Where(bo => bo.OperationType.Contains(searchTerm) || 
+                                         bo.EntityType.Contains(searchTerm) ||
+                                         bo.Status.Contains(searchTerm) ||
+                                         bo.InitiatedBy.Contains(searchTerm));
+            }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query
+                .OrderByDescending(bo => bo.CreatedDate)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
+
+            return new PagedResult<BatchOperation>(items, totalCount, pageNumber, pageSize);
         }
 
-        public async Task DeleteBatchOperationAsync(BatchOperation batchOperation, CancellationToken cancellationToken)
+        Task<Application.DTOs.Common.PagedResult<BatchOperation>> IBatchOperationRepository.GetPagedOperationsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            _context.BatchOperations.Remove(batchOperation);
-            await _context.SaveChangesAsync(cancellationToken);
+            throw new NotImplementedException();
         }
     }
 }

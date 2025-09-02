@@ -1,17 +1,20 @@
-﻿// Persistence/Repositories/SupplierRepository.cs
+// Persistence/Repositories/SupplierRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class SupplierRepository(SIMSDbContext dbContext) : GenericRepository<Supplier>(dbContext), ISupplierRepository
+    public class SupplierRepository : GenericRepository<Supplier>, ISupplierRepository
     {
-        private new readonly SIMSDbContext _context = dbContext;
+        private readonly SIMSDbContext _context;
+
+        public SupplierRepository(SIMSDbContext dbContext) : base(dbContext)
+        {
+            _context = dbContext;
+        }
 
         public async Task<Supplier?> GetSupplierByNameAsync(string name, CancellationToken cancellationToken)
         {
@@ -29,13 +32,23 @@ namespace Persistence.Repositories
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(s => s.SupplierName.Contains(searchTerm) || s.ContactPerson.Contains(searchTerm) || s.Email.Contains(searchTerm));
+                query = query.Where(s => s.SupplierName.Contains(searchTerm) || 
+                                        s.ContactPerson.Contains(searchTerm) || 
+                                        s.Email.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
 
             return new PagedResult<Supplier>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<Supplier>> ISupplierRepository.GetPagedSuppliersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

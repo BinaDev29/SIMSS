@@ -1,4 +1,4 @@
-﻿// Domain/Models/Delivery.cs
+// Domain/Models/Delivery.cs
 using Domain.Common;
 using System;
 using System.Collections.Generic;

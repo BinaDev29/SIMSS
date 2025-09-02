@@ -1,5 +1,6 @@
+// Application/Services/GodownInventoryService.cs
+
 using Application.Contracts;
-using Application.Services;
 using Domain.Models;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,18 +15,13 @@ namespace Application.Services
             return inventory != null && inventory.Quantity >= requiredQuantity;
         }
 
-        public Task<bool> CheckSufficientStock(object value1, object value2, object value3, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task UpdateInventoryQuantity(int godownId, int itemId, int quantityChange, CancellationToken cancellationToken)
         {
             var inventory = await godownInventoryRepository.GetByGodownAndItemAsync(godownId, itemId, cancellationToken);
             if (inventory != null)
             {
                 inventory.Quantity += quantityChange;
-                await godownInventoryRepository.Update(inventory, cancellationToken);
+                await godownInventoryRepository.UpdateAsync(inventory, cancellationToken);
             }
         }
     }

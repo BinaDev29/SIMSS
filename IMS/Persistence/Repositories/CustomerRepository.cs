@@ -1,6 +1,5 @@
-﻿// Persistence/Repositories/CustomerRepository.cs
+// Persistence/Repositories/CustomerRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -34,7 +33,9 @@ namespace Persistence.Repositories
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(c => c.CustomerName.Contains(searchTerm) || c.ContactPerson.Contains(searchTerm) || c.Email.Contains(searchTerm));
+                query = query.Where(c => c.CustomerName.Contains(searchTerm) || 
+                                        c.ContactPerson.Contains(searchTerm) || 
+                                        c.Email.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
@@ -44,6 +45,11 @@ namespace Persistence.Repositories
                 .ToListAsync(cancellationToken);
 
             return new PagedResult<Customer>(items, totalCount, pageNumber, pageSize);
+        }
+
+        Task<Application.DTOs.Common.PagedResult<Customer>> ICustomerRepository.GetPagedCustomersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

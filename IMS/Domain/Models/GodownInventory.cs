@@ -1,4 +1,4 @@
-﻿// GodownInventory.cs
+// GodownInventory.cs
 using Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 

@@ -1,45 +1,76 @@
 // Persistence/Repositories/DemandForecastRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System;
 
 namespace Persistence.Repositories
 {
     public class DemandForecastRepository : GenericRepository<DemandForecast>, IDemandForecastRepository
     {
+        private readonly SIMSDbContext _context;
+
         public DemandForecastRepository(SIMSDbContext dbContext) : base(dbContext)
         {
+            _context = dbContext;
         }
 
-        public async Task<PagedResult<DemandForecast>> GetPagedForecastsAsync(int pageNumber, int pageSize, string? forecastPeriod, int? itemId, int? godownId, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<DemandForecast>> GetForecastsByItemAsync(int itemId, CancellationToken cancellationToken)
         {
-            var query = _dbContext.Set<DemandForecast>().AsQueryable();
+            return await _context.DemandForecasts
+                .Include(df => df.Godown)
+                .Where(df => df.ItemId == itemId)
+                .OrderByDescending(df => df.ForecastDate)
+                .ToListAsync(cancellationToken);
+        }
 
-            if (!string.IsNullOrEmpty(forecastPeriod))
-            {
-                query = query.Where(f => f.ForecastPeriod == forecastPeriod);
-            }
+        public async Task<IReadOnlyList<DemandForecast>> GetForecastsByGodownAsync(int godownId, CancellationToken cancellationToken)
+        {
+            return await _context.DemandForecasts
+                .Include(df => df.Item)
+                .Where(df => df.GodownId == godownId)
+                .OrderByDescending(df => df.ForecastDate)
+                .ToListAsync(cancellationToken);
+        }
 
-            if (itemId.HasValue)
-            {
-                query = query.Where(f => f.ItemId == itemId.Value);
-            }
+        public async Task<IReadOnlyList<DemandForecast>> GetForecastsByPeriodAsync(string period, CancellationToken cancellationToken)
+        {
+            return await _context.DemandForecasts
+                .Include(df => df.Item)
+                .Include(df => df.Godown)
+                .Where(df => df.ForecastPeriod == period)
+                .OrderByDescending(df => df.ForecastDate)
+                .ToListAsync(cancellationToken);
+        }
 
-            if (godownId.HasValue)
+        public async Task<DemandForecast?> GetLatestForecastAsync(int itemId, int godownId, CancellationToken cancellationToken)
+        {
+            return await _context.DemandForecasts
+                .Include(df => df.Item)
+                .Include(df => df.Godown)
+                .Where(df => df.ItemId == itemId && df.GodownId == godownId)
+                .OrderByDescending(df => df.ForecastDate)
+                .FirstOrDefaultAsync(cancellationToken);
+        }
+
+        public async Task<PagedResult<DemandForecast>> GetPagedForecastsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            var query = _context.Set<DemandForecast>()
+                .Include(df => df.Item)
+                .Include(df => df.Godown)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(f => f.GodownId == godownId.Value);
+                query = query.Where(df => df.Item!.ItemName.Contains(searchTerm) || 
+                                         df.ForecastPeriod.Contains(searchTerm) ||
+                                         df.ForecastModel.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
             var items = await query
-                .Include(f => f.Item)
-                .Include(f => f.Godown)
-                .OrderByDescending(f => f.ForecastDate)
+                .OrderByDescending(df => df.ForecastDate)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync(cancellationToken);
@@ -47,59 +78,9 @@ namespace Persistence.Repositories
             return new PagedResult<DemandForecast>(items, totalCount, pageNumber, pageSize);
         }
 
-        public async Task<IReadOnlyList<DemandForecast>> GetForecastsByItemAsync(int itemId, string forecastPeriod, CancellationToken cancellationToken)
+        Task<Application.DTOs.Common.PagedResult<DemandForecast>> IDemandForecastRepository.GetPagedForecastsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            return await _dbContext.Set<DemandForecast>()
-                .Where(f => f.ItemId == itemId && f.ForecastPeriod == forecastPeriod)
-                .Include(f => f.Item)
-                .Include(f => f.Godown)
-                .OrderByDescending(f => f.ForecastDate)
-                .ToListAsync(cancellationToken);
-        }
-
-        public async Task<DemandForecast?> GetLatestForecastAsync(int itemId, int godownId, string forecastPeriod, CancellationToken cancellationToken)
-        {
-            return await _dbContext.Set<DemandForecast>()
-                .Where(f => f.ItemId == itemId && f.GodownId == godownId && f.ForecastPeriod == forecastPeriod)
-                .Include(f => f.Item)
-                .Include(f => f.Godown)
-                .OrderByDescending(f => f.ForecastDate)
-                .FirstOrDefaultAsync(cancellationToken);
-        }
-
-        public async Task<IReadOnlyList<DemandForecast>> GetForecastsForAccuracyCheckAsync(DateTime cutoffDate, CancellationToken cancellationToken)
-        {
-            return await _dbContext.Set<DemandForecast>()
-                .Where(f => f.ForecastDate <= cutoffDate && f.ActualDemand == null)
-                .Include(f => f.Item)
-                .Include(f => f.Godown)
-                .ToListAsync(cancellationToken);
-        }
-
-        public async Task UpdateActualDemandAsync(int forecastId, decimal actualDemand, CancellationToken cancellationToken)
-        {
-            var forecast = await _dbContext.Set<DemandForecast>().FindAsync(new object[] { forecastId }, cancellationToken);
-            if (forecast != null)
-            {
-                forecast.ActualDemand = actualDemand;
-                forecast.ActualDate = DateTime.UtcNow;
-                forecast.ForecastError = Math.Abs(forecast.PredictedDemand - actualDemand);
-                // ????? ?? ???? ?????
-                await _dbContext.SaveChangesAsync(cancellationToken);
-            }
-        }
-
-        public async Task<decimal> GetAverageAccuracyByModelAsync(string forecastModel, CancellationToken cancellationToken)
-        {
-            var forecasts = await _dbContext.Set<DemandForecast>()
-                .Where(f => f.ForecastModel == forecastModel && f.ActualDemand.HasValue)
-                .ToListAsync(cancellationToken);
-
-            if (!forecasts.Any())
-                return 0;
-
-            // ? accuracyScore? ????
-            return forecasts.Average(f => f.AccuracyScore);
+            throw new NotImplementedException();
         }
     }
 }
