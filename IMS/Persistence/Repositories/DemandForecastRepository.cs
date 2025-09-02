@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System;
 
 namespace Persistence.Repositories
 {
@@ -17,7 +18,7 @@ namespace Persistence.Repositories
 
         public async Task<PagedResult<DemandForecast>> GetPagedForecastsAsync(int pageNumber, int pageSize, string? forecastPeriod, int? itemId, int? godownId, CancellationToken cancellationToken)
         {
-            var query = _context.Set<DemandForecast>().AsQueryable();
+            var query = _dbContext.Set<DemandForecast>().AsQueryable();
 
             if (!string.IsNullOrEmpty(forecastPeriod))
             {
@@ -48,7 +49,7 @@ namespace Persistence.Repositories
 
         public async Task<IReadOnlyList<DemandForecast>> GetForecastsByItemAsync(int itemId, string forecastPeriod, CancellationToken cancellationToken)
         {
-            return await _context.Set<DemandForecast>()
+            return await _dbContext.Set<DemandForecast>()
                 .Where(f => f.ItemId == itemId && f.ForecastPeriod == forecastPeriod)
                 .Include(f => f.Item)
                 .Include(f => f.Godown)
@@ -58,7 +59,7 @@ namespace Persistence.Repositories
 
         public async Task<DemandForecast?> GetLatestForecastAsync(int itemId, int godownId, string forecastPeriod, CancellationToken cancellationToken)
         {
-            return await _context.Set<DemandForecast>()
+            return await _dbContext.Set<DemandForecast>()
                 .Where(f => f.ItemId == itemId && f.GodownId == godownId && f.ForecastPeriod == forecastPeriod)
                 .Include(f => f.Item)
                 .Include(f => f.Godown)
@@ -68,7 +69,7 @@ namespace Persistence.Repositories
 
         public async Task<IReadOnlyList<DemandForecast>> GetForecastsForAccuracyCheckAsync(DateTime cutoffDate, CancellationToken cancellationToken)
         {
-            return await _context.Set<DemandForecast>()
+            return await _dbContext.Set<DemandForecast>()
                 .Where(f => f.ForecastDate <= cutoffDate && f.ActualDemand == null)
                 .Include(f => f.Item)
                 .Include(f => f.Godown)
@@ -77,24 +78,27 @@ namespace Persistence.Repositories
 
         public async Task UpdateActualDemandAsync(int forecastId, decimal actualDemand, CancellationToken cancellationToken)
         {
-            var forecast = await _context.Set<DemandForecast>().FindAsync(new object[] { forecastId }, cancellationToken);
+            var forecast = await _dbContext.Set<DemandForecast>().FindAsync(new object[] { forecastId }, cancellationToken);
             if (forecast != null)
             {
                 forecast.ActualDemand = actualDemand;
                 forecast.ActualDate = DateTime.UtcNow;
                 forecast.ForecastError = Math.Abs(forecast.PredictedDemand - actualDemand);
+                // ????? ?? ???? ?????
+                await _dbContext.SaveChangesAsync(cancellationToken);
             }
         }
 
         public async Task<decimal> GetAverageAccuracyByModelAsync(string forecastModel, CancellationToken cancellationToken)
         {
-            var forecasts = await _context.Set<DemandForecast>()
+            var forecasts = await _dbContext.Set<DemandForecast>()
                 .Where(f => f.ForecastModel == forecastModel && f.ActualDemand.HasValue)
                 .ToListAsync(cancellationToken);
 
             if (!forecasts.Any())
                 return 0;
 
+            // ? accuracyScore? ????
             return forecasts.Average(f => f.AccuracyScore);
         }
     }

@@ -1,4 +1,4 @@
-﻿using Application.Contracts;
+using Application.Contracts;
 using Application.CQRS.Transactions.Commands.CreateOutwardTransaction;
 using Application.DTOs.Transaction;
 using Application.DTOs.Transaction.Validators;
@@ -7,68 +7,77 @@ using Application.Services;
 using AutoMapper;
 using MediatR;
 using System.Transactions;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
-public class CreateOutwardTransactionCommandHandler(
-    IOutwardTransactionRepository outwardTransactionRepository,
-    IGodownInventoryService godownInventoryService,
-    IMapper mapper)
-    : IRequestHandler<CreateOutwardTransactionCommand, BaseCommandResponse>
+namespace Application.CQRS.OutwardTransactions.Commands.CreateOutwardTransaction
 {
-    public async Task<BaseCommandResponse> Handle(CreateOutwardTransactionCommand request, CancellationToken cancellationToken)
+    public class CreateOutwardTransactionCommandHandler(
+        IOutwardTransactionRepository outwardTransactionRepository,
+        IGodownInventoryService godownInventoryService,
+        IMapper mapper) : IRequestHandler<CreateOutwardTransactionCommand, BaseCommandResponse>
     {
-        var response = new BaseCommandResponse();
-        var validator = new CreateOutwardTransactionValidator();
-        var validationResult = await validator.ValidateAsync(request.OutwardTransactionDto, cancellationToken);
-
-        if (!validationResult.IsValid)
+        public async Task<BaseCommandResponse> Handle(CreateOutwardTransactionCommand request, CancellationToken cancellationToken)
         {
-            response.Success = false;
-            response.Message = "Outward Transaction creation failed due to validation errors.";
-            response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
-            return response;
-        }
+            var response = new BaseCommandResponse();
+            var validator = new CreateOutwardTransactionValidator();
+            var validationResult = await validator.ValidateAsync(request.OutwardTransactionDto, cancellationToken);
 
-        // 💡 Check for sufficient stock using the dedicated service.
-        var hasSufficientStock = await godownInventoryService.CheckSufficientStock(
-            request.OutwardTransactionDto.ItemId.GetValueOrDefault(),
-            request.OutwardTransactionDto.GodownId.GetValueOrDefault(),
-            request.OutwardTransactionDto.QuantityDelivered.GetValueOrDefault(),
-            cancellationToken);
+            if (!validationResult.IsValid)
+            {
+                response.Success = false;
+                response.Message = "Outward Transaction creation failed due to validation errors.";
+                response.Errors = validationResult.Errors.Select(q => q.ErrorMessage).ToList();
+                return response;
+            }
 
-        if (!hasSufficientStock)
-        {
-            response.Success = false;
-            response.Message = "Insufficient stock to complete the outward transaction.";
-            return response;
-        }
-
-        // 💡 All operations are wrapped in a transaction for atomicity.
-        using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-        try
-        {
-            var outwardTransaction = mapper.Map<Domain.Models.OutwardTransaction>(request.OutwardTransactionDto);
-            var addedTransaction = await outwardTransactionRepository.AddAsync(outwardTransaction, cancellationToken);
-
-            // 💡 Update inventory using the service.
-            await godownInventoryService.UpdateInventoryQuantity(
-                addedTransaction.GodownId,
-                addedTransaction.ItemId,
-                -addedTransaction.QuantityDelivered,
+            // Check for sufficient stock using the dedicated service.
+            var hasSufficientStock = await godownInventoryService.CheckSufficientStock(
+                request.OutwardTransactionDto.ItemId.GetValueOrDefault(),
+                request.OutwardTransactionDto.GodownId.GetValueOrDefault(),
+                request.OutwardTransactionDto.QuantityDelivered.GetValueOrDefault(),
                 cancellationToken);
 
-            scope.Complete();
+            if (!hasSufficientStock)
+            {
+                response.Success = false;
+                response.Message = "Insufficient stock to complete the outward transaction.";
+                return response;
+            }
 
-            response.Success = true;
-            response.Message = "Outward Transaction created and inventory updated successfully.";
-            response.Id = addedTransaction.Id;
-        }
-        catch (Exception ex)
-        {
-            response.Success = false;
-            response.Message = "Outward Transaction creation failed.";
-            response.Errors = new List<string> { ex.Message };
-        }
+            // All operations are wrapped in a transaction for atomicity.
+            using var transaction = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions
+            {
+                IsolationLevel = IsolationLevel.ReadCommitted
+            }, TransactionScopeAsyncFlowOption.Enabled);
 
-        return response;
+            try
+            {
+                var outwardTransaction = mapper.Map<Domain.Models.OutwardTransaction>(request.OutwardTransactionDto);
+                var addedTransaction = await outwardTransactionRepository.AddAsync(outwardTransaction, cancellationToken);
+
+                // Update inventory using the service.
+                await godownInventoryService.UpdateInventoryQuantity(
+                    addedTransaction.GodownId,
+                    addedTransaction.ItemId,
+                    -addedTransaction.QuantityDelivered,
+                    cancellationToken);
+
+                transaction.Complete();
+
+                response.Success = true;
+                response.Message = "Outward Transaction created and inventory updated successfully.";
+                response.Id = addedTransaction.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Outward Transaction creation failed.";
+                response.Errors = [ex.Message];
+            }
+
+            return response;
+        }
     }
 }

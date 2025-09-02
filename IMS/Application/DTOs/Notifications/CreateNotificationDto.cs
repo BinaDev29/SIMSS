@@ -12,6 +12,8 @@ namespace Application.DTOs.Notifications
         
         public string Type { get; set; } = "Info";
         
+        public string Priority { get; set; } = "Medium"; // Add missing Priority property
+        
         [Required]
         public int UserId { get; set; }
     }

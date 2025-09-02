@@ -29,28 +29,18 @@ namespace Persistence.Repositories
 
         public Task GetPagedInvoicesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-        }
-
-        Task<Application.Contracts.IDbContextTransaction> IInvoiceRepository.BeginTransactionAsync()
-        {
-            throw new NotImplementedException();
+            // Implementation placeholder
+            return Task.CompletedTask;
         }
     }
 
     public class DbContextTransactionWrapper : Application.Contracts.IDbContextTransaction
     {
-        private readonly Application.Contracts.IDbContextTransaction _transaction;
-        private Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction;
-
-        public DbContextTransactionWrapper(Application.Contracts.IDbContextTransaction transaction)
-        {
-            _transaction = transaction;
-        }
+        private readonly Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction _transaction;
 
         public DbContextTransactionWrapper(Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction transaction)
         {
-            this.transaction = transaction;
+            _transaction = transaction;
         }
 
         public void Commit()

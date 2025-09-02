@@ -3,48 +3,58 @@ using Application.Contracts;
 using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class DeliveryRepository(SIMSDbContext context) : GenericRepository<Delivery>(context), IDeliveryRepository
+    public class DeliveryRepository : GenericRepository<Delivery>, IDeliveryRepository
     {
-        private new readonly SIMSDbContext _context = context;
+        private readonly SIMSDbContext _context;
 
-        public async Task<Delivery?> GetDeliveryWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public DeliveryRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            return await _context.Deliveries
-                .Include(x => x.Customer)
-                .Include(x => x.DeliveryDetails)
-                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            _context = dbContext;
         }
 
-        public async Task<Delivery?> GetByOutwardTransactionIdAsync(int outwardTransactionId, CancellationToken cancellationToken)
+        public async Task<Delivery?> GetDeliveryWithDetailsAsync(int deliveryId, CancellationToken cancellationToken)
         {
             return await _context.Deliveries
-                .FirstOrDefaultAsync(x => x.OutwardTransactionId == outwardTransactionId, cancellationToken);
+                .Include(d => d.DeliveryDetails)
+                    .ThenInclude(dd => dd.Item)
+                .Include(d => d.DeliveryDetails)
+                    .ThenInclude(dd => dd.Godown)
+                .FirstOrDefaultAsync(d => d.Id == deliveryId, cancellationToken);
+        }
+
+        public async Task<bool> HasDeliveriesByCustomerIdAsync(int customerId, CancellationToken cancellationToken)
+        {
+            return await _context.Deliveries.AnyAsync(d => d.CustomerId == customerId, cancellationToken);
         }
 
         public async Task<PagedResult<Delivery>> GetPagedDeliveriesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            var query = _context.Set<Delivery>().AsQueryable();
+            var query = _context.Deliveries.AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(d => d.TrackingNumber.Contains(searchTerm) || d.Status.Contains(searchTerm));
+                query = query.Include(d => d.Customer)
+                             .Where(d => d.Customer!.CustomerName.Contains(searchTerm) || d.DeliveryNumber.Contains(searchTerm));
+            }
+            else
+            {
+                query = query.Include(d => d.Customer);
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query.OrderByDescending(d => d.DeliveryDate)
+                                   .Skip((pageNumber - 1) * pageSize)
+                                   .Take(pageSize)
+                                   .ToListAsync(cancellationToken);
 
             return new PagedResult<Delivery>(items, totalCount, pageNumber, pageSize);
-        }
-
-        public Task GetByOutwardTransactionId(int outwardTransactionId)
-        {
-            throw new NotImplementedException();
         }
     }
 }

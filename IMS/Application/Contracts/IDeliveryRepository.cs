@@ -11,6 +11,5 @@ namespace Application.Contracts
         Task<Delivery?> GetDeliveryWithDetailsAsync(int id, CancellationToken cancellationToken);
         Task<Delivery?> GetByOutwardTransactionIdAsync(int outwardTransactionId, CancellationToken cancellationToken);
         Task<PagedResult<Delivery>> GetPagedDeliveriesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
-        Task GetByOutwardTransactionId(int outwardTransactionId);
     }
 }

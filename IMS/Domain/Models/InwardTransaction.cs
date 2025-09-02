@@ -1,4 +1,4 @@
-﻿// InwardTransaction.cs
+// InwardTransaction.cs
 using Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 using System;
@@ -7,8 +7,6 @@ namespace Domain.Models
 {
     public class InwardTransaction : BaseDomainEntity
     {
-
-
         public required int GodownId { get; set; }
         public virtual Godown? Godown { get; set; }
 
@@ -23,5 +21,12 @@ namespace Domain.Models
         public string? Source { get; set; }
         public string? InvoiceNumber { get; set; }
         public int EmployeeId { get; set; }
+
+        // Add missing properties that are referenced in the code
+        public int Quantity => QuantityReceived; // Alias for QuantityReceived
+        public decimal UnitPrice { get; set; } = 0;
+
+        // Add backward compatibility property
+        public DateTime DateCreated => CreatedDate;
     }
 }

@@ -1,4 +1,4 @@
-﻿// OutwardTransaction.cs
+// OutwardTransaction.cs
 using Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 using System;
@@ -22,5 +22,12 @@ namespace Domain.Models
         public required string InvoiceNumber { get; set; }
         public required int EmployeeId { get; set; }
         public virtual Employee? Employee { get; set; }
+
+        // Add missing properties that are referenced in the code
+        public int Quantity => QuantityDelivered; // Alias for QuantityDelivered
+        public decimal UnitPrice { get; set; } = 0;
+
+        // Add backward compatibility property
+        public DateTime DateCreated => CreatedDate;
     }
 }

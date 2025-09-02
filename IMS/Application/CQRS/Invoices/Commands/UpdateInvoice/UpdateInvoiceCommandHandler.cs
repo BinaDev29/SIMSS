@@ -1,4 +1,4 @@
-﻿using Application.Contracts;
+using Application.Contracts;
 using Application.DTOs.Invoice;
 using Application.DTOs.Invoice.Validators;
 using Application.Responses;
@@ -39,7 +39,7 @@ namespace Application.CQRS.Invoices.Commands.UpdateInvoice
             }
 
             // Begin a single transaction for atomicity to ensure all operations succeed or fail together
-            await using var transaction = await invoiceRepository.BeginTransactionAsync(cancellationToken);
+            using var transaction = await invoiceRepository.BeginTransactionAsync();
             try
             {
                 // Revert old stock changes by adding back the quantities of the old details
@@ -62,18 +62,21 @@ namespace Application.CQRS.Invoices.Commands.UpdateInvoice
                 {
                     foreach (var detailDto in request.InvoiceDto.InvoiceDetails)
                     {
-                        var newItem = await itemRepository.GetByIdAsync(detailDto.ItemId.GetValueOrDefault(), cancellationToken);
+                        var itemId = detailDto.ItemId.GetValueOrDefault();
+                        var quantity = detailDto.Quantity.GetValueOrDefault();
+                        
+                        var newItem = await itemRepository.GetByIdAsync(itemId, cancellationToken);
                         if (newItem == null)
                         {
-                            throw new Exception($"Item with ID {detailDto.ItemId} not found.");
+                            throw new Exception($"Item with ID {itemId} not found.");
                         }
 
-                        if (newItem.StockQuantity < detailDto.Quantity.GetValueOrDefault())
+                        if (newItem.StockQuantity < quantity)
                         {
-                            throw new Exception($"Insufficient stock for item with ID {newItem.Id}. Available: {newItem.StockQuantity}, Requested: {detailDto.Quantity}");
+                            throw new Exception($"Insufficient stock for item with ID {newItem.Id}. Available: {newItem.StockQuantity}, Requested: {quantity}");
                         }
 
-                        newItem.StockQuantity -= detailDto.Quantity.GetValueOrDefault();
+                        newItem.StockQuantity -= quantity;
                         await itemRepository.Update(newItem, cancellationToken);
 
                         var newInvoiceDetail = mapper.Map<Domain.Models.InvoiceDetail>(detailDto);
@@ -87,7 +90,7 @@ namespace Application.CQRS.Invoices.Commands.UpdateInvoice
                 await invoiceRepository.Update(existingInvoice, cancellationToken);
 
                 // Commit the transaction
-                await transaction.CommitAsync(cancellationToken);
+                transaction.Commit();
 
                 response.Success = true;
                 response.Message = "Invoice updated successfully.";
@@ -96,10 +99,10 @@ namespace Application.CQRS.Invoices.Commands.UpdateInvoice
             catch (Exception ex)
             {
                 // Rollback the transaction on failure
-                await transaction.RollbackAsync(cancellationToken);
+                transaction.Rollback();
                 response.Success = false;
                 response.Message = "Invoice update failed.";
-                response.Errors = new List<string> { ex.Message };
+                response.Errors = [ex.Message];
             }
 
             return response;

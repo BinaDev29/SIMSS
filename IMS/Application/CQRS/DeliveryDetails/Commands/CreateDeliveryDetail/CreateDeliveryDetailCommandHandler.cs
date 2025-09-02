@@ -1,24 +1,22 @@
-﻿using MediatR;
+// Application/CQRS/DeliveryDetails/Commands/CreateDeliveryDetail/CreateDeliveryDetailCommandHandler.cs
+using MediatR;
 using Application.Contracts;
 using Application.DTOs.Delivery.Validators;
 using Application.Responses;
 using AutoMapper;
 using Domain.Models;
 using Application.Services;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.DeliveryDetails.Commands.CreateDeliveryDetail
 {
-    public class CreateDeliveryDetailCommandHandler(IDeliveryDetailRepository deliveryDetailRepository, IGodownInventoryService godownInventoryService, IMapper mapper)
-        : IRequestHandler<CreateDeliveryDetailCommand, BaseCommandResponse>
+    public class CreateDeliveryDetailCommandHandler(
+        IDeliveryDetailRepository deliveryDetailRepository,
+        IGodownInventoryService godownInventoryService,
+        IMapper mapper) : IRequestHandler<CreateDeliveryDetailCommand, BaseCommandResponse>
     {
-        private object? cancellationationToken;
-
-        public object? GetCancellationationToken()
-        {
-            return cancellationationToken;
-        }
-
-        public async Task<BaseCommandResponse> Handle(CreateDeliveryDetailCommand request, object? cancellationationToken, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(CreateDeliveryDetailCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse();
             var validator = new CreateDeliveryDetailValidator();
@@ -32,28 +30,23 @@ namespace Application.CQRS.DeliveryDetails.Commands.CreateDeliveryDetail
                 return response;
             }
 
-            // 💡 የመጋዘን ክምችት በቂ መሆኑን ማረጋገጥ አለብህ
-            // ... (የክምችት ማጣሪያ ኮድ እዚህ ላይ ይገባል)
+            // Check inventory availability
+            // ... (inventory checking code should be added here)
 
             var deliveryDetail = mapper.Map<Domain.Models.DeliveryDetail>(request.DeliveryDetailDto);
-            var addedDeliveryDetail = await deliveryDetailRepository.AddAsync(deliveryDetail, cancellationationToken);
+            var addedDeliveryDetail = await deliveryDetailRepository.AddAsync(deliveryDetail, cancellationToken); // Ensure AddAsync returns the added entity
 
-            // 💡 የመጋዘን ክምችትን ይቀንሳል
+            // Update inventory quantity
             await godownInventoryService.UpdateInventoryQuantity(
                 addedDeliveryDetail.GodownId,
                 addedDeliveryDetail.ItemId,
-                -addedDeliveryDetail.Quantity);
+                -addedDeliveryDetail.Quantity,
+                cancellationToken);
 
             response.Success = true;
             response.Message = "DeliveryDetail created successfully.";
             response.Id = addedDeliveryDetail.Id;
-
             return response;
-        }
-
-        Task<BaseCommandResponse> IRequestHandler<CreateDeliveryDetailCommand, BaseCommandResponse>.Handle(CreateDeliveryDetailCommand request, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
         }
     }
 }

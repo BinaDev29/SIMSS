@@ -8,7 +8,7 @@ namespace Domain.Models
         public required string Title { get; set; }
         public required string Message { get; set; }
         public required string Type { get; set; } // "Info", "Warning", "Error", "Success"
-        public required string Priority { get; set; } // "Low", "Medium", "High", "Critical"
+        public required int Priority { get; set; } // 1=Low, 2=Medium, 3=High, 4=Critical
         public required int UserId { get; set; }
         public bool IsRead { get; set; } = false;
         public DateTime? ReadAt { get; set; }
@@ -17,5 +17,8 @@ namespace Domain.Models
         
         // Navigation properties
         public User User { get; set; } = null!;
+
+        // Add backward compatibility property
+        public DateTime CreatedAt => CreatedDate;
     }
 }

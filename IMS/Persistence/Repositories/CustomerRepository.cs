@@ -9,16 +9,23 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class CustomerRepository(SIMSDbContext dbContext) : GenericRepository<Customer>(dbContext), ICustomerRepository
+    public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        public async Task<Customer?> GetCustomerByEmailAsync(string email, CancellationToken cancellationToken)
+        private readonly SIMSDbContext _context;
+
+        public CustomerRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            return await _context.Customers.FirstOrDefaultAsync(c => c.Email == email, cancellationToken);
+            _context = dbContext;
         }
 
-        public Task GetCustomerWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public async Task<Customer?> GetCustomerByNameAsync(string name, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _context.Customers.FirstOrDefaultAsync(c => c.CustomerName == name, cancellationToken);
+        }
+
+        public async Task<bool> HasTransactionsByCustomerIdAsync(int customerId, CancellationToken cancellationToken)
+        {
+            return await _context.OutwardTransactions.AnyAsync(t => t.CustomerId == customerId, cancellationToken);
         }
 
         public async Task<PagedResult<Customer>> GetPagedCustomersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
@@ -27,11 +34,14 @@ namespace Persistence.Repositories
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(c => c.FirstName.Contains(searchTerm) || c.LastName.Contains(searchTerm) || c.Email.Contains(searchTerm));
+                query = query.Where(c => c.CustomerName.Contains(searchTerm) || c.ContactPerson.Contains(searchTerm) || c.Email.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
 
             return new PagedResult<Customer>(items, totalCount, pageNumber, pageSize);
         }

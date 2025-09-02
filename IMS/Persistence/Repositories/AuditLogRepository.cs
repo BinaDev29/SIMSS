@@ -1,8 +1,8 @@
 // Persistence/Repositories/AuditLogRepository.cs
 using Application.Contracts;
-using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,59 +11,41 @@ namespace Persistence.Repositories
 {
     public class AuditLogRepository : GenericRepository<AuditLog>, IAuditLogRepository
     {
+        private readonly SIMSDbContext _context;
+
         public AuditLogRepository(SIMSDbContext dbContext) : base(dbContext)
         {
+            _context = dbContext;
         }
 
-        public async Task<PagedResult<AuditLog>> GetPagedAuditLogsAsync(int pageNumber, int pageSize, string? entityName, string? action, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<AuditLog>> GetAllLogsAsync(CancellationToken cancellationToken)
         {
-            var query = _context.Set<AuditLog>().AsQueryable();
-
-            if (!string.IsNullOrEmpty(entityName))
-            {
-                query = query.Where(a => a.EntityName == entityName);
-            }
-
-            if (!string.IsNullOrEmpty(action))
-            {
-                query = query.Where(a => a.Action == action);
-            }
-
-            var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query
-                .OrderByDescending(a => a.Timestamp)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync(cancellationToken);
-
-            return new PagedResult<AuditLog>(items, totalCount, pageNumber, pageSize);
-        }
-
-        public async Task<IReadOnlyList<AuditLog>> GetAuditLogsByEntityAsync(string entityName, string entityId, CancellationToken cancellationToken)
-        {
-            return await _context.Set<AuditLog>()
-                .Where(a => a.EntityName == entityName && a.EntityId == entityId)
+            return await _context.AuditLogs
                 .OrderByDescending(a => a.Timestamp)
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<IReadOnlyList<AuditLog>> GetAuditLogsByUserAsync(string userId, DateTime? fromDate, DateTime? toDate, CancellationToken cancellationToken)
+        public async Task<AuditLog?> GetLogByIdAsync(int id, CancellationToken cancellationToken)
         {
-            var query = _context.Set<AuditLog>().Where(a => a.UserId == userId);
+            return await _context.AuditLogs.FindAsync(new object[] { id }, cancellationToken);
+        }
 
-            if (fromDate.HasValue)
-            {
-                query = query.Where(a => a.Timestamp >= fromDate.Value);
-            }
+        public async Task AddLogAsync(AuditLog log, CancellationToken cancellationToken)
+        {
+            await _context.AuditLogs.AddAsync(log, cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
+        }
 
-            if (toDate.HasValue)
-            {
-                query = query.Where(a => a.Timestamp <= toDate.Value);
-            }
+        public async Task UpdateLogAsync(AuditLog log, CancellationToken cancellationToken)
+        {
+            _context.Entry(log).State = EntityState.Modified;
+            await _context.SaveChangesAsync(cancellationToken);
+        }
 
-            return await query
-                .OrderByDescending(a => a.Timestamp)
-                .ToListAsync(cancellationToken);
+        public async Task DeleteLogAsync(AuditLog log, CancellationToken cancellationToken)
+        {
+            _context.AuditLogs.Remove(log);
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

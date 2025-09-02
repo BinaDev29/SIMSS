@@ -11,23 +11,22 @@ namespace Persistence.Repositories
 {
     public class EmployeeRepository(SIMSDbContext dbContext) : GenericRepository<Employee>(dbContext), IEmployeeRepository
     {
-        private new readonly SIMSDbContext _context = dbContext;
-
         public async Task<Employee?> GetEmployeeByEmailAsync(string email, CancellationToken cancellationToken)
         {
-            return await _context.Employees.FirstOrDefaultAsync(e => e.Email == email, cancellationToken);
+            return await _dbContext.Employees.FirstOrDefaultAsync(e => e.Email == email, cancellationToken);
         }
 
         public async Task<bool> HasTransactionsByEmployeeIdAsync(int employeeId, CancellationToken cancellationToken)
         {
-            // Assuming transactions are related to the employee through a foreign key.
-            // Adjust this based on your domain model's relationships.
-            return await _context.InwardTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken);
+            // Assuming employee is related to all transaction types
+            return await _dbContext.InwardTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken) ||
+                   await _dbContext.OutwardTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken) ||
+                   await _dbContext.ReturnTransactions.AnyAsync(t => t.EmployeeId == employeeId, cancellationToken);
         }
 
         public async Task<PagedResult<Employee>> GetPagedEmployeesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            var query = _context.Set<Employee>().AsQueryable();
+            var query = _dbContext.Set<Employee>().AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
@@ -35,14 +34,18 @@ namespace Persistence.Repositories
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            var items = await query
+                .OrderBy(e => e.FirstName)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
 
             return new PagedResult<Employee>(items, totalCount, pageNumber, pageSize);
         }
 
         public async Task<Employee?> GetEmployeeWithDetailsAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Employees.Include(e => e.User).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            return await _dbContext.Employees.Include(e => e.User).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
         }
     }
 }

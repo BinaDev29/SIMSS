@@ -29,5 +29,11 @@ namespace Domain.Models
         public decimal ConfidenceScore { get; set; } = 1.0m;
         public string? ActionTaken { get; set; }
         public string? Notes { get; set; }
+
+        // Add backward compatibility properties as settable
+        public decimal Threshold { get; set; }
+        public decimal CurrentValue { get; set; }
+        public DateTime? ProcessedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

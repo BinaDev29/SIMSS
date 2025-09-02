@@ -20,9 +20,9 @@ namespace Application.Services
                 Title = createDto.Title,
                 Message = createDto.Message,
                 Type = createDto.Type,
-                UserId = createDto.UserId.ToString(),
-                IsRead = false,
-                CreatedAt = DateTime.UtcNow
+                Priority = GetPriorityValue(createDto.Priority), // Convert string to int
+                UserId = createDto.UserId,
+                IsRead = false
             };
 
             var createdNotification = await notificationRepository.AddAsync(notification, CancellationToken.None);
@@ -32,18 +32,18 @@ namespace Application.Services
         public async Task<IEnumerable<NotificationDto>> GetUserNotificationsAsync(int userId, bool unreadOnly = false)
         {
             var allNotifications = await notificationRepository.GetAllAsync(CancellationToken.None);
-            var userNotifications = allNotifications.Where(x => x.UserId == userId.ToString());
+            var userNotifications = allNotifications.Where(x => x.UserId == userId);
             
             if (unreadOnly)
                 userNotifications = userNotifications.Where(x => !x.IsRead);
 
-            return mapper.Map<IEnumerable<NotificationDto>>(userNotifications.OrderByDescending(x => x.CreatedAt));
+            return mapper.Map<IEnumerable<NotificationDto>>(userNotifications.OrderByDescending(x => x.CreatedDate));
         }
 
         public async Task<bool> MarkAsReadAsync(int notificationId, int userId)
         {
             var notification = await notificationRepository.GetByIdAsync(notificationId, CancellationToken.None);
-            if (notification != null && notification.UserId == userId.ToString())
+            if (notification != null && notification.UserId == userId)
             {
                 notification.IsRead = true;
                 await notificationRepository.Update(notification, CancellationToken.None);
@@ -76,7 +76,7 @@ namespace Application.Services
         public async Task<bool> DeleteNotificationAsync(int notificationId, int userId)
         {
             var notification = await notificationRepository.GetByIdAsync(notificationId, CancellationToken.None);
-            if (notification != null && notification.UserId == userId.ToString())
+            if (notification != null && notification.UserId == userId)
             {
                 await notificationRepository.Delete(notification, CancellationToken.None);
                 return true;
@@ -96,9 +96,9 @@ namespace Application.Services
                     Title = "Low Stock Alert",
                     Message = $"Item '{item.ItemName}' is running low. Current stock: {item.Quantity}, Minimum level: {item.MinimumStockLevel}",
                     Type = "Warning",
-                    UserId = "1", // System notification - should be sent to admin users
-                    IsRead = false,
-                    CreatedAt = DateTime.UtcNow
+                    Priority = 3, // High priority
+                    UserId = 1, // System notification - should be sent to admin users
+                    IsRead = false
                 };
 
                 await notificationRepository.AddAsync(notification, CancellationToken.None);
@@ -117,13 +117,25 @@ namespace Application.Services
                     Title = "Item Expiry Alert",
                     Message = $"Item '{item.ItemName}' is expiring soon. Expiry date: {item.ExpiryDate:yyyy-MM-dd}",
                     Type = "Warning",
-                    UserId = "1", // System notification - should be sent to admin users
-                    IsRead = false,
-                    CreatedAt = DateTime.UtcNow
+                    Priority = 3, // High priority
+                    UserId = 1, // System notification - should be sent to admin users
+                    IsRead = false
                 };
 
                 await notificationRepository.AddAsync(notification, CancellationToken.None);
             }
+        }
+
+        private int GetPriorityValue(string priority)
+        {
+            return priority?.ToLower() switch
+            {
+                "low" => 1,
+                "medium" => 2,
+                "high" => 3,
+                "critical" => 4,
+                _ => 2 // Default to medium
+            };
         }
     }
 }

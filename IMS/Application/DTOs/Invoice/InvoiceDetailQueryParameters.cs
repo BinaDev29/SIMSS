@@ -1,5 +1,6 @@
 using Application.DTOs.Common;
 
+
 namespace Application.DTOs.Invoice
 {
     public class InvoiceDetailQueryParameters : QueryParameters

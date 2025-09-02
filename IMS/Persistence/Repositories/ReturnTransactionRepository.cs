@@ -1,44 +1,52 @@
-// Persistence/Repositories/ReturnTransactionRepository.cs
+// Persistence/Repositories/SupplierRepository.cs
 using Application.Contracts;
+using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class ReturnTransactionRepository(SIMSDbContext context) : GenericRepository<ReturnTransaction>(context), IReturnTransactionRepository
+    public class SupplierRepository : GenericRepository<Supplier>, ISupplierRepository
     {
-        private readonly SIMSDbContext _context = context;
+        private readonly SIMSDbContext _context;
 
-        public async Task<IDbContextTransaction> BeginTransactionAsync()
+        public SupplierRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            var transaction = await _context.Database.BeginTransactionAsync();
-            return new DbContextTransactionWrapper(transaction);
+            _context = dbContext;
         }
 
-        public Task GetPagedReturnTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        public async Task<Supplier?> GetSupplierByNameAsync(string name, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _context.Suppliers.FirstOrDefaultAsync(s => s.SupplierName == name, cancellationToken);
         }
 
-        public async Task<IReadOnlyList<ReturnTransaction>> GetReturnsByCustomerIdAsync(int customerId, CancellationToken cancellationToken)
+        public async Task<bool> HasTransactionsBySupplierIdAsync(int supplierId, CancellationToken cancellationToken)
         {
-            return await _context.ReturnTransactions
-                .Where(x => x.CustomerId == customerId)
-                .Include(x => x.Customer)
-                .Include(x => x.Item)
+            return await _context.InwardTransactions.AnyAsync(t => t.SupplierId == supplierId, cancellationToken);
+        }
+
+        public async Task<PagedResult<Supplier>> GetPagedSuppliersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            var query = _context.Set<Supplier>().AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                query = query.Where(s => s.SupplierName.Contains(searchTerm) ||
+                                         s.ContactPerson.Contains(searchTerm) ||
+                                         s.Email.Contains(searchTerm));
+            }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query
+                .OrderBy(s => s.SupplierName)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync(cancellationToken);
-        }
 
-        public async Task<ReturnTransaction?> GetReturnWithDetailsAsync(int id, CancellationToken cancellationToken)
-        {
-            return await _context.ReturnTransactions
-                .Include(x => x.Customer)
-                .Include(x => x.Item)
-                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            return new PagedResult<Supplier>(items, totalCount, pageNumber, pageSize);
         }
     }
 }

@@ -10,5 +10,8 @@ namespace Domain.Models
         public required string PasswordHash { get; set; }
         public required string Role { get; set; }
         public bool IsActive { get; set; } = true;
+
+        // Add backward compatibility property
+        public string UserName => Username;
     }
 }

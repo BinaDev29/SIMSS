@@ -34,5 +34,13 @@ namespace Domain.Models
         public DateTime? ActualDate { get; set; }
         public decimal? ActualDemand { get; set; }
         public decimal? ForecastError { get; set; }
+
+        // Add backward compatibility properties as settable
+        public string Period { get; set; } = string.Empty;
+        public int ForecastLength { get; set; }
+        public DateTime GeneratedDate { get; set; }
+        public string ForecastData { get; set; } = string.Empty;
+        public decimal Accuracy { get; set; }
+        public string Method { get; set; } = string.Empty;
     }
 }

@@ -1,4 +1,4 @@
-﻿// Invoice.cs
+// Invoice.cs
 using Domain.Common;
 using System;
 using System.Collections.Generic;
@@ -22,5 +22,8 @@ namespace Domain.Models
         public DateTime? PaymentDate { get; set; }
 
         public ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
+
+        // Add backward compatibility property
+        public DateTime DateCreated => CreatedDate;
     }
 }

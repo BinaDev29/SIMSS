@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Add services from other layers.
-builder.Services.AddApplicationServices();
+builder.Services.ConfigureApplicationServices(); // Fixed method name
 builder.Services.AddPersistenceServices(builder.Configuration);
 
 // Add FluentValidation validators by scanning the Application assembly.

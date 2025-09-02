@@ -44,5 +44,11 @@ namespace Domain.Models
         public decimal DeadStockValue { get; set; }
         public decimal ExcessStockValue { get; set; }
         public decimal OptimalStockValue { get; set; }
+
+        // Add backward compatibility properties as settable
+        public string AnalysisType { get; set; } = "General";
+        public string Category { get; set; } = string.Empty;
+        public decimal Value { get; set; }
+        public string Metrics { get; set; } = string.Empty;
     }
 }

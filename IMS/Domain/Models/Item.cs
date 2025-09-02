@@ -1,4 +1,4 @@
-﻿// Item.cs
+// Item.cs
 using Domain.Common;
 using System.Collections.Generic;
 using System;
@@ -18,6 +18,14 @@ namespace Domain.Models
         public string? Category { get; set; }
         public DateTime? ManufacturingDate { get; set; }
         public DateTime? ExpiryDate { get; set; }
+
+        // Add missing properties that are referenced in the code
+        public decimal Quantity => StockQuantity; // Alias for StockQuantity
+        public decimal Price => SalePrice; // Alias for SalePrice
+        public decimal MinimumStockLevel { get; set; } = 10;
+        public decimal MaximumStockLevel { get; set; } = 1000;
+        public decimal ReorderLevel { get; set; } = 20;
+        public DateTime? DateModified { get; set; } = DateTime.UtcNow;
 
         public ICollection<GodownInventory> GodownInventories { get; set; } = new List<GodownInventory>();
         public ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();

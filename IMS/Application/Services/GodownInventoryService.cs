@@ -14,6 +14,11 @@ namespace Application.Services
             return inventory != null && inventory.Quantity >= requiredQuantity;
         }
 
+        public Task<bool> CheckSufficientStock(object value1, object value2, object value3, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task UpdateInventoryQuantity(int godownId, int itemId, int quantityChange, CancellationToken cancellationToken)
         {
             var inventory = await godownInventoryRepository.GetByGodownAndItemAsync(godownId, itemId, cancellationToken);

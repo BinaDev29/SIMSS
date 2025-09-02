@@ -1,5 +1,6 @@
 // Persistence/Repositories/DeliveryDetailRepository.cs
 using Application.Contracts;
+using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -9,39 +10,56 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class DeliveryDetailRepository(SIMSDbContext context) : GenericRepository<DeliveryDetail>(context), IDeliveryDetailRepository
+    public class DeliveryDetailRepository : GenericRepository<DeliveryDetail>, IDeliveryDetailRepository
     {
-        private new readonly SIMSDbContext _context = context;
+        private readonly SIMSDbContext _context;
 
-        public async Task<DeliveryDetail?> GetDeliveryDetailWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public DeliveryDetailRepository(SIMSDbContext dbContext) : base(dbContext)
         {
-            return await _context.DeliveryDetails
-                .Include(x => x.Delivery)
-                .Include(x => x.Item)
-                .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            _context = dbContext;
         }
 
-        public async Task<IReadOnlyList<DeliveryDetail>> GetByDeliveryIdAsync(int deliveryId, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<DeliveryDetail>> GetDetailsByDeliveryIdAsync(int deliveryId, CancellationToken cancellationToken)
         {
             return await _context.DeliveryDetails
-                .Where(x => x.DeliveryId == deliveryId)
-                .Include(x => x.Item)
+                .Where(dd => dd.DeliveryId == deliveryId)
+                .Include(dd => dd.Item)
+                .Include(dd => dd.Godown)
+                .AsNoTracking()
                 .ToListAsync(cancellationToken);
         }
 
-        Task<DeliveryDetail?> IDeliveryDetailRepository.GetDeliveryDetailWithDetailsAsync(int id, CancellationToken cancellationToken)
+        public async Task<bool> HasDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _context.DeliveryDetails.AnyAsync(dd => dd.ItemId == itemId, cancellationToken);
         }
 
-        Task<IReadOnlyList<DeliveryDetail>> IDeliveryDetailRepository.GetByDeliveryIdAsync(int deliveryId, CancellationToken cancellationToken)
+        public async Task DeleteRangeAsync(IEnumerable<DeliveryDetail> entities, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            _context.DeliveryDetails.RemoveRange(entities);
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
-        Task IDeliveryDetailRepository.AddAsync(DeliveryDetail deliveryDetail, object cancellationationToken)
+        public async Task<PagedResult<DeliveryDetail>> GetPagedDeliveryDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var query = _context.DeliveryDetails.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                query = query.Include(dd => dd.Item)
+                             .Include(dd => dd.Godown)
+                             .Where(dd => dd.Item!.ItemName.Contains(searchTerm) || dd.Godown!.GodownName.Contains(searchTerm));
+            }
+            else
+            {
+                query = query.Include(dd => dd.Item)
+                             .Include(dd => dd.Godown);
+            }
+
+            var totalCount = await query.CountAsync(cancellationToken);
+            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+
+            return new PagedResult<DeliveryDetail>(items, totalCount, pageNumber, pageSize);
         }
     }
 }
