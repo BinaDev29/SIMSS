@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\queries\\getgodowninventorylist\\getgodowninventorylistqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\queries\\getgodowninventorylist\\getgodowninventorylistqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\queries\\getgodowninventorylist\\getgodowninventorylistquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\queries\\getgodowninventorylist\\getgodowninventorylistquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\queries\\getgodowninventorybyid\\getgodowninventorybyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\queries\\getgodowninventorybyid\\getgodowninventorybyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\queries\\getgodowninventorybyid\\getgodowninventorybyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\queries\\getgodowninventorybyid\\getgodowninventorybyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\commands\\deletegodowninventory\\deletegodowninventorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\commands\\deletegodowninventory\\deletegodowninventorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\commands\\deletegodowninventory\\deletegodowninventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\commands\\deletegodowninventory\\deletegodowninventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\commands\\updategodowninventory\\updategodowninventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\commands\\updategodowninventory\\updategodowninventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\commands\\updategodowninventory\\updategodowninventorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\commands\\updategodowninventory\\updategodowninventorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\commands\\creategodowninventory\\creategodowninventorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\commands\\creategodowninventory\\creategodowninventorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\cqrs\\godowninventory\\commands\\creategodowninventory\\creategodowninventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\cqrs\\godowninventory\\commands\\creategodowninventory\\creategodowninventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|f:\\@internship 2017\\inventery\\sims\\ims\\application\\dtos\\godowninventory\\validators\\creategodowninventoryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A748B51-388A-4BA4-8949-CF8555518B83}|Application\\Application.csproj|solutionrelative:application\\dtos\\godowninventory\\validators\\creategodowninventoryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -838,7 +878,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -846,7 +886,137 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetGodownInventoryListQueryHandler.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQueryHandler.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQueryHandler.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQueryHandler.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQueryHandler.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:54:54.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GetGodownInventoryListQuery.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQuery.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQuery.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQuery.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryList\\GetGodownInventoryListQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:53:44.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetGodownInventoryByIdQueryHandler.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQueryHandler.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQueryHandler.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQueryHandler.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:52:56.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetGodownInventoryByIdQuery.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQuery.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQuery.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQuery.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Queries\\GetGodownInventoryById\\GetGodownInventoryByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:52:23.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeleteGodownInventoryCommandHandler.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommandHandler.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommandHandler.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommandHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:50:51.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeleteGodownInventoryCommand.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommand.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommand.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommand.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Commands\\DeleteGodownInventory\\DeleteGodownInventoryCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:50:11.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateGodownInventoryCommandHandler.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommandHandler.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommandHandler.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:48:41.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateGodownInventoryCommand.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommand.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommand.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommand.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Commands\\UpdateGodownInventory\\UpdateGodownInventoryCommand.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:47:47.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateGodownInventoryCommandHandler.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommandHandler.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommandHandler.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommandHandler.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:46:39.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CreateGodownInventoryCommand.cs",
+              "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommand.cs",
+              "RelativeDocumentMoniker": "Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommand.cs",
+              "ToolTip": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommand.cs",
+              "RelativeToolTip": "Application\\CQRS\\GodownInventory\\Commands\\CreateGodownInventory\\CreateGodownInventoryCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T09:46:15.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "UpdateGodownInventoryValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\GodownInventory\\Validators\\UpdateGodownInventoryValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\GodownInventory\\Validators\\UpdateGodownInventoryValidator.cs",
@@ -854,12 +1024,11 @@
               "RelativeToolTip": "Application\\DTOs\\GodownInventory\\Validators\\UpdateGodownInventoryValidator.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAUwBUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:37:42.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:37:42.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "CreateGodownInventoryValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\GodownInventory\\Validators\\CreateGodownInventoryValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\GodownInventory\\Validators\\CreateGodownInventoryValidator.cs",
@@ -872,7 +1041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "UpdateGodownInventoryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\GodownInventory\\UpdateGodownInventoryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\GodownInventory\\UpdateGodownInventoryDto.cs",
@@ -880,12 +1049,11 @@
               "RelativeToolTip": "Application\\DTOs\\GodownInventory\\UpdateGodownInventoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:37:23.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:37:23.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "GodownInventoryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\GodownInventory\\GodownInventoryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\GodownInventory\\GodownInventoryDto.cs",
@@ -893,12 +1061,11 @@
               "RelativeToolTip": "Application\\DTOs\\GodownInventory\\GodownInventoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:37:15.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:37:15.217Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "CreateGodownInventoryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\GodownInventory\\CreateGodownInventoryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\GodownInventory\\CreateGodownInventoryDto.cs",
@@ -906,12 +1073,11 @@
               "RelativeToolTip": "Application\\DTOs\\GodownInventory\\CreateGodownInventoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:37:06.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:37:06.334Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "GetGodownListQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Queries\\GetGodownList\\GetGodownListQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Queries\\GetGodownList\\GetGodownListQueryHandler.cs",
@@ -919,12 +1085,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Queries\\GetGodownList\\GetGodownListQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:36:41.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:36:41.398Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "GetGodownListQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Queries\\GetGodownList\\GetGodownListQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Queries\\GetGodownList\\GetGodownListQuery.cs",
@@ -932,12 +1097,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Queries\\GetGodownList\\GetGodownListQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:36:26.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:36:26.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "GetGodownByIdQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Queries\\GetGodownById\\GetGodownByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Queries\\GetGodownById\\GetGodownByIdQueryHandler.cs",
@@ -945,12 +1109,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Queries\\GetGodownById\\GetGodownByIdQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:36:13.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:36:13.05Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "GetGodownByIdQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Queries\\GetGodownById\\GetGodownByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Queries\\GetGodownById\\GetGodownByIdQuery.cs",
@@ -958,12 +1121,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Queries\\GetGodownById\\GetGodownByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:36:02.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:36:02.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "DeleteGodownCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Commands\\DeleteGodown\\DeleteGodownCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Commands\\DeleteGodown\\DeleteGodownCommandHandler.cs",
@@ -971,12 +1133,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Commands\\DeleteGodown\\DeleteGodownCommandHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAcwCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:35:43.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:35:43.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "DeleteGodownCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Commands\\DeleteGodown\\DeleteGodownCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Commands\\DeleteGodown\\DeleteGodownCommand.cs",
@@ -984,12 +1145,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Commands\\DeleteGodown\\DeleteGodownCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:35:33.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:35:33.505Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "UpdateGodownCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Commands\\UpdateGodown\\UpdateGodownCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Commands\\UpdateGodown\\UpdateGodownCommandHandler.cs",
@@ -997,12 +1157,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Commands\\UpdateGodown\\UpdateGodownCommandHandler.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:35:15.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:35:15.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "UpdateGodownCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Commands\\UpdateGodown\\UpdateGodownCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Commands\\UpdateGodown\\UpdateGodownCommand.cs",
@@ -1010,12 +1169,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Commands\\UpdateGodown\\UpdateGodownCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:34:57.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:34:57.057Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "UpdateGodownValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Godown\\Validators\\UpdateGodownValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Godown\\Validators\\UpdateGodownValidator.cs",
@@ -1023,12 +1181,11 @@
               "RelativeToolTip": "Application\\DTOs\\Godown\\Validators\\UpdateGodownValidator.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA2wBcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:32:48.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:32:48.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "Godown.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Godown.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Godown.cs",
@@ -1036,12 +1193,11 @@
               "RelativeToolTip": "Domain\\Models\\Godown.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAYwBEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T16:25:35.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T16:25:35.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "Employee.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Employee.cs",
@@ -1049,12 +1205,11 @@
               "RelativeToolTip": "Domain\\Models\\Employee.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAIwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T16:25:26.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T16:25:26.81Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "CreateGodownCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Commands\\CreateGodown\\CreateGodownCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Commands\\CreateGodown\\CreateGodownCommand.cs",
@@ -1062,12 +1217,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Commands\\CreateGodown\\CreateGodownCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:31:30.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:31:30.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "CreateGodownCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Godowns\\Commands\\CreateGodown\\CreateGodownCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Godowns\\Commands\\CreateGodown\\CreateGodownCommandHandler.cs",
@@ -1075,12 +1229,11 @@
               "RelativeToolTip": "Application\\CQRS\\Godowns\\Commands\\CreateGodown\\CreateGodownCommandHandler.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAYwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:31:32.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:31:32.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "CreateGodownValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Godown\\Validators\\CreateGodownValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Godown\\Validators\\CreateGodownValidator.cs",
@@ -1088,12 +1241,11 @@
               "RelativeToolTip": "Application\\DTOs\\Godown\\Validators\\CreateGodownValidator.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAcwBQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:32:34.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:32:34.334Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "UpdateGodownDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Godown\\UpdateGodownDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Godown\\UpdateGodownDto.cs",
@@ -1101,12 +1253,11 @@
               "RelativeToolTip": "Application\\DTOs\\Godown\\UpdateGodownDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:32:24.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:32:24.881Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 30,
               "Title": "GodownDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Godown\\GodownDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Godown\\GodownDto.cs",
@@ -1114,12 +1265,11 @@
               "RelativeToolTip": "Application\\DTOs\\Godown\\GodownDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:32:16.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:32:16.918Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 31,
               "Title": "CreateGodownDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Godown\\CreateGodownDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Godown\\CreateGodownDto.cs",
@@ -1127,12 +1277,11 @@
               "RelativeToolTip": "Application\\DTOs\\Godown\\CreateGodownDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:32:07.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:32:07.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 32,
               "Title": "UpdateDeliveryDetailCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DeliveryDetails\\Commands\\UpdateDeliveryDetail\\UpdateDeliveryDetailCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DeliveryDetails\\Commands\\UpdateDeliveryDetail\\UpdateDeliveryDetailCommandHandler.cs",
@@ -1140,12 +1289,11 @@
               "RelativeToolTip": "Application\\CQRS\\DeliveryDetails\\Commands\\UpdateDeliveryDetail\\UpdateDeliveryDetailCommandHandler.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAkwAsAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:30:59.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:30:59.46Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 34,
               "Title": "DeleteDeliveryDetailCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DeliveryDetails\\Commands\\DeleteDeliveryDetail\\DeleteDeliveryDetailCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DeliveryDetails\\Commands\\DeleteDeliveryDetail\\DeleteDeliveryDetailCommandHandler.cs",
@@ -1153,12 +1301,11 @@
               "RelativeToolTip": "Application\\CQRS\\DeliveryDetails\\Commands\\DeleteDeliveryDetail\\DeleteDeliveryDetailCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:30:55.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:30:55.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 35,
               "Title": "DeleteDeliveryDetailCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DeliveryDetails\\Commands\\DeleteDeliveryDetail\\DeleteDeliveryDetailCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DeliveryDetails\\Commands\\DeleteDeliveryDetail\\DeleteDeliveryDetailCommand.cs",
@@ -1166,12 +1313,11 @@
               "RelativeToolTip": "Application\\CQRS\\DeliveryDetails\\Commands\\DeleteDeliveryDetail\\DeleteDeliveryDetailCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:30:53.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:30:53.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 33,
               "Title": "UpdateDeliveryDetailCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DeliveryDetails\\Commands\\UpdateDeliveryDetail\\UpdateDeliveryDetailCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DeliveryDetails\\Commands\\UpdateDeliveryDetail\\UpdateDeliveryDetailCommand.cs",
@@ -1179,12 +1325,11 @@
               "RelativeToolTip": "Application\\CQRS\\DeliveryDetails\\Commands\\UpdateDeliveryDetail\\UpdateDeliveryDetailCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:29:33.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:29:33.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 36,
               "Title": "CreateDeliveryDetailCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DeliveryDetails\\Commands\\CreateDeliveryDetail\\CreateDeliveryDetailCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DeliveryDetails\\Commands\\CreateDeliveryDetail\\CreateDeliveryDetailCommandHandler.cs",
@@ -1192,12 +1337,11 @@
               "RelativeToolTip": "Application\\CQRS\\DeliveryDetails\\Commands\\CreateDeliveryDetail\\CreateDeliveryDetailCommandHandler.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:29:09.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:29:09.769Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 37,
               "Title": "CreateDeliveryDetailCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DeliveryDetails\\Commands\\CreateDeliveryDetail\\CreateDeliveryDetailCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DeliveryDetails\\Commands\\CreateDeliveryDetail\\CreateDeliveryDetailCommand.cs",
@@ -1205,12 +1349,11 @@
               "RelativeToolTip": "Application\\CQRS\\DeliveryDetails\\Commands\\CreateDeliveryDetail\\CreateDeliveryDetailCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:28:56.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:28:56.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 38,
               "Title": "GetEmployeeListQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Queries\\GetEmployeeList\\GetEmployeeListQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Queries\\GetEmployeeList\\GetEmployeeListQueryHandler.cs",
@@ -1218,12 +1361,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Queries\\GetEmployeeList\\GetEmployeeListQueryHandler.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAUwBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:26:43.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:26:43.943Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 39,
               "Title": "GetEmployeeListQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Queries\\GetEmployeeList\\GetEmployeeListQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Queries\\GetEmployeeList\\GetEmployeeListQuery.cs",
@@ -1231,12 +1373,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Queries\\GetEmployeeList\\GetEmployeeListQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:26:23.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:26:23.249Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 40,
               "Title": "GetEmployeeByIdQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Queries\\GetEmployeeById\\GetEmployeeByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Queries\\GetEmployeeById\\GetEmployeeByIdQueryHandler.cs",
@@ -1244,12 +1385,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Queries\\GetEmployeeById\\GetEmployeeByIdQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:26:09.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:26:09.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 41,
               "Title": "GetEmployeeByIdQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Queries\\GetEmployeeById\\GetEmployeeByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Queries\\GetEmployeeById\\GetEmployeeByIdQuery.cs",
@@ -1257,12 +1397,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Queries\\GetEmployeeById\\GetEmployeeByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:25:59.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:25:59.144Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 42,
               "Title": "DeleteEmployeeCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Commands\\DeleteEmployee\\DeleteEmployeeCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Commands\\DeleteEmployee\\DeleteEmployeeCommandHandler.cs",
@@ -1270,12 +1409,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Commands\\DeleteEmployee\\DeleteEmployeeCommandHandler.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAADwvyEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:25:42.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:25:42.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 45,
               "Title": "UpdateEmployeeCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Commands\\UpdateEmployee\\UpdateEmployeeCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Commands\\UpdateEmployee\\UpdateEmployeeCommand.cs",
@@ -1283,12 +1421,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Commands\\UpdateEmployee\\UpdateEmployeeCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:25:14.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:25:14.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 44,
               "Title": "UpdateEmployeeCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Commands\\UpdateEmployee\\UpdateEmployeeCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Commands\\UpdateEmployee\\UpdateEmployeeCommandHandler.cs",
@@ -1296,12 +1433,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Commands\\UpdateEmployee\\UpdateEmployeeCommandHandler.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:25:01.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:25:01.065Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 43,
               "Title": "DeleteEmployeeCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Commands\\DeleteEmployee\\DeleteEmployeeCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Commands\\DeleteEmployee\\DeleteEmployeeCommand.cs",
@@ -1309,12 +1445,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Commands\\DeleteEmployee\\DeleteEmployeeCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:24:47.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:24:47.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 46,
               "Title": "CreateEmployeeCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommandHandler.cs",
@@ -1322,12 +1457,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommandHandler.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAcwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:23:39.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:23:39.51Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 47,
               "Title": "CreateEmployeeCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
@@ -1335,12 +1469,11 @@
               "RelativeToolTip": "Application\\CQRS\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:23:03.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:23:03.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 48,
               "Title": "CreateEmployeeValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Employee\\Validators\\CreateEmployeeValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Employee\\Validators\\CreateEmployeeValidator.cs",
@@ -1348,12 +1481,11 @@
               "RelativeToolTip": "Application\\DTOs\\Employee\\Validators\\CreateEmployeeValidator.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAcwCUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:22:00.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:22:00.32Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 49,
               "Title": "UpdateEmployeeValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Employee\\Validators\\UpdateEmployeeValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Employee\\Validators\\UpdateEmployeeValidator.cs",
@@ -1361,12 +1493,11 @@
               "RelativeToolTip": "Application\\DTOs\\Employee\\Validators\\UpdateEmployeeValidator.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAcwCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:21:57.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:21:57.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 50,
               "Title": "UpdateEmployeeDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Employee\\UpdateEmployeeDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Employee\\UpdateEmployeeDto.cs",
@@ -1374,12 +1505,11 @@
               "RelativeToolTip": "Application\\DTOs\\Employee\\UpdateEmployeeDto.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAA3wBIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:21:27.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:21:27.818Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 51,
               "Title": "EmployeeDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Employee\\EmployeeDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Employee\\EmployeeDto.cs",
@@ -1387,12 +1517,11 @@
               "RelativeToolTip": "Application\\DTOs\\Employee\\EmployeeDto.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAgwBYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:21:15.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:21:15.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 52,
               "Title": "CreateEmployeeDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Employee\\CreateEmployeeDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Employee\\CreateEmployeeDto.cs",
@@ -1400,12 +1529,11 @@
               "RelativeToolTip": "Application\\DTOs\\Employee\\CreateEmployeeDto.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA3wBEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:20:57.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:20:57.139Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 53,
               "Title": "GetDemandForecastsQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecasts\\GetDemandForecastsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecasts\\GetDemandForecastsQueryHandler.cs",
@@ -1413,12 +1541,11 @@
               "RelativeToolTip": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecasts\\GetDemandForecastsQueryHandler.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAUwCIAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:19:37.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:19:37.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 54,
               "Title": "GetDemandForecastsQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecasts\\GetDemandForecastsQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecasts\\GetDemandForecastsQuery.cs",
@@ -1426,12 +1553,11 @@
               "RelativeToolTip": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecasts\\GetDemandForecastsQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:19:05.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:19:05.115Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 55,
               "Title": "GetDemandForecastByIdQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecastById\\GetDemandForecastByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecastById\\GetDemandForecastByIdQueryHandler.cs",
@@ -1439,12 +1565,11 @@
               "RelativeToolTip": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecastById\\GetDemandForecastByIdQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:18:10.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:18:10.498Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 56,
               "Title": "GetDemandForecastByIdQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecastById\\GetDemandForecastByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecastById\\GetDemandForecastByIdQuery.cs",
@@ -1452,12 +1577,11 @@
               "RelativeToolTip": "Application\\CQRS\\DemandForecast\\Queries\\GetDemandForecastById\\GetDemandForecastByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:17:41.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:17:41.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 57,
               "Title": "CreateDemandForecastCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DemandForecast\\Commands\\CreateDemandForecast\\CreateDemandForecastCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DemandForecast\\Commands\\CreateDemandForecast\\CreateDemandForecastCommandHandler.cs",
@@ -1465,12 +1589,11 @@
               "RelativeToolTip": "Application\\CQRS\\DemandForecast\\Commands\\CreateDemandForecast\\CreateDemandForecastCommandHandler.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAcwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:16:12.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:16:12.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 58,
               "Title": "CreateDemandForecastCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\DemandForecast\\Commands\\CreateDemandForecast\\CreateDemandForecastCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\DemandForecast\\Commands\\CreateDemandForecast\\CreateDemandForecastCommand.cs",
@@ -1478,12 +1601,11 @@
               "RelativeToolTip": "Application\\CQRS\\DemandForecast\\Commands\\CreateDemandForecast\\CreateDemandForecastCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:15:27.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:15:27.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 59,
               "Title": "GetDeliveryListQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Queries\\GetDeliveryList\\GetDeliveryListQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryList\\GetDeliveryListQueryHandler.cs",
@@ -1491,12 +1613,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryList\\GetDeliveryListQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:12:21.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:12:21.122Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 60,
               "Title": "GetDeliveryListQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Queries\\GetDeliveryList\\GetDeliveryListQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryList\\GetDeliveryListQuery.cs",
@@ -1504,12 +1625,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryList\\GetDeliveryListQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:12:04.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:12:04.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 62,
               "Title": "GetDeliveryByIdQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Queries\\GetDeliveryById\\GetDeliveryByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryById\\GetDeliveryByIdQueryHandler.cs",
@@ -1517,12 +1637,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryById\\GetDeliveryByIdQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:11:31.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:11:31.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 61,
               "Title": "GetDeliveryByIdQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Queries\\GetDeliveryById\\GetDeliveryByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryById\\GetDeliveryByIdQuery.cs",
@@ -1530,12 +1649,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Queries\\GetDeliveryById\\GetDeliveryByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:11:21.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:11:21.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 63,
               "Title": "DeleteDeliveryCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Commands\\DeleteDelivery\\DeleteDeliveryCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Commands\\DeleteDelivery\\DeleteDeliveryCommandHandler.cs",
@@ -1543,12 +1661,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Commands\\DeleteDelivery\\DeleteDeliveryCommandHandler.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAcwCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:10:58.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:10:58.015Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 64,
               "Title": "DeleteDeliveryCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Commands\\DeleteDelivery\\DeleteDeliveryCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Commands\\DeleteDelivery\\DeleteDeliveryCommand.cs",
@@ -1556,12 +1673,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Commands\\DeleteDelivery\\DeleteDeliveryCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:10:46.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:10:46.202Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 65,
               "Title": "UpdateDeliveryCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Commands\\UpdateDelivery\\UpdateDeliveryCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Commands\\UpdateDelivery\\UpdateDeliveryCommandHandler.cs",
@@ -1569,12 +1685,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Commands\\UpdateDelivery\\UpdateDeliveryCommandHandler.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:07:13.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:07:13.665Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 66,
               "Title": "UpdateDeliveryCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Commands\\UpdateDelivery\\UpdateDeliveryCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Commands\\UpdateDelivery\\UpdateDeliveryCommand.cs",
@@ -1582,12 +1697,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Commands\\UpdateDelivery\\UpdateDeliveryCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:06:57.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:06:57.308Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 67,
               "Title": "CreateDeliveryCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Commands\\CreateDelivery\\CreateDeliveryCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Commands\\CreateDelivery\\CreateDeliveryCommandHandler.cs",
@@ -1595,12 +1709,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Commands\\CreateDelivery\\CreateDeliveryCommandHandler.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAcwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:06:37.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:06:37.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 68,
               "Title": "CreateDeliveryCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Deliveries\\Commands\\CreateDelivery\\CreateDeliveryCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Deliveries\\Commands\\CreateDelivery\\CreateDeliveryCommand.cs",
@@ -1608,12 +1721,11 @@
               "RelativeToolTip": "Application\\CQRS\\Deliveries\\Commands\\CreateDelivery\\CreateDeliveryCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:06:18.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:06:18.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 69,
               "Title": "DeleteCustomerCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Customers\\Commands\\DeleteCustomer\\DeleteCustomerCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Customers\\Commands\\DeleteCustomer\\DeleteCustomerCommand.cs",
@@ -1621,12 +1733,11 @@
               "RelativeToolTip": "Application\\CQRS\\Customers\\Commands\\DeleteCustomer\\DeleteCustomerCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:04:56.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:04:56.447Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 70,
               "Title": "CreateCustomerCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Customers\\Commands\\CreateCustomer\\CreateCustomerCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Customers\\Commands\\CreateCustomer\\CreateCustomerCommandHandler.cs",
@@ -1634,12 +1745,11 @@
               "RelativeToolTip": "Application\\CQRS\\Customers\\Commands\\CreateCustomer\\CreateCustomerCommandHandler.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAcwDMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:04:26.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:04:26.962Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 71,
               "Title": "CreateCustomerCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Customers\\Commands\\CreateCustomer\\CreateCustomerCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Customers\\Commands\\CreateCustomer\\CreateCustomerCommand.cs",
@@ -1647,12 +1757,11 @@
               "RelativeToolTip": "Application\\CQRS\\Customers\\Commands\\CreateCustomer\\CreateCustomerCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:04:15.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T09:04:15.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 73,
               "Title": "IQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Common\\IQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Common\\IQueryHandler.cs",
@@ -1660,12 +1769,11 @@
               "RelativeToolTip": "Application\\CQRS\\Common\\IQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:58:39.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:58:39.924Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 74,
               "Title": "IQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Common\\IQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Common\\IQuery.cs",
@@ -1673,12 +1781,11 @@
               "RelativeToolTip": "Application\\CQRS\\Common\\IQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:58:38.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:58:38.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 75,
               "Title": "ICommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Common\\ICommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Common\\ICommandHandler.cs",
@@ -1686,12 +1793,11 @@
               "RelativeToolTip": "Application\\CQRS\\Common\\ICommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:58:36.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:58:36.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 72,
               "Title": "ICommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\Common\\ICommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\Common\\ICommand.cs",
@@ -1699,12 +1805,11 @@
               "RelativeToolTip": "Application\\CQRS\\Common\\ICommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:58:32.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:58:32.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 76,
               "Title": "GetAuditSummaryQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AuditLog\\Queries\\GetAuditSummary\\GetAuditSummaryQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AuditLog\\Queries\\GetAuditSummary\\GetAuditSummaryQueryHandler.cs",
@@ -1712,12 +1817,11 @@
               "RelativeToolTip": "Application\\CQRS\\AuditLog\\Queries\\GetAuditSummary\\GetAuditSummaryQueryHandler.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwDMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:57:55.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:57:55.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 77,
               "Title": "GetAuditSummaryQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AuditLog\\Queries\\GetAuditSummary\\GetAuditSummaryQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AuditLog\\Queries\\GetAuditSummary\\GetAuditSummaryQuery.cs",
@@ -1725,12 +1829,11 @@
               "RelativeToolTip": "Application\\CQRS\\AuditLog\\Queries\\GetAuditSummary\\GetAuditSummaryQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:57:27.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:57:27.447Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 78,
               "Title": "GetAuditLogsQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AuditLog\\Queries\\GetAuditLogs\\GetAuditLogsQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogs\\GetAuditLogsQueryHandler.cs",
@@ -1738,12 +1841,11 @@
               "RelativeToolTip": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogs\\GetAuditLogsQueryHandler.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAUwDYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:56:23.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:56:23.829Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 79,
               "Title": "GetAuditLogsQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AuditLog\\Queries\\GetAuditLogs\\GetAuditLogsQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogs\\GetAuditLogsQuery.cs",
@@ -1751,12 +1853,11 @@
               "RelativeToolTip": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogs\\GetAuditLogsQuery.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAYwBEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:55:45.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:55:45.422Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 80,
               "Title": "GetAuditLogByIdQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AuditLog\\Queries\\GetAuditLogById\\GetAuditLogByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogById\\GetAuditLogByIdQueryHandler.cs",
@@ -1764,12 +1865,11 @@
               "RelativeToolTip": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogById\\GetAuditLogByIdQueryHandler.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA4wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:54:39.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:54:39.922Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 81,
               "Title": "GetAuditLogByIdQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AuditLog\\Queries\\GetAuditLogById\\GetAuditLogByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogById\\GetAuditLogByIdQuery.cs",
@@ -1777,12 +1877,11 @@
               "RelativeToolTip": "Application\\CQRS\\AuditLog\\Queries\\GetAuditLogById\\GetAuditLogByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:54:11.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:54:11.893Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 82,
               "Title": "GetAlertRulesQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Queries\\GetAlertRules\\GetAlertRulesQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRules\\GetAlertRulesQueryHandler.cs",
@@ -1790,12 +1889,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRules\\GetAlertRulesQueryHandler.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAiwB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:51:13.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:51:13.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 83,
               "Title": "GetAlertRulesQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Queries\\GetAlertRules\\GetAlertRulesQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRules\\GetAlertRulesQuery.cs",
@@ -1803,12 +1901,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRules\\GetAlertRulesQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:50:18.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:50:18.605Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 84,
               "Title": "GetAlertRuleByIdQueryHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Queries\\GetAlertRuleById\\GetAlertRuleByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRuleById\\GetAlertRuleByIdQueryHandler.cs",
@@ -1816,12 +1913,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRuleById\\GetAlertRuleByIdQueryHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA2wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:49:21.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:49:21.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 85,
               "Title": "GetAlertRuleByIdQuery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Queries\\GetAlertRuleById\\GetAlertRuleByIdQuery.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRuleById\\GetAlertRuleByIdQuery.cs",
@@ -1829,12 +1925,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Queries\\GetAlertRuleById\\GetAlertRuleByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:48:39.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:48:39.742Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 87,
               "Title": "DeleteAlertRuleCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Commands\\DeleteAlertRule\\DeleteAlertRuleCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Commands\\DeleteAlertRule\\DeleteAlertRuleCommandHandler.cs",
@@ -1842,12 +1937,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Commands\\DeleteAlertRule\\DeleteAlertRuleCommandHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAcwCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:36:01.627Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:36:01.627Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 88,
               "Title": "DeleteAlertRuleCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Commands\\DeleteAlertRule\\DeleteAlertRuleCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Commands\\DeleteAlertRule\\DeleteAlertRuleCommand.cs",
@@ -1855,12 +1949,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Commands\\DeleteAlertRule\\DeleteAlertRuleCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:35:09.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:35:09.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 86,
               "Title": "UpdateAlertRuleCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Commands\\UpdateAlertRule\\UpdateAlertRuleCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Commands\\UpdateAlertRule\\UpdateAlertRuleCommandHandler.cs",
@@ -1868,12 +1961,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Commands\\UpdateAlertRule\\UpdateAlertRuleCommandHandler.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAcwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:34:08.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:34:08.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 89,
               "Title": "UpdateAlertRuleCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Commands\\UpdateAlertRule\\UpdateAlertRuleCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Commands\\UpdateAlertRule\\UpdateAlertRuleCommand.cs",
@@ -1881,12 +1973,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Commands\\UpdateAlertRule\\UpdateAlertRuleCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:33:40.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:33:40.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 90,
               "Title": "CreateAlertRuleCommandHandler.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Commands\\CreateAlertRule\\CreateAlertRuleCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Commands\\CreateAlertRule\\CreateAlertRuleCommandHandler.cs",
@@ -1894,12 +1985,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Commands\\CreateAlertRule\\CreateAlertRuleCommandHandler.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAcwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:32:53.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:32:53.454Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 91,
               "Title": "CreateAlertRuleCommand.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\CQRS\\AlertRule\\Commands\\CreateAlertRule\\CreateAlertRuleCommand.cs",
               "RelativeDocumentMoniker": "Application\\CQRS\\AlertRule\\Commands\\CreateAlertRule\\CreateAlertRuleCommand.cs",
@@ -1907,12 +1997,11 @@
               "RelativeToolTip": "Application\\CQRS\\AlertRule\\Commands\\CreateAlertRule\\CreateAlertRuleCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:31:22.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:31:22.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 93,
               "Title": "DemandForecastDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\DemandForecast\\DemandForecastDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\DemandForecast\\DemandForecastDto.cs",
@@ -1920,12 +2009,11 @@
               "RelativeToolTip": "Application\\DTOs\\DemandForecast\\DemandForecastDto.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAA3wB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:25:27.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:25:27.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 94,
               "Title": "CreateDemandForecastDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\DemandForecast\\CreateDemandForecastDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\DemandForecast\\CreateDemandForecastDto.cs",
@@ -1933,12 +2021,11 @@
               "RelativeToolTip": "Application\\DTOs\\DemandForecast\\CreateDemandForecastDto.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA3wBYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:25:18.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:25:18.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 95,
               "Title": "UpdateDeliveryValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\Validators\\UpdateDeliveryValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\Validators\\UpdateDeliveryValidator.cs",
@@ -1946,12 +2033,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\Validators\\UpdateDeliveryValidator.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAcwBkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:25:00.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:25:00.469Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 92,
               "Title": "CreateCustomerDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\CreateCustomerDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\CreateCustomerDto.cs",
@@ -1959,12 +2045,11 @@
               "RelativeToolTip": "Application\\DTOs\\Customer\\CreateCustomerDto.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAgwBkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:18:22.437Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:18:22.437Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 96,
               "Title": "UpdateDeliveryDetailValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\Validators\\UpdateDeliveryDetailValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\Validators\\UpdateDeliveryDetailValidator.cs",
@@ -1972,12 +2057,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\Validators\\UpdateDeliveryDetailValidator.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAUwBYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:24:49.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:24:49.074Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 97,
               "Title": "CreateDeliveryValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\Validators\\CreateDeliveryValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\Validators\\CreateDeliveryValidator.cs",
@@ -1985,12 +2069,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\Validators\\CreateDeliveryValidator.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAcwB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:24:26.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:24:26.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 98,
               "Title": "CreateDeliveryDetailValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\Validators\\CreateDeliveryDetailValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\Validators\\CreateDeliveryDetailValidator.cs",
@@ -1998,12 +2081,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\Validators\\CreateDeliveryDetailValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAIwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:24:16.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:24:16.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 99,
               "Title": "UpdateDeliveryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\UpdateDeliveryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\UpdateDeliveryDto.cs",
@@ -2011,12 +2093,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\UpdateDeliveryDto.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAgwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:24:05.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:24:05.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 100,
               "Title": "UpdateDeliveryDetailDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\UpdateDeliveryDetailDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\UpdateDeliveryDetailDto.cs",
@@ -2024,12 +2105,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\UpdateDeliveryDetailDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:23:53.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:23:53.72Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 101,
               "Title": "DeliveryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\DeliveryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\DeliveryDto.cs",
@@ -2037,12 +2117,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\DeliveryDto.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAkwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:23:44.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:23:44.426Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 102,
               "Title": "DeliveryDetailDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\DeliveryDetailDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\DeliveryDetailDto.cs",
@@ -2050,12 +2129,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\DeliveryDetailDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:23:33.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:23:33.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 103,
               "Title": "CreateDeliveryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\CreateDeliveryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\CreateDeliveryDto.cs",
@@ -2063,12 +2141,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\CreateDeliveryDto.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAgwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:22:18.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:22:18.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 104,
               "Title": "CreateDeliveryDetailDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Delivery\\CreateDeliveryDetailDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Delivery\\CreateDeliveryDetailDto.cs",
@@ -2076,12 +2153,11 @@
               "RelativeToolTip": "Application\\DTOs\\Delivery\\CreateDeliveryDetailDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:22:10.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:22:10.476Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 108,
               "Title": "CustomerDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\CustomerDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\CustomerDto.cs",
@@ -2089,12 +2165,11 @@
               "RelativeToolTip": "Application\\DTOs\\Customer\\CustomerDto.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAA5wBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:18:35.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:18:35.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 107,
               "Title": "UpdateCustomerDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
@@ -2102,12 +2177,11 @@
               "RelativeToolTip": "Application\\DTOs\\Customer\\UpdateCustomerDto.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAswCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:18:46.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:18:46.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 106,
               "Title": "CreateCustomerValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
@@ -2115,12 +2189,11 @@
               "RelativeToolTip": "Application\\DTOs\\Customer\\Validators\\CreateCustomerValidator.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAcwCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:18:56.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:18:56.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 105,
               "Title": "UpdateCustomerValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
@@ -2128,12 +2201,11 @@
               "RelativeToolTip": "Application\\DTOs\\Customer\\Validators\\UpdateCustomerValidator.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAcwCgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:19:05.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:19:05.083Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 109,
               "Title": "PagedRequestValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\Validators\\PagedRequestValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\Validators\\PagedRequestValidator.cs",
@@ -2141,12 +2213,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\Validators\\PagedRequestValidator.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAIwBAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:20:58.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:20:58.041Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 110,
               "Title": "QueryParameters.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\QueryParameters.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\QueryParameters.cs",
@@ -2154,12 +2225,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\QueryParameters.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAkwFkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:20:48.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:20:48.216Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 112,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\PagedResult.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\PagedResult.cs",
@@ -2167,12 +2237,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\PagedResult.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAADwvxoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:20:28.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:20:28.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 113,
               "Title": "PagedRequestDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\PagedRequestDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\PagedRequestDto.cs",
@@ -2180,12 +2249,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\PagedRequestDto.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAIwBMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:20:17.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:20:17.545Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 114,
               "Title": "InvoiceDetailQueryParameters.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\InvoiceDetailQueryParameters.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\InvoiceDetailQueryParameters.cs",
@@ -2193,12 +2261,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\InvoiceDetailQueryParameters.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAkwA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:20:07.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:20:07.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 111,
               "Title": "PaginatedList.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\PaginatedList.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\PaginatedList.cs",
@@ -2206,12 +2273,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\PaginatedList.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAowAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:19:49.393Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T08:19:49.393Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 119,
               "Title": "UpdateAlertRuleValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\AlertRule\\Validators\\UpdateAlertRuleValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\AlertRule\\Validators\\UpdateAlertRuleValidator.cs",
@@ -2219,12 +2285,11 @@
               "RelativeToolTip": "Application\\DTOs\\AlertRule\\Validators\\UpdateAlertRuleValidator.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAcwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:44:20.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:44:20.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 118,
               "Title": "AuditLogDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Audit\\AuditLogDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Audit\\AuditLogDto.cs",
@@ -2232,12 +2297,11 @@
               "RelativeToolTip": "Application\\DTOs\\Audit\\AuditLogDto.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAA3wA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:52:50.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:52:50.812Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 117,
               "Title": "AuditSummaryDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Audit\\AuditSummaryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Audit\\AuditSummaryDto.cs",
@@ -2245,12 +2309,11 @@
               "RelativeToolTip": "Application\\DTOs\\Audit\\AuditSummaryDto.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAgwA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:56:37.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:56:37.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 115,
               "Title": "BaseDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\Common\\BaseDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Common\\BaseDto.cs",
@@ -2258,12 +2321,11 @@
               "RelativeToolTip": "Application\\DTOs\\Common\\BaseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T18:00:59.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T18:00:59.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 120,
               "Title": "CreateAlertRuleValidator.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\AlertRule\\Validators\\CreateAlertRuleValidator.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\AlertRule\\Validators\\CreateAlertRuleValidator.cs",
@@ -2271,12 +2333,11 @@
               "RelativeToolTip": "Application\\DTOs\\AlertRule\\Validators\\CreateAlertRuleValidator.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAcwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:41:12.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:41:12.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 116,
               "Title": "AuditLogDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\AuditLog\\AuditLogDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\AuditLog\\AuditLogDto.cs",
@@ -2284,12 +2345,11 @@
               "RelativeToolTip": "Application\\DTOs\\AuditLog\\AuditLogDto.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAA3wBIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:52:20.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:52:20.559Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 121,
               "Title": "UpdateAlertRuleDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\AlertRule\\UpdateAlertRuleDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\AlertRule\\UpdateAlertRuleDto.cs",
@@ -2297,12 +2357,11 @@
               "RelativeToolTip": "Application\\DTOs\\AlertRule\\UpdateAlertRuleDto.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAswCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:39:14.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:39:14.246Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 122,
               "Title": "CreateAlertRuleDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\AlertRule\\CreateAlertRuleDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\AlertRule\\CreateAlertRuleDto.cs",
@@ -2310,12 +2369,11 @@
               "RelativeToolTip": "Application\\DTOs\\AlertRule\\CreateAlertRuleDto.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAswB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:35:48.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:35:48.361Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 123,
               "Title": "AlertRuleDto.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\DTOs\\AlertRule\\AlertRuleDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\AlertRule\\AlertRuleDto.cs",
@@ -2323,12 +2381,11 @@
               "RelativeToolTip": "Application\\DTOs\\AlertRule\\AlertRuleDto.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA3wBAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:28:02.626Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:28:02.626Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 124,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IUnitOfWork.cs",
@@ -2336,12 +2393,11 @@
               "RelativeToolTip": "Application\\Contracts\\IUnitOfWork.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAwAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T16:54:11.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T16:54:11.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 125,
               "Title": "IAuditLogRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IAuditLogRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IAuditLogRepository.cs",
@@ -2353,7 +2409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 127,
               "Title": "AlertRule.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\AlertRule.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\AlertRule.cs",
@@ -2365,7 +2421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 126,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\AuditLog.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\AuditLog.cs",
@@ -2377,7 +2433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 128,
               "Title": "SmartReorderProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\SmartReorderProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\SmartReorderProfile.cs",
@@ -2389,7 +2445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 129,
               "Title": "NotificationProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\NotificationProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\NotificationProfile.cs",
@@ -2401,7 +2457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 130,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\MappingProfile.cs",
@@ -2413,7 +2469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 131,
               "Title": "InventoryReportProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\InventoryReportProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\InventoryReportProfile.cs",
@@ -2425,7 +2481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 132,
               "Title": "InventoryAnalyticsProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\InventoryAnalyticsProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\InventoryAnalyticsProfile.cs",
@@ -2437,7 +2493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 133,
               "Title": "InventoryAlertProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\InventoryAlertProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\InventoryAlertProfile.cs",
@@ -2449,7 +2505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 134,
               "Title": "DemandForecastProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\DemandForecastProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\DemandForecastProfile.cs",
@@ -2461,7 +2517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 135,
               "Title": "AuditLogProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\AuditLogProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\AuditLogProfile.cs",
@@ -2473,7 +2529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 136,
               "Title": "AlertRuleProfile.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Profiles\\AlertRuleProfile.cs",
               "RelativeDocumentMoniker": "Application\\Profiles\\AlertRuleProfile.cs",
@@ -2485,7 +2541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 137,
               "Title": "ReportingService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\ReportingService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\ReportingService.cs",
@@ -2497,7 +2553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 138,
               "Title": "NotificationService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\NotificationService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\NotificationService.cs",
@@ -2509,7 +2565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 139,
               "Title": "IReportingService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\IReportingService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\IReportingService.cs",
@@ -2521,7 +2577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 140,
               "Title": "InventoryAnalyticsService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\InventoryAnalyticsService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\InventoryAnalyticsService.cs",
@@ -2533,7 +2589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 141,
               "Title": "INotificationService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\INotificationService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\INotificationService.cs",
@@ -2545,7 +2601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 142,
               "Title": "IGodownInventoryService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\IGodownInventoryService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\IGodownInventoryService.cs",
@@ -2557,7 +2613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 143,
               "Title": "IAuditService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\IAuditService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\IAuditService.cs",
@@ -2569,7 +2625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 144,
               "Title": "GodownInventoryService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\GodownInventoryService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\GodownInventoryService.cs",
@@ -2581,7 +2637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 145,
               "Title": "AuditService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Services\\AuditService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\AuditService.cs",
@@ -2593,7 +2649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 146,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IUserRepository.cs",
@@ -2605,7 +2661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 147,
               "Title": "ISupplierRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\ISupplierRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\ISupplierRepository.cs",
@@ -2617,7 +2673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 148,
               "Title": "ISmartReorderRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\ISmartReorderRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\ISmartReorderRepository.cs",
@@ -2629,7 +2685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 149,
               "Title": "IReturnTransactionRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IReturnTransactionRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IReturnTransactionRepository.cs",
@@ -2641,7 +2697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 150,
               "Title": "IOutwardTransactionRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IOutwardTransactionRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IOutwardTransactionRepository.cs",
@@ -2653,7 +2709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 151,
               "Title": "INotificationRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\INotificationRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\INotificationRepository.cs",
@@ -2665,7 +2721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 152,
               "Title": "IItemRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IItemRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IItemRepository.cs",
@@ -2677,7 +2733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 153,
               "Title": "IInwardTransactionRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInwardTransactionRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInwardTransactionRepository.cs",
@@ -2689,7 +2745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 154,
               "Title": "IInvoiceRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInvoiceRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInvoiceRepository.cs",
@@ -2701,7 +2757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 155,
               "Title": "IInvoiceDetailRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInvoiceDetailRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInvoiceDetailRepository.cs",
@@ -2713,7 +2769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 156,
               "Title": "IInventoryReportRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInventoryReportRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInventoryReportRepository.cs",
@@ -2725,7 +2781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 157,
               "Title": "IInventoryAnalyticsService.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInventoryAnalyticsService.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInventoryAnalyticsService.cs",
@@ -2737,7 +2793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 158,
               "Title": "IInventoryAnalyticsRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInventoryAnalyticsRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInventoryAnalyticsRepository.cs",
@@ -2749,7 +2805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 160,
               "Title": "IGodownRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IGodownRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IGodownRepository.cs",
@@ -2761,7 +2817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 159,
               "Title": "IInventoryAlertRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IInventoryAlertRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IInventoryAlertRepository.cs",
@@ -2773,7 +2829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 161,
               "Title": "IGodownInventoryRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IGodownInventoryRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IGodownInventoryRepository.cs",
@@ -2785,7 +2841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 162,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IGenericRepository.cs",
@@ -2797,7 +2853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 163,
               "Title": "IEmployeeRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IEmployeeRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IEmployeeRepository.cs",
@@ -2809,7 +2865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 164,
               "Title": "IDemandForecastRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IDemandForecastRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IDemandForecastRepository.cs",
@@ -2821,7 +2877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 165,
               "Title": "IDeliveryRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IDeliveryRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IDeliveryRepository.cs",
@@ -2833,7 +2889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 166,
               "Title": "IDeliveryDetailRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IDeliveryDetailRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IDeliveryDetailRepository.cs",
@@ -2845,7 +2901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 167,
               "Title": "IDbContextTransaction.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IDbContextTransaction.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IDbContextTransaction.cs",
@@ -2857,7 +2913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 168,
               "Title": "ICustomerRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\ICustomerRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\ICustomerRepository.cs",
@@ -2865,12 +2921,11 @@
               "RelativeToolTip": "Application\\Contracts\\ICustomerRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAwwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T16:49:46.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T16:49:46.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 169,
               "Title": "IBatchOperationRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IBatchOperationRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IBatchOperationRepository.cs",
@@ -2882,7 +2937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 170,
               "Title": "IAlertRuleRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Contracts\\IAlertRuleRepository.cs",
               "RelativeDocumentMoniker": "Application\\Contracts\\IAlertRuleRepository.cs",
@@ -2894,7 +2949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 171,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\UserRepository.cs",
@@ -2906,7 +2961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 162,
+              "DocumentIndex": 172,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\UnitOfWork.cs",
@@ -2918,7 +2973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 163,
+              "DocumentIndex": 173,
               "Title": "SupplierRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\SupplierRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\SupplierRepository.cs",
@@ -2930,7 +2985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 164,
+              "DocumentIndex": 174,
               "Title": "SmartReorderRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\SmartReorderRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\SmartReorderRepository.cs",
@@ -2942,7 +2997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 165,
+              "DocumentIndex": 175,
               "Title": "ReturnTransactionRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\ReturnTransactionRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\ReturnTransactionRepository.cs",
@@ -2954,7 +3009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 166,
+              "DocumentIndex": 176,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\PagedResult.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\PagedResult.cs",
@@ -2966,7 +3021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 167,
+              "DocumentIndex": 177,
               "Title": "OutwardTransactionRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\OutwardTransactionRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\OutwardTransactionRepository.cs",
@@ -2978,7 +3033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 168,
+              "DocumentIndex": 178,
               "Title": "NotificationRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\NotificationRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\NotificationRepository.cs",
@@ -2990,7 +3045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 169,
+              "DocumentIndex": 179,
               "Title": "ItemRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\ItemRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\ItemRepository.cs",
@@ -3002,7 +3057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 170,
+              "DocumentIndex": 180,
               "Title": "InwardTransactionRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InwardTransactionRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\InwardTransactionRepository.cs",
@@ -3014,7 +3069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 171,
+              "DocumentIndex": 181,
               "Title": "InvoiceRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InvoiceRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\InvoiceRepository.cs",
@@ -3026,7 +3081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 172,
+              "DocumentIndex": 182,
               "Title": "InvoiceDetailRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InvoiceDetailRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\InvoiceDetailRepository.cs",
@@ -3038,7 +3093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 173,
+              "DocumentIndex": 183,
               "Title": "InventoryReportRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryReportRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\InventoryReportRepository.cs",
@@ -3050,7 +3105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 174,
+              "DocumentIndex": 184,
               "Title": "InventoryAnalyticsRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryAnalyticsRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\InventoryAnalyticsRepository.cs",
@@ -3062,7 +3117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 175,
+              "DocumentIndex": 185,
               "Title": "InventoryAlertRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\InventoryAlertRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\InventoryAlertRepository.cs",
@@ -3074,7 +3129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 176,
+              "DocumentIndex": 186,
               "Title": "GodownRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GodownRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\GodownRepository.cs",
@@ -3086,7 +3141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 177,
+              "DocumentIndex": 187,
               "Title": "GodownInventoryRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GodownInventoryRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\GodownInventoryRepository.cs",
@@ -3098,7 +3153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 178,
+              "DocumentIndex": 188,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\GenericRepository.cs",
@@ -3110,7 +3165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 179,
+              "DocumentIndex": 189,
               "Title": "EmployeeRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\EmployeeRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\EmployeeRepository.cs",
@@ -3122,7 +3177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 180,
+              "DocumentIndex": 190,
               "Title": "DemandForecastRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DemandForecastRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\DemandForecastRepository.cs",
@@ -3134,7 +3189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 181,
+              "DocumentIndex": 191,
               "Title": "DeliveryRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DeliveryRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\DeliveryRepository.cs",
@@ -3146,7 +3201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 182,
+              "DocumentIndex": 192,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\CustomerRepository.cs",
@@ -3158,7 +3213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 183,
+              "DocumentIndex": 193,
               "Title": "DeliveryDetailRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\DeliveryDetailRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\DeliveryDetailRepository.cs",
@@ -3170,7 +3225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 184,
+              "DocumentIndex": 194,
               "Title": "BatchOperationRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\BatchOperationRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\BatchOperationRepository.cs",
@@ -3182,7 +3237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 185,
+              "DocumentIndex": 195,
               "Title": "AuditLogRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\AuditLogRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\AuditLogRepository.cs",
@@ -3194,7 +3249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 186,
+              "DocumentIndex": 196,
               "Title": "AlertRuleRepository.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Repositories\\AlertRuleRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\AlertRuleRepository.cs",
@@ -3206,7 +3261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 187,
+              "DocumentIndex": 197,
               "Title": "User.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\User.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\User.cs",
@@ -3218,7 +3273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 188,
+              "DocumentIndex": 198,
               "Title": "Supplier.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Supplier.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Supplier.cs",
@@ -3230,7 +3285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 189,
+              "DocumentIndex": 199,
               "Title": "SmartReorder.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\SmartReorder.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\SmartReorder.cs",
@@ -3242,7 +3297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 190,
+              "DocumentIndex": 200,
               "Title": "ReturnTransaction.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\ReturnTransaction.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\ReturnTransaction.cs",
@@ -3254,7 +3309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 191,
+              "DocumentIndex": 201,
               "Title": "OutwardTransaction.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\OutwardTransaction.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\OutwardTransaction.cs",
@@ -3266,7 +3321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 192,
+              "DocumentIndex": 202,
               "Title": "Notification.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Notification.cs",
@@ -3278,7 +3333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 193,
+              "DocumentIndex": 203,
               "Title": "Item.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Item.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Item.cs",
@@ -3290,7 +3345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 194,
+              "DocumentIndex": 204,
               "Title": "InwardTransaction.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InwardTransaction.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\InwardTransaction.cs",
@@ -3302,7 +3357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 195,
+              "DocumentIndex": 205,
               "Title": "InvoiceDetail.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InvoiceDetail.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\InvoiceDetail.cs",
@@ -3314,7 +3369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 196,
+              "DocumentIndex": 206,
               "Title": "Invoice.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Invoice.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Invoice.cs",
@@ -3326,7 +3381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 197,
+              "DocumentIndex": 207,
               "Title": "InventoryReport.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryReport.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\InventoryReport.cs",
@@ -3338,7 +3393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 198,
+              "DocumentIndex": 208,
               "Title": "InventoryAnalytics.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryAnalytics.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\InventoryAnalytics.cs",
@@ -3350,7 +3405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 199,
+              "DocumentIndex": 209,
               "Title": "InventoryAlert.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\InventoryAlert.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\InventoryAlert.cs",
@@ -3362,7 +3417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 200,
+              "DocumentIndex": 210,
               "Title": "GodownInventory.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\GodownInventory.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\GodownInventory.cs",
@@ -3374,7 +3429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 201,
+              "DocumentIndex": 211,
               "Title": "DemandForecast.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\DemandForecast.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\DemandForecast.cs",
@@ -3386,7 +3441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 202,
+              "DocumentIndex": 212,
               "Title": "DeliveryDetail.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\DeliveryDetail.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\DeliveryDetail.cs",
@@ -3398,7 +3453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 203,
+              "DocumentIndex": 213,
               "Title": "Delivery.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Delivery.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Delivery.cs",
@@ -3410,7 +3465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 204,
+              "DocumentIndex": 214,
               "Title": "Customer.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Customer.cs",
@@ -3422,7 +3477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 205,
+              "DocumentIndex": 215,
               "Title": "BatchOperation.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Models\\BatchOperation.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\BatchOperation.cs",
@@ -3434,7 +3489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 206,
+              "DocumentIndex": 216,
               "Title": "BaseDomainEntity.cs",
               "DocumentMoniker": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Common\\BaseDomainEntity.cs",
               "RelativeDocumentMoniker": "Domain\\Common\\BaseDomainEntity.cs",
