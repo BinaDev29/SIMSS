@@ -15,5 +15,6 @@ namespace Application.Contracts
         Task<IReadOnlyList<AuditLog>> GetLogsByActionAsync(string action, CancellationToken cancellationToken);
         Task<IReadOnlyList<AuditLog>> GetLogsByDateRangeAsync(DateTime fromDate, DateTime toDate, CancellationToken cancellationToken);
         Task<PagedResult<AuditLog>> GetPagedLogsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        IEnumerable<object> Query();
     }
 }

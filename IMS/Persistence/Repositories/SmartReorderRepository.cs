@@ -89,5 +89,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task AddAsync(SmartReorder smartReorder)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

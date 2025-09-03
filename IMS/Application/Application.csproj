@@ -7,6 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CQRS\Commen\**" />
+    <Compile Remove="CQRS\InventoryAlert\**" />
+    <Compile Remove="CQRS\InventoryAnalytics\**" />
+    <Compile Remove="CQRS\InventoryReport\**" />
+    <Compile Remove="CQRS\Notifications\**" />
+    <Compile Remove="CQRS\Report\**" />
+    <EmbeddedResource Remove="CQRS\Commen\**" />
+    <EmbeddedResource Remove="CQRS\InventoryAlert\**" />
+    <EmbeddedResource Remove="CQRS\InventoryAnalytics\**" />
+    <EmbeddedResource Remove="CQRS\InventoryReport\**" />
+    <EmbeddedResource Remove="CQRS\Notifications\**" />
+    <EmbeddedResource Remove="CQRS\Report\**" />
+    <None Remove="CQRS\Commen\**" />
+    <None Remove="CQRS\InventoryAlert\**" />
+    <None Remove="CQRS\InventoryAnalytics\**" />
+    <None Remove="CQRS\InventoryReport\**" />
+    <None Remove="CQRS\Notifications\**" />
+    <None Remove="CQRS\Report\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />

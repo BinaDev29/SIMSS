@@ -1,19 +1,17 @@
-// Application/DTOs/AlertRule/AlertRuleDto.cs
-using Application.DTOs.Common;
-
 namespace Application.DTOs.AlertRule
 {
-    public class AlertRuleDto : BaseDto
+    public record AlertRuleDto
     {
-        public string RuleName { get; set; } = string.Empty;
-        public string RuleType { get; set; } = string.Empty;
-        public string Condition { get; set; } = string.Empty;
-        public string AlertMessage { get; set; } = string.Empty;
-        public string Priority { get; set; } = string.Empty;
-        public bool IsActive { get; set; }
-        public DateTime? LastTriggered { get; set; }
-        public int TriggerCount { get; set; }
-        public string? NotificationChannels { get; set; }
-        public string? Recipients { get; set; }
+        public int Id { get; init; }
+        public string RuleName { get; init; } = string.Empty;
+        public string RuleType { get; init; } = string.Empty;
+        public string Condition { get; init; } = string.Empty;
+        public string AlertMessage { get; init; } = string.Empty;
+        public string? Priority { get; init; }
+        public bool IsActive { get; init; }
+        public string? NotificationChannels { get; init; }
+        public string? Recipients { get; init; }
+        public DateTime? LastTriggered { get; init; }
+        public int TriggerCount { get; init; }
     }
 }
