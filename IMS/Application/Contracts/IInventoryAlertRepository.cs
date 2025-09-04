@@ -13,5 +13,7 @@ namespace Application.Contracts
         Task<IReadOnlyList<InventoryAlert>> GetAlertsByTypeAsync(string alertType, CancellationToken cancellationToken);
         Task<IReadOnlyList<InventoryAlert>> GetAlertsByItemAsync(int itemId, CancellationToken cancellationToken);
         Task<PagedResult<InventoryAlert>> GetPagedAlertsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        Task AddAsync(InventoryAlert inventoryAlert);
+        Task GetPagedInventoryAlertsAsync(int pageNumber, int pageSize, string? alertType, string? severity, bool? isActive, CancellationToken cancellationToken);
     }
 }

@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+// Application/DTOs/Customer/UpdateCustomerDto.cs
+using System.ComponentModel.DataAnnotations;
 
 namespace Application.DTOs.Customer
 {
     public record UpdateCustomerDto
     {
-        [Required(ErrorMessage = "Id is required for update.")]
         public int Id { get; init; }
 
         [Required(ErrorMessage = "Customer name is required.")]

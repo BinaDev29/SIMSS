@@ -1,4 +1,4 @@
-// Item.cs
+// Domain/Item.cs
 using Domain.Common;
 using System.Collections.Generic;
 using System;
@@ -9,29 +9,31 @@ namespace Domain.Models
     {
         public required string ItemName { get; set; }
         public required string ItemCode { get; set; }
-        public required decimal StockQuantity { get; set; }
+        public decimal StockQuantity { get; set; }
         public required string UnitOfMeasure { get; set; }
         public string? Description { get; set; }
-        public required decimal PurchasePrice { get; set; }
-        public required decimal SalePrice { get; set; }
+        public decimal PurchasePrice { get; set; }
+        public decimal SalePrice { get; set; }
         public string? Type { get; set; }
         public string? Category { get; set; }
         public DateTime? ManufacturingDate { get; set; }
         public DateTime? ExpiryDate { get; set; }
+        public decimal MinimumStockLevel { get; set; }
+        public decimal MaximumStockLevel { get; set; }
+        public decimal ReorderLevel { get; set; }
+        public bool IsActive { get; set; } = true;
+        public DateTime? DateModified { get; set; }
 
-        // Add missing properties that are referenced in the code
-        public decimal Quantity => StockQuantity; // Alias for StockQuantity
-        public decimal Price => SalePrice; // Alias for SalePrice
-        public decimal MinimumStockLevel { get; set; } = 10;
-        public decimal MaximumStockLevel { get; set; } = 1000;
-        public decimal ReorderLevel { get; set; } = 20;
-        public DateTime? DateModified { get; set; } = DateTime.UtcNow;
+        // Foreign Key
+        public int SupplierId { get; set; }
 
-        public ICollection<GodownInventory> GodownInventories { get; set; } = new List<GodownInventory>();
-        public ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
-        public ICollection<DeliveryDetail> DeliveryDetails { get; set; } = new List<DeliveryDetail>();
-        public ICollection<InwardTransaction> InwardTransactions { get; set; } = new List<InwardTransaction>();
-        public ICollection<OutwardTransaction> OutwardTransactions { get; set; } = new List<OutwardTransaction>();
-        public ICollection<ReturnTransaction> ReturnTransactions { get; set; } = new List<ReturnTransaction>();
+        // Navigation Properties
+        public virtual Supplier Supplier { get; set; } = null!;
+        public virtual ICollection<GodownInventory> GodownInventories { get; set; } = new List<GodownInventory>();
+        public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
+        public virtual ICollection<DeliveryDetail> DeliveryDetails { get; set; } = new List<DeliveryDetail>();
+        public virtual ICollection<InwardTransaction> InwardTransactions { get; set; } = new List<InwardTransaction>();
+        public virtual ICollection<OutwardTransaction> OutwardTransactions { get; set; } = new List<OutwardTransaction>();
+        public virtual ICollection<ReturnTransaction> ReturnTransactions { get; set; } = new List<ReturnTransaction>();
     }
 }

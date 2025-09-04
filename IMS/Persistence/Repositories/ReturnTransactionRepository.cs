@@ -75,5 +75,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task BeginTransactionAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

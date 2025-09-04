@@ -71,5 +71,15 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task AddAsync(InventoryAlert inventoryAlert)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetPagedInventoryAlertsAsync(int pageNumber, int pageSize, string? alertType, string? severity, bool? isActive, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

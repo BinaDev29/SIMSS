@@ -40,7 +40,7 @@ namespace Application.CQRS.AlertRule.Commands.UpdateAlertRule
             }
 
             _mapper.Map(request.AlertRuleDto, alertRule);
-            await _alertRuleRepository.Update(alertRule, cancellationToken);
+            await _alertRuleRepository.UpdateAsync(alertRule, cancellationToken);
 
             response.Success = true;
             response.Message = "Alert rule updated successfully.";

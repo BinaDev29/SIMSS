@@ -94,5 +94,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<Application.DTOs.Common.PagedResult<SmartReorder>> GetPagedReordersAsync(int pageNumber, int pageSize, string? searchTerm, string? reorderReason, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

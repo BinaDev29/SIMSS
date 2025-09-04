@@ -3,17 +3,23 @@ using Application.Contracts;
 using Application.DTOs.Customer.Validators;
 using Application.Responses;
 using AutoMapper;
+using Domain.Models;
 
 namespace Application.CQRS.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, BaseCommandResponse>
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public CreateCustomerCommandHandler(ICustomerRepository customerRepository, IMapper mapper)
+        public CreateCustomerCommandHandler(
+            ICustomerRepository customerRepository, 
+            IUnitOfWork unitOfWork,
+            IMapper mapper)
         {
             _customerRepository = customerRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
@@ -31,20 +37,31 @@ namespace Application.CQRS.Customers.Commands.CreateCustomer
                 return response;
             }
 
-            var customerExists = await _customerRepository.GetCustomerByEmailAsync(request.CustomerDto.Email, cancellationToken);
-            if (customerExists != null)
+            // Check if customer with email already exists
+            var existingCustomer = await _customerRepository.GetCustomerByEmailAsync(request.CustomerDto.Email, cancellationToken);
+            if (existingCustomer != null)
             {
                 response.Success = false;
                 response.Message = "A customer with this email address already exists.";
                 return response;
             }
 
-            var customer = _mapper.Map<Domain.Models.Customer>(request.CustomerDto);
-            var addedCustomer = await _customerRepository.AddAsync(customer, cancellationToken);
+            try
+            {
+                var customer = _mapper.Map<Customer>(request.CustomerDto);
+                var addedCustomer = await _customerRepository.AddAsync(customer, cancellationToken);
+                await _unitOfWork.SaveAsync(cancellationToken);
 
-            response.Success = true;
-            response.Message = "Customer created successfully.";
-            response.Id = addedCustomer.Id;
+                response.Success = true;
+                response.Message = "Customer created successfully.";
+                response.Id = addedCustomer.Id;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "An error occurred while creating the customer.";
+                response.Errors.Add(ex.Message);
+            }
 
             return response;
         }

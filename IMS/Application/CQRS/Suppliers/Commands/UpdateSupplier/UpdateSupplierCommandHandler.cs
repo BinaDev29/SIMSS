@@ -42,7 +42,7 @@ namespace Application.CQRS.Suppliers.Commands.UpdateSupplier
             }
 
             mapper.Map(request.SupplierDto, supplierToUpdate);
-            await supplierRepository.Update(supplierToUpdate, cancellationToken);
+            await supplierRepository.UpdateAsync(supplierToUpdate, cancellationToken);
 
             response.Success = true;
             response.Message = "Supplier updated successfully.";

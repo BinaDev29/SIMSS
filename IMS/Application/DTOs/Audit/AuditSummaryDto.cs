@@ -1,3 +1,6 @@
+// Application/DTOs/Audit/AuditSummaryDto.cs
+using System.Collections.Generic;
+
 namespace Application.DTOs.Audit
 {
     public class AuditSummaryDto
@@ -7,8 +10,8 @@ namespace Application.DTOs.Audit
         public int TotalActions { get; set; }
         public int UniqueUsers { get; set; }
         public int UniqueEntities { get; set; }
-        public Dictionary<string, int> ActionCounts { get; set; } = [];
-        public Dictionary<string, int> EntityCounts { get; set; } = [];
-        public Dictionary<string, int> UserActivityCounts { get; set; } = [];
+        public Dictionary<string, int> ActionCounts { get; set; } = new Dictionary<string, int>();
+        public Dictionary<string, int> EntityCounts { get; set; } = new Dictionary<string, int>();
+        public Dictionary<string, int> UserActivityCounts { get; set; } = new Dictionary<string, int>();
     }
 }

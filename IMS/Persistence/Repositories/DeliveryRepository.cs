@@ -67,5 +67,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task GetByIdWithDetailsAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

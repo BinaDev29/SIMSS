@@ -1,4 +1,4 @@
-﻿using Application.DTOs.Customer;
+// Application/DTOs/Customer/Validators/UpdateCustomerValidator.cs
 using FluentValidation;
 
 namespace Application.DTOs.Customer.Validators
@@ -8,34 +8,35 @@ namespace Application.DTOs.Customer.Validators
         public UpdateCustomerValidator()
         {
             RuleFor(x => x.Id)
-                .NotEmpty().WithMessage("Id is required.")
-                .GreaterThan(0).WithMessage("Id must be greater than 0.");
+                .GreaterThan(0).WithMessage("Customer ID must be greater than 0.");
 
             RuleFor(x => x.CustomerName)
                 .NotEmpty().WithMessage("Customer name is required.")
-                .MaximumLength(100);
+                .MaximumLength(100).WithMessage("Customer name cannot exceed 100 characters.");
 
             RuleFor(x => x.ContactPerson)
                 .NotEmpty().WithMessage("Contact person is required.")
-                .MaximumLength(100);
-
-            RuleFor(x => x.Email)
-                .NotEmpty().WithMessage("Email is required.")
-                .EmailAddress().WithMessage("Invalid email format.")
-                .MaximumLength(100);
+                .MaximumLength(100).WithMessage("Contact person cannot exceed 100 characters.");
 
             RuleFor(x => x.PhoneNumber)
                 .NotEmpty().WithMessage("Phone number is required.")
-                .MaximumLength(20);
+                .Matches(@"^\+?[1-9]\d{1,14}$").WithMessage("Invalid phone number format.");
+
+            RuleFor(x => x.Email)
+                .NotEmpty().WithMessage("Email is required.")
+                .EmailAddress().WithMessage("Invalid email address format.");
 
             RuleFor(x => x.Address)
-                .MaximumLength(250);
+                .MaximumLength(200).WithMessage("Address cannot exceed 200 characters.")
+                .When(x => !string.IsNullOrEmpty(x.Address));
 
             RuleFor(x => x.TaxId)
-                .MaximumLength(50);
+                .MaximumLength(50).WithMessage("Tax ID cannot exceed 50 characters.")
+                .When(x => !string.IsNullOrEmpty(x.TaxId));
 
             RuleFor(x => x.PaymentTerms)
-                .MaximumLength(100);
+                .MaximumLength(100).WithMessage("Payment terms cannot exceed 100 characters.")
+                .When(x => !string.IsNullOrEmpty(x.PaymentTerms));
         }
     }
 }

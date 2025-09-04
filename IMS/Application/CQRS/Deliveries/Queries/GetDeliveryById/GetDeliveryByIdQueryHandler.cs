@@ -18,7 +18,7 @@ namespace Application.CQRS.Delivery.Queries.GetDeliveryById
 
         public async Task<DeliveryDto?> Handle(GetDeliveryByIdQuery request, CancellationToken cancellationToken)
         {
-            var delivery = await _deliveryRepository.GetByIdWithDetailsAsync(request.Id, cancellationToken);
+            var delivery = await deliveryRepository.GetByIdWithDetailsAsync(request.Id, cancellationToken);
             return delivery == null ? null : _mapper.Map<DeliveryDto>(delivery);
         }
     }

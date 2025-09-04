@@ -80,5 +80,30 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<IReadOnlyList<GodownInventory>> GetByGodownAsync(int godownId, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<GodownInventory>> GetByItemAsync(int itemId, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<GodownInventory>> GetLowStockItemsAsync(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(GodownInventory entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(GodownInventory entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -5,11 +5,21 @@ using AutoMapper;
 
 namespace Application.CQRS.Customers.Queries.GetCustomerById
 {
-    public class GetCustomerByIdQueryHandler(ICustomerRepository customerRepository, IMapper mapper) : IRequestHandler<GetCustomerByIdQuery, CustomerDto>
+    public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery, CustomerDto?>
     {
-        public async Task<CustomerDto> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IMapper _mapper;
+
+        public GetCustomerByIdQueryHandler(ICustomerRepository customerRepository, IMapper mapper)
         {
-            return mapper.Map<CustomerDto>(await customerRepository.GetCustomerWithDetailsAsync(request.Id, cancellationToken));
+            _customerRepository = customerRepository;
+            _mapper = mapper;
+        }
+
+        public async Task<CustomerDto?> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
+        {
+            var customer = await _customerRepository.GetByIdAsync(request.Id, cancellationToken);
+            return customer == null ? null : _mapper.Map<CustomerDto>(customer);
         }
     }
 }

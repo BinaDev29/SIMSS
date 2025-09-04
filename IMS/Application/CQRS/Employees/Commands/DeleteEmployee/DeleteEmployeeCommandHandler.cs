@@ -25,7 +25,7 @@ namespace Application.CQRS.Employee.Commands.DeleteEmployee
                 return response;
             }
 
-            await _employeeRepository.Delete(employee, cancellationToken);
+            await _employeeRepository.DeleteAsync(employee, cancellationToken);
             response.Success = true;
             response.Message = "Employee deleted successfully.";
             return response;

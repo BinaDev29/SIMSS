@@ -1,10 +1,11 @@
+// Application/DTOs/Common/PagedResult.cs
 using System.Collections.Generic;
 
 namespace Application.DTOs.Common
 {
     public class PagedResult<T>
     {
-        public List<T> Items { get; set; } = new List<T>();
+        public IReadOnlyList<T> Items { get; set; } = new List<T>();
         public int TotalCount { get; set; }
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
@@ -16,7 +17,7 @@ namespace Application.DTOs.Common
         {
         }
 
-        public PagedResult(List<T> items, int totalCount, int pageNumber, int pageSize)
+        public PagedResult(IReadOnlyList<T> items, int totalCount, int pageNumber, int pageSize)
         {
             Items = items;
             TotalCount = totalCount;

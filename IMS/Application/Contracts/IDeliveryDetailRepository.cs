@@ -12,5 +12,6 @@ namespace Application.Contracts
         Task<IReadOnlyList<DeliveryDetail>> GetDetailsByDeliveryAsync(int deliveryId, CancellationToken cancellationToken);
         Task<IReadOnlyList<DeliveryDetail>> GetDetailsByItemAsync(int itemId, CancellationToken cancellationToken);
         Task<PagedResult<DeliveryDetail>> GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        Task<DeliveryDetail?> GetDeliveryDetailWithDetailsAsync(int id, CancellationToken cancellationToken);
     }
 }

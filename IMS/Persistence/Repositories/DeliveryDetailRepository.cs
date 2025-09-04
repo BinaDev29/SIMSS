@@ -16,6 +16,11 @@ namespace Persistence.Repositories
             _context = dbContext;
         }
 
+        public Task<DeliveryDetail?> GetDeliveryDetailWithDetailsAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IReadOnlyList<DeliveryDetail>> GetDetailsByDeliveryAsync(int deliveryId, CancellationToken cancellationToken)
         {
             return await _context.DeliveryDetails

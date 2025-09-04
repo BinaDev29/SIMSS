@@ -40,7 +40,7 @@ namespace Application.CQRS.Employee.Commands.UpdateEmployee
             }
 
             _mapper.Map(request.EmployeeDto, employee);
-            await _employeeRepository.Update(employee, cancellationToken);
+            await _employeeRepository.UpdateAsync(employee, cancellationToken);
 
             response.Success = true;
             response.Message = "Employee updated successfully.";

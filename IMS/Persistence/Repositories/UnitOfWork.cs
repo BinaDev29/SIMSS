@@ -73,14 +73,39 @@ namespace Persistence.Repositories
         public IDemandForecastRepository DemandForecastRepository { get; }
         public ISmartReorderRepository SmartReorderRepository { get; }
 
+        public Task BeginTransactionAsync(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task CommitAsync(CancellationToken cancellationToken)
         {
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
+        public Task CommitTransactionAsync(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
             _dbContext.Dispose();
+        }
+
+        public Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> SaveAsync(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
         }
     }
 }

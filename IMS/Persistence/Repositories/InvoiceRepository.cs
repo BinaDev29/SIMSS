@@ -69,5 +69,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task BeginTransactionAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

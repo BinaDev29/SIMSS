@@ -50,7 +50,7 @@ namespace Application.CQRS.Invoices.Commands.UpdateInvoice
                     if (item != null)
                     {
                         item.StockQuantity += oldDetail.Quantity;
-                        await itemRepository.Update(item, cancellationToken);
+                        await itemRepository.UpdateAsync(item, cancellationToken);
                     }
                 }
 
@@ -87,7 +87,7 @@ namespace Application.CQRS.Invoices.Commands.UpdateInvoice
 
                 // Map and update the main invoice data
                 mapper.Map(request.InvoiceDto, existingInvoice);
-                await invoiceRepository.Update(existingInvoice, cancellationToken);
+                await invoiceRepository.UpdateAsync(existingInvoice, cancellationToken);
 
                 // Commit the transaction
                 transaction.Commit();

@@ -7272,11 +7272,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\API\\API.csproj",
+      "projectUniqueName": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\API\\API.csproj",
+      "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\API\\obj\\",
+      "outputPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7297,11 +7297,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Application.csproj": {
-              "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Application.csproj"
+            "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Application\\Application.csproj": {
+              "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Application\\Application.csproj"
             },
-            "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Persistence.csproj": {
-              "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Persistence.csproj"
+            "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Persistence\\Persistence.csproj": {
+              "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Persistence\\Persistence.csproj"
             }
           }
         }

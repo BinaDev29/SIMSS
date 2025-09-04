@@ -40,7 +40,7 @@ namespace Application.CQRS.Godown.Commands.UpdateGodown
             }
 
             _mapper.Map(request.GodownDto, godown);
-            await _godownRepository.Update(godown, cancellationToken);
+            await _godownRepository.UpdateAsync(godown, cancellationToken);
 
             response.Success = true;
             response.Message = "Godown updated successfully.";

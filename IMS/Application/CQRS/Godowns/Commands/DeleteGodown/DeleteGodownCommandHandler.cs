@@ -25,7 +25,7 @@ namespace Application.CQRS.Godown.Commands.DeleteGodown
                 return response;
             }
 
-            await _godownRepository.Delete(godown, cancellationToken);
+            await _godownRepository.DeleteAsync(godown, cancellationToken);
             response.Success = true;
             response.Message = "Godown deleted successfully.";
             return response;

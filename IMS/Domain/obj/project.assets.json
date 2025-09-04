@@ -544,11 +544,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Domain.csproj",
+      "projectUniqueName": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\Domain.csproj",
+      "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Domain\\obj\\",
+      "outputPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -16,5 +16,6 @@ namespace Application.Contracts
         Task<PagedResult<Item>> GetPagedItemsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
         Task<IReadOnlyList<Item>> GetLowStockItemsAsync(CancellationToken cancellationToken);
         Task<IReadOnlyList<Item>> GetItemsByCategoryAsync(string category, CancellationToken cancellationToken);
+        Task<Item> GetByIdAsync(object itemId, CancellationToken cancellationToken);
     }
 }

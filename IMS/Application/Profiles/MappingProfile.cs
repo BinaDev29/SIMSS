@@ -1,13 +1,8 @@
-﻿using Application.DTOs.Customer;
-using Application.DTOs.Delivery;
-using Application.DTOs.Employee;
-using Application.DTOs.Godown;
-using Application.DTOs.Invoice;
-using Application.DTOs.Item;
-using Application.DTOs.Supplier;
-using Application.DTOs.Transaction;
-using Application.DTOs.User;
+// Application/Profiles/MappingProfile.cs
 using AutoMapper;
+using Application.DTOs.Customer;
+using Application.DTOs.Audit;
+using Application.DTOs.Notifications;
 using Domain.Models;
 
 namespace Application.Profiles
@@ -16,63 +11,34 @@ namespace Application.Profiles
     {
         public MappingProfile()
         {
-            // Customer
+            // Customer mappings
             CreateMap<Customer, CustomerDto>().ReverseMap();
-            CreateMap<Customer, CreateCustomerDto>().ReverseMap();
-            CreateMap<UpdateCustomerDto, Customer>();
+            CreateMap<CreateCustomerDto, Customer>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.LastModifiedDate, opt => opt.Ignore())
+                .ForMember(dest => dest.Invoices, opt => opt.Ignore())
+                .ForMember(dest => dest.Deliveries, opt => opt.Ignore())
+                .ForMember(dest => dest.OutwardTransactions, opt => opt.Ignore())
+                .ForMember(dest => dest.ReturnTransactions, opt => opt.Ignore());
 
-            // Delivery
-            CreateMap<Delivery, DeliveryDto>().ReverseMap();
-            CreateMap<Delivery, CreateDeliveryDto>().ReverseMap();
-            CreateMap<UpdateDeliveryDto, Delivery>();
+            CreateMap<UpdateCustomerDto, Customer>()
+                .ForMember(dest => dest.CreatedDate, opt => opt.Ignore())
+                .ForMember(dest => dest.LastModifiedDate, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.Invoices, opt => opt.Ignore())
+                .ForMember(dest => dest.Deliveries, opt => opt.Ignore())
+                .ForMember(dest => dest.OutwardTransactions, opt => opt.Ignore())
+                .ForMember(dest => dest.ReturnTransactions, opt => opt.Ignore());
 
-            // Employee
-            CreateMap<Employee, EmployeeDto>().ReverseMap();
-            CreateMap<Employee, CreateEmployeeDto>().ReverseMap();
-            CreateMap<UpdateEmployeeDto, Employee>();
+            // Audit mappings
+            CreateMap<AuditLog, AuditLogDto>().ReverseMap();
 
-            // Supplier
-            CreateMap<Supplier, SupplierDto>().ReverseMap();
-            CreateMap<Supplier, CreateSupplierDto>().ReverseMap();
-            CreateMap<UpdateSupplierDto, Supplier>();
-
-            // Item
-            CreateMap<Item, ItemDto>().ReverseMap();
-            CreateMap<Item, CreateItemDto>().ReverseMap();
-            CreateMap<UpdateItemDto, Item>();
-
-            // Godown
-            CreateMap<Godown, GodownDto>().ReverseMap();
-            CreateMap<Godown, CreateGodownDto>().ReverseMap();
-            CreateMap<UpdateGodownDto, Godown>();
-
-            // Invoice
-            CreateMap<Invoice, InvoiceDto>().ReverseMap();
-            CreateMap<Invoice, CreateInvoiceDto>().ReverseMap();
-            CreateMap<UpdateInvoiceDto, Invoice>();
-
-            // InvoiceDetail
-            CreateMap<InvoiceDetail, InvoiceDetailDto>().ReverseMap();
-            CreateMap<InvoiceDetail, CreateInvoiceDetailDto>().ReverseMap();
-            CreateMap<UpdateInvoiceDetailDto, InvoiceDetail>();
-
-            // Transactions
-            CreateMap<InwardTransaction, InwardTransactionDto>().ReverseMap();
-            CreateMap<InwardTransaction, CreateInwardTransactionDto>().ReverseMap();
-            CreateMap<UpdateInwardTransactionDto, InwardTransaction>();
-
-            CreateMap<OutwardTransaction, OutwardTransactionDto>().ReverseMap();
-            CreateMap<OutwardTransaction, CreateOutwardTransactionDto>().ReverseMap();
-            CreateMap<UpdateOutwardTransactionDto, OutwardTransaction>();
-
-            CreateMap<ReturnTransaction, ReturnTransactionDto>().ReverseMap();
-            CreateMap<ReturnTransaction, CreateReturnTransactionDto>().ReverseMap();
-            CreateMap<UpdateReturnTransactionDto, ReturnTransaction>();
-
-            // User
-            CreateMap<User, UserDto>().ReverseMap();
-            CreateMap<User, CreateUserDto>().ReverseMap();
-            CreateMap<UpdateUserDto, User>();
+            // Notification mappings
+            CreateMap<Notification, NotificationDto>().ReverseMap();
+            CreateMap<CreateNotificationDto, Notification>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.LastModifiedDate, opt => opt.Ignore());
         }
     }
 }

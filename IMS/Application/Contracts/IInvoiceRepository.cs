@@ -13,5 +13,6 @@ namespace Application.Contracts
         Task<IReadOnlyList<Invoice>> GetInvoicesByCustomerAsync(int customerId, CancellationToken cancellationToken);
         Task<IReadOnlyList<Invoice>> GetUnpaidInvoicesAsync(CancellationToken cancellationToken);
         Task<PagedResult<Invoice>> GetPagedInvoicesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        Task BeginTransactionAsync();
     }
 }

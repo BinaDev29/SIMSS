@@ -18,3 +18,9 @@ F:\@INTERNSHIP 2017\INVENTERY\SIMS\IMS\Persistence\obj\Debug\net9.0\refint\Persi
 F:\@INTERNSHIP 2017\INVENTERY\SIMS\IMS\Persistence\obj\Debug\net9.0\Persistence.pdb
 F:\@INTERNSHIP 2017\INVENTERY\SIMS\IMS\Persistence\obj\Debug\net9.0\Persistence.genruntimeconfig.cache
 F:\@INTERNSHIP 2017\INVENTERY\SIMS\IMS\Persistence\obj\Debug\net9.0\ref\Persistence.dll
+F:\@INTERNSHIP 2017\INVENTERY\SIMSS\IMS\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
+F:\@INTERNSHIP 2017\INVENTERY\SIMSS\IMS\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+F:\@INTERNSHIP 2017\INVENTERY\SIMSS\IMS\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
+F:\@INTERNSHIP 2017\INVENTERY\SIMSS\IMS\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
+F:\@INTERNSHIP 2017\INVENTERY\SIMSS\IMS\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
+F:\@INTERNSHIP 2017\INVENTERY\SIMSS\IMS\Persistence\obj\Debug\net9.0\Persistence.sourcelink.json

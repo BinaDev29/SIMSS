@@ -30,7 +30,7 @@ namespace Application.CQRS.Suppliers.Commands.DeleteSupplier
                 return response;
             }
 
-            await supplierRepository.Delete(supplier, cancellationToken);
+            await supplierRepository.DeleteAsync(supplier, cancellationToken);
             response.Success = true;
             response.Message = "Supplier deleted successfully.";
             return response;

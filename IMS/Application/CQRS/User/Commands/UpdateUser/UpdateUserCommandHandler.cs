@@ -48,7 +48,7 @@ namespace Application.CQRS.User.Commands.UpdateUser
             // 💡 የይለፍ ቃሉን ከDTO ውስጥ አያስተላልፍም
             mapper.Map(request.UserDto, userToUpdate);
 
-            await userRepository.Update(userToUpdate, cancellationToken);
+            await userRepository.UpdateAsync(userToUpdate, cancellationToken);
 
             response.Success = true;
             response.Message = "User updated successfully.";

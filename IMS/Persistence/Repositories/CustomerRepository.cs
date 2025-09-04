@@ -51,5 +51,35 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task GetCustomerByEmailAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddAsync(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Customer?> ICustomerRepository.GetCustomerByEmailAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Customer?> GetCustomerWithDetailsAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

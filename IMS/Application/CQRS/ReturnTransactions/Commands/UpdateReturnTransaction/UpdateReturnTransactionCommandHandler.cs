@@ -50,7 +50,7 @@ namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
                 }
 
                 oldItem.StockQuantity -= existingTransaction.Quantity;
-                await itemRepository.Update(oldItem, cancellationToken);
+                await itemRepository.UpdateAsync(oldItem, cancellationToken);
 
                 // Map the new DTO data to the existing transaction object
                 mapper.Map(request.ReturnTransactionDto, existingTransaction);
@@ -65,12 +65,12 @@ namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
                 // Apply the new stock change
                 newItem.StockQuantity += existingTransaction.Quantity;
 
-                await returnTransactionRepository.Update(existingTransaction, cancellationToken);
+                await returnTransactionRepository.UpdateAsync(existingTransaction, cancellationToken);
 
                 // Update the new item's stock, only if different from the old item
                 if (oldItem.Id != newItem.Id)
                 {
-                    await itemRepository.Update(newItem, cancellationToken);
+                    await itemRepository.UpdateAsync(newItem, cancellationToken);
                 }
 
                 await transaction.CommitAsync(cancellationToken);

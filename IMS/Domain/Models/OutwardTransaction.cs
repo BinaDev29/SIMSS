@@ -29,5 +29,7 @@ namespace Domain.Models
 
         // Add backward compatibility property
         public DateTime DateCreated => CreatedDate;
+
+        public DateTime TransactionDate { get; set; }
     }
 }

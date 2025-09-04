@@ -25,7 +25,7 @@ namespace Application.CQRS.GodownInventory.Commands.DeleteGodownInventory
                 return response;
             }
 
-            await _godownInventoryRepository.Delete(inventory, cancellationToken);
+            await _godownInventoryRepository.DeleteAsync(inventory, cancellationToken);
             response.Success = true;
             response.Message = "Godown inventory deleted successfully.";
             return response;

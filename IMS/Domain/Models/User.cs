@@ -12,6 +12,8 @@ namespace Domain.Models
         public bool IsActive { get; set; } = true;
 
         // Add backward compatibility property
-        public string UserName => Username;
+
+        public DateTime LastLoginDate { get; set; }
+        public string? Email { get; set; }
     }
 }

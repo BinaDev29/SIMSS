@@ -39,7 +39,7 @@ namespace Application.CQRS.Items.Commands.DeleteItem
                 return response;
             }
 
-            await itemRepository.Delete(item, cancellationToken);
+            await itemRepository.DeleteAsync(item, cancellationToken);
             response.Success = true;
             response.Message = "Item deleted successfully.";
             return response;

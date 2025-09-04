@@ -12,5 +12,6 @@ namespace Application.Contracts
         Task<IReadOnlyList<AlertRule>> GetActiveRulesAsync(CancellationToken cancellationToken);
         Task<IReadOnlyList<AlertRule>> GetRulesByTypeAsync(string ruleType, CancellationToken cancellationToken);
         Task<PagedResult<AlertRule>> GetPagedRulesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        object Query();
     }
 }

@@ -10,7 +10,7 @@ namespace Application.Profiles
         public NotificationProfile()
         {
             CreateMap<Notification, NotificationDto>()
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User != null ? src.User.UserName : null));
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User != null ? src.User.Username : null));
             
             CreateMap<CreateNotificationDto, Notification>();
         }

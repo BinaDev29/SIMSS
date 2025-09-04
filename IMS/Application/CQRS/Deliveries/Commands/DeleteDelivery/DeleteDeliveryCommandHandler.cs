@@ -25,7 +25,7 @@ namespace Application.CQRS.Delivery.Commands.DeleteDelivery
                 return response;
             }
 
-            await _deliveryRepository.Delete(delivery, cancellationToken);
+            await _deliveryRepository.DeleteAsync(delivery, cancellationToken);
             response.Success = true;
             response.Message = "Delivery deleted successfully.";
             return response;

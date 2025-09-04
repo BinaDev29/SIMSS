@@ -5,8 +5,10 @@ using Application.DTOs.Common;
 
 namespace Application.CQRS.Customers.Queries.GetCustomerList
 {
-    public class GetCustomerListQuery : IRequest<List<CustomerDto>>
+    public class GetCustomerListQuery : IRequest<PagedResult<CustomerDto>>
     {
-        public CustomerQueryParameters? Parameters { get; set; }
+        public int PageNumber { get; set; } = 1;
+        public int PageSize { get; set; } = 10;
+        public string? SearchTerm { get; set; }
     }
 }

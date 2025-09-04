@@ -74,5 +74,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<object> Query()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,37 +1,59 @@
-﻿using MediatR;
+using MediatR;
 using Application.Contracts;
 using Application.Responses;
-using System;
 
 namespace Application.CQRS.Customers.Commands.DeleteCustomer
 {
-    public class DeleteCustomerCommandHandler(ICustomerRepository customerRepository, IOutwardTransactionRepository outwardTransactionRepository)
-        : IRequestHandler<DeleteCustomerCommand, BaseCommandResponse>
+    public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerCommand, BaseCommandResponse>
     {
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public DeleteCustomerCommandHandler(
+            ICustomerRepository customerRepository,
+            IUnitOfWork unitOfWork)
+        {
+            _customerRepository = customerRepository;
+            _unitOfWork = unitOfWork;
+        }
+
         public async Task<BaseCommandResponse> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse();
-            var customer = await customerRepository.GetByIdAsync(request.Id, cancellationToken);
 
-            if (customer == null)
+            try
+            {
+                var customer = await _customerRepository.GetByIdAsync(request.Id, cancellationToken);
+                if (customer == null)
+                {
+                    response.Success = false;
+                    response.Message = "Customer not found.";
+                    return response;
+                }
+
+                // Check if customer has transactions
+                var hasTransactions = await _customerRepository.HasTransactionsByCustomerIdAsync(request.Id, cancellationToken);
+                if (hasTransactions)
+                {
+                    response.Success = false;
+                    response.Message = "Cannot delete customer with existing transactions.";
+                    return response;
+                }
+
+                await _customerRepository.DeleteAsync(customer, cancellationToken);
+                await _unitOfWork.SaveAsync(cancellationToken);
+
+                response.Success = true;
+                response.Message = "Customer deleted successfully.";
+                response.Id = request.Id;
+            }
+            catch (Exception ex)
             {
                 response.Success = false;
-                response.Message = "Customer not found for deletion.";
-                return response;
+                response.Message = "An error occurred while deleting the customer.";
+                response.Errors.Add(ex.Message);
             }
 
-            // 💡 ከደንበኛው ጋር የተያያዘ ግብይት መኖሩን ማረጋገጥ
-            var hasTransactions = await outwardTransactionRepository.HasTransactionsByCustomerId(request.Id);
-            if (hasTransactions)
-            {
-                response.Success = false;
-                response.Message = "Cannot delete customer because there are existing transactions linked to them.";
-                return response;
-            }
-
-            await customerRepository.Delete(customer, cancellationToken);
-            response.Success = true;
-            response.Message = "Customer deleted successfully.";
             return response;
         }
     }

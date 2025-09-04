@@ -65,13 +65,13 @@ namespace Application.CQRS.InwardTransactions.Commands.UpdateInwardTransaction
             // Apply new stock change by adding the new quantity
             newItem.StockQuantity += existingTransaction.QuantityReceived;
 
-            await inwardTransactionRepository.Update(existingTransaction, cancellationToken);
-            await itemRepository.Update(oldItem, cancellationToken);
+            await inwardTransactionRepository.UpdateAsync(existingTransaction, cancellationToken);
+            await itemRepository.UpdateAsync(oldItem, cancellationToken);
 
             // Only update newItem if it's different from oldItem. This prevents redundant database calls.
             if (oldItem.Id != newItem.Id)
             {
-                await itemRepository.Update(newItem, cancellationToken);
+                await itemRepository.UpdateAsync(newItem, cancellationToken);
             }
 
             response.Success = true;

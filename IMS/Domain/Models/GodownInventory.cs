@@ -12,5 +12,6 @@ namespace Domain.Models
 
         public virtual Godown? Godown { get; set; }
         public virtual Item? Item { get; set; }
+        public decimal CurrentStock { get; set; }
     }
 }

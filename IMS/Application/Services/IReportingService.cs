@@ -1,17 +1,13 @@
-using Application.DTOs.Reports;
-using System.Collections.Generic;
+// Application/Services/IReportingService.cs
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Application.Services
 {
     public interface IReportingService
     {
-        Task<InventoryReportDto> GenerateStockReportAsync(StockReportParametersDto parameters);
-        Task<SalesReportDto> GenerateSalesReportAsync(SalesReportParametersDto parameters);
-        Task<StockMovementReportDto> GenerateStockMovementReportAsync(StockMovementParametersDto parameters);
-        Task<ValuationReportDto> GenerateValuationReportAsync(ValuationReportParametersDto parameters);
-        Task<IEnumerable<ReportSummaryDto>> GetReportHistoryAsync(int userId);
-        Task<byte[]> ExportReportToPdfAsync(int reportId);
-        Task<byte[]> ExportReportToExcelAsync(int reportId);
+        Task<object> GenerateInventoryReportAsync(CancellationToken cancellationToken = default);
+        Task<object> GenerateSalesReportAsync(DateTime startDate, DateTime endDate, CancellationToken cancellationToken = default);
+        Task<object> GenerateCustomerReportAsync(CancellationToken cancellationToken = default);
     }
 }

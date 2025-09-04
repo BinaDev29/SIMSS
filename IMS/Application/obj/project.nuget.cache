@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AG53dmcLzYg=",
+  "dgSpecHash": "K9y/Hi/+iqE=",
   "success": true,
-  "projectFilePath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Application\\Application.csproj",
+  "projectFilePath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hp\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

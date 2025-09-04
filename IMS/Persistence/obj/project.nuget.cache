@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HYfmoYjzmZo=",
+  "dgSpecHash": "qBh0Om7tQdM=",
   "success": true,
-  "projectFilePath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMS\\IMS\\Persistence\\Persistence.csproj",
+  "projectFilePath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hp\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

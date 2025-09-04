@@ -1,4 +1,4 @@
-// BaseDomainEntity.cs
+// Domain/Common/BaseDomainEntity.cs
 using System;
 
 namespace Domain.Common

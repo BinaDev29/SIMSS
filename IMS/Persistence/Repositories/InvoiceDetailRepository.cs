@@ -16,6 +16,11 @@ namespace Persistence.Repositories
             _context = dbContext;
         }
 
+        public Task DeleteRangeAsync(IEnumerable<InvoiceDetail> details, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IReadOnlyList<InvoiceDetail>> GetDetailsByInvoiceAsync(int invoiceId, CancellationToken cancellationToken)
         {
             return await _context.InvoiceDetails
@@ -32,6 +37,11 @@ namespace Persistence.Repositories
                     .ThenInclude(i => i!.Customer)
                 .Where(id => id.ItemId == itemId)
                 .ToListAsync(cancellationToken);
+        }
+
+        public Task<IReadOnlyList<InvoiceDetail>> GetInvoiceDetailsByInvoiceIdAsync(int id, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<PagedResult<InvoiceDetail>> GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
@@ -55,6 +65,11 @@ namespace Persistence.Repositories
                 .ToListAsync(cancellationToken);
 
             return new PagedResult<InvoiceDetail>(items, totalCount, pageNumber, pageSize);
+        }
+
+        public Task<bool> HasDetailsByItemIdAsync(int itemId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
 
         Task<Application.DTOs.Common.PagedResult<InvoiceDetail>> IInvoiceDetailRepository.GetPagedDetailsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)

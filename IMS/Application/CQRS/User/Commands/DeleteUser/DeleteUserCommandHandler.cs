@@ -21,7 +21,7 @@ namespace Application.CQRS.User.Commands.DeleteUser
 
             // 💡 የተጠቃሚውን ሁኔታ ወደ ስራ የማያገለግል (Deactivate) ይቀይራል
             user.IsActive = false;
-            await userRepository.Update(user, cancellationToken);
+            await userRepository.DeleteAsync(user, cancellationToken);
 
             response.Success = true;
             response.Message = "User deactivated successfully.";

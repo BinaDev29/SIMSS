@@ -75,5 +75,20 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<Application.DTOs.Common.PagedResult<OutwardTransaction>> GetPagedOutwardTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> HasTransactionsByCustomerId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> HasTransactionsByItemIdAsync(int itemId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

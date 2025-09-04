@@ -14,5 +14,6 @@ namespace Application.Contracts
         Task<IReadOnlyList<DemandForecast>> GetForecastsByPeriodAsync(string period, CancellationToken cancellationToken);
         Task<DemandForecast?> GetLatestForecastAsync(int itemId, int godownId, CancellationToken cancellationToken);
         Task<PagedResult<DemandForecast>> GetPagedForecastsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        object Query();
     }
 }

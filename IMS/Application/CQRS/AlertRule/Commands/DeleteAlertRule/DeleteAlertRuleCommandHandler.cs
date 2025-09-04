@@ -25,7 +25,7 @@ namespace Application.CQRS.AlertRule.Commands.DeleteAlertRule
                 return response;
             }
 
-            await _alertRuleRepository.Delete(alertRule, cancellationToken);
+            await _alertRuleRepository.DeleteAsync(alertRule, cancellationToken);
             response.Success = true;
             response.Message = "Alert rule deleted successfully.";
             return response;

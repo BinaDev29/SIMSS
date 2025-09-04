@@ -82,5 +82,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public object Query()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

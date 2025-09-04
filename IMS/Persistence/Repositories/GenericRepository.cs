@@ -50,5 +50,15 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void Update(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(T entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

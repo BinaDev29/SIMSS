@@ -1,8 +1,4 @@
-﻿using Application.DTOs.Delivery;
-using Application.DTOs.Invoice;
-using Application.DTOs.Transaction;
-using System.Collections.Generic;
-
+// Application/DTOs/Customer/CustomerDto.cs
 namespace Application.DTOs.Customer
 {
     public record CustomerDto
@@ -15,11 +11,7 @@ namespace Application.DTOs.Customer
         public string? Address { get; init; }
         public string? TaxId { get; init; }
         public string? PaymentTerms { get; init; }
-
-        // እነዚህ ከdomain modelህ ጋር የሚመሳሰሉ collections ናቸው
-        public ICollection<InvoiceDto> Invoices { get; init; } = new List<InvoiceDto>();
-        public ICollection<DeliveryDto> Deliveries { get; init; } = new List<DeliveryDto>();
-        public ICollection<OutwardTransactionDto> OutwardTransactions { get; init; } = new List<OutwardTransactionDto>();
-        public ICollection<ReturnTransactionDto> ReturnTransactions { get; init; } = new List<ReturnTransactionDto>();
+        public DateTime CreatedDate { get; init; }
+        public DateTime? LastModifiedDate { get; init; }
     }
 }
