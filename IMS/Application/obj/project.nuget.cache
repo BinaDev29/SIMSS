@@ -79,15 +79,5 @@
     "C:\\Users\\Hp\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Application\\Application.csproj",
-      "warningLevel": 1,
-      "filePath": "F:\\@INTERNSHIP 2017\\INVENTERY\\SIMSS\\IMS\\Application\\Application.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
