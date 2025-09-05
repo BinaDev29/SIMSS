@@ -35,5 +35,6 @@ namespace Domain.Models
         public decimal CurrentValue { get; set; }
         public DateTime? ProcessedDate { get; set; }
         public DateTime CreatedDate { get; set; }
+
     }
 }

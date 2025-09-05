@@ -30,8 +30,6 @@ namespace Application.Profiles
                 .ForMember(dest => dest.OutwardTransactions, opt => opt.Ignore())
                 .ForMember(dest => dest.ReturnTransactions, opt => opt.Ignore());
 
-            // Audit mappings
-            CreateMap<AuditLog, AuditLogDto>().ReverseMap();
 
             // Notification mappings
             CreateMap<Notification, NotificationDto>().ReverseMap();

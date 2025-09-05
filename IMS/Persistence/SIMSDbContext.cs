@@ -33,7 +33,7 @@ namespace Persistence
         // Enhanced Features - Reporting & Notifications
         public DbSet<InventoryReport> InventoryReports { get; set; } = null!;
         public DbSet<Notification> Notifications { get; set; } = null!;
-        public DbSet<AuditLog> AuditLogs { get; set; } = null!;
+        //public DbSet<AuditLog> AuditLogs { get; set; } = null!;
         public DbSet<AlertRule> AlertRules { get; set; } = null!;
         public DbSet<BatchOperation> BatchOperations { get; set; } = null!;
 
@@ -121,14 +121,14 @@ namespace Persistence
             });
 
             // Configure indexes for better performance
-            modelBuilder.Entity<AuditLog>(entity =>
-            {
-                entity.HasIndex(a => new { a.EntityName, a.EntityId })
-                    .HasDatabaseName("IX_AuditLog_Entity");
+            //modelBuilder.Entity<AuditLog>(entity =>
+            //{
+            //    entity.HasIndex(a => new { a.EntityName, a.EntityId })
+            //        .HasDatabaseName("IX_AuditLog_Entity");
 
-                entity.HasIndex(a => a.Timestamp)
-                    .HasDatabaseName("IX_AuditLog_Timestamp");
-            });
+            //    entity.HasIndex(a => a.Timestamp)
+            //        .HasDatabaseName("IX_AuditLog_Timestamp");
+            //});
 
             modelBuilder.Entity<Notification>(entity =>
             {

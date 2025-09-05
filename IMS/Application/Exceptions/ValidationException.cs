@@ -17,5 +17,9 @@ namespace Application.Exceptions
                 ValidationErrors.Add(error.ErrorMessage);
             }
         }
+
+        public ValidationException(string message) : base(message)
+        {
+        }
     }
 }

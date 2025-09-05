@@ -20,7 +20,6 @@ namespace Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             // Register application services
-            services.AddScoped<IAuditService, AuditService>();
             services.AddScoped<INotificationService, NotificationService>();
             services.AddScoped<IReportingService, ReportingService>();
             services.AddScoped<IGodownInventoryService, GodownInventoryService>();

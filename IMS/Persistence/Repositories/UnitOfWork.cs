@@ -11,7 +11,7 @@ namespace Persistence.Repositories
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly SIMSDbContext _dbContext;
-        private IDbContextTransaction? _currentTransaction;
+        private Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? _currentTransaction;
 
         public UnitOfWork(SIMSDbContext dbContext)
         {
@@ -36,7 +36,7 @@ namespace Persistence.Repositories
             // Enhanced Feature Repositories
             InventoryReportRepository = new InventoryReportRepository(dbContext);
             NotificationRepository = new NotificationRepository(dbContext);
-            AuditLogRepository = new AuditLogRepository(dbContext);
+            //AuditLogRepository = new AuditLogRepository(dbContext);
             AlertRuleRepository = new AlertRuleRepository(dbContext);
             BatchOperationRepository = new BatchOperationRepository(dbContext);
 
@@ -64,7 +64,6 @@ namespace Persistence.Repositories
         public IUserRepository UserRepository { get; }
         public IInventoryReportRepository InventoryReportRepository { get; }
         public INotificationRepository NotificationRepository { get; }
-        public IAuditLogRepository AuditLogRepository { get; }
         public IAlertRuleRepository AlertRuleRepository { get; }
         public IBatchOperationRepository BatchOperationRepository { get; }
         public IInventoryAlertRepository InventoryAlertRepository { get; }
@@ -73,7 +72,7 @@ namespace Persistence.Repositories
         public ISmartReorderRepository SmartReorderRepository { get; }
 
         // Transaction and Save Methods
-        public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+        public async Task<Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
         {
             _currentTransaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
             return _currentTransaction;
@@ -87,6 +86,11 @@ namespace Persistence.Repositories
         public void Dispose()
         {
             _dbContext.Dispose();
+        }
+
+        Task<Application.Contracts.IDbContextTransaction> IUnitOfWork.BeginTransactionAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

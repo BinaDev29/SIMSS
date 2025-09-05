@@ -36,7 +36,6 @@ namespace Persistence
             // Register Enhanced Feature Repositories
             services.AddScoped<IInventoryReportRepository, InventoryReportRepository>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
-            services.AddScoped<IAuditLogRepository, AuditLogRepository>();
             services.AddScoped<IAlertRuleRepository, AlertRuleRepository>();
             services.AddScoped<IBatchOperationRepository, BatchOperationRepository>();
 

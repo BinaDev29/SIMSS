@@ -15,5 +15,7 @@ namespace Application.Contracts
 
         Task<bool> IsUsernameUniqueAsync(string username, CancellationToken cancellationToken);
         Task<PagedResult<User>> GetPagedUsersAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
+        Task GetUserByUsernameAsync(string? username);
+        Task GetUserByEmailAsync(string? email);
     }
 }

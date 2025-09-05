@@ -27,7 +27,7 @@ namespace Application.Contracts
         // Enhanced Feature Repositories
         IInventoryReportRepository InventoryReportRepository { get; }
         INotificationRepository NotificationRepository { get; }
-        IAuditLogRepository AuditLogRepository { get; }
+        //IAuditLogRepository AuditLogRepository { get; }
         IAlertRuleRepository AlertRuleRepository { get; }
         IBatchOperationRepository BatchOperationRepository { get; }
 

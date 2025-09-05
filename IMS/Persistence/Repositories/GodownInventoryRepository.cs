@@ -105,5 +105,10 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public IQueryable<GodownInventory> Query()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

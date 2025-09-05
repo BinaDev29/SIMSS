@@ -64,12 +64,12 @@ namespace Application.Services
 
         public async Task<AuthResponseDto> RegisterAsync(CreateUserDto createUserDto, CancellationToken cancellationToken = default)
         {
-            if (await _userRepository.GetUserByUsernameAsync(createUserDto.Username) != null)
+            if (await _userRepository.GetUserByUsernameAsync(createUserDto.Username, cancellationToken) != null)
             {
                 throw new ValidationException("Username already exists");
             }
 
-            if (await _userRepository.GetUserByEmailAsync(createUserDto.Email) != null)
+            if (await _userRepository.GetUserByEmailAsync(createUserDto.Email, cancellationToken) != null)
             {
                 throw new ValidationException("Email already exists");
             }

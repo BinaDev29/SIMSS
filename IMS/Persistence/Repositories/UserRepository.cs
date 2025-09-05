@@ -48,5 +48,20 @@ namespace Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<User?> GetUserByEmailAsync(string email, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetUserByUsernameAsync(string? username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetUserByEmailAsync(string? email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
