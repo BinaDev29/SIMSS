@@ -1,19 +1,22 @@
 // Persistence/Repositories/UnitOfWork.cs
 using Application.Contracts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly SIMSDbContext _dbContext;
+        private IDbContextTransaction? _currentTransaction;
 
         public UnitOfWork(SIMSDbContext dbContext)
         {
             _dbContext = dbContext;
-            
+
             // Core Business Repositories
             CustomerRepository = new CustomerRepository(dbContext);
             DeliveryRepository = new DeliveryRepository(dbContext);
@@ -29,14 +32,14 @@ namespace Persistence.Repositories
             ReturnTransactionRepository = new ReturnTransactionRepository(dbContext);
             SupplierRepository = new SupplierRepository(dbContext);
             UserRepository = new UserRepository(dbContext);
-            
+
             // Enhanced Feature Repositories
             InventoryReportRepository = new InventoryReportRepository(dbContext);
             NotificationRepository = new NotificationRepository(dbContext);
             AuditLogRepository = new AuditLogRepository(dbContext);
             AlertRuleRepository = new AlertRuleRepository(dbContext);
             BatchOperationRepository = new BatchOperationRepository(dbContext);
-            
+
             // Smart Inventory Management Repositories
             InventoryAlertRepository = new InventoryAlertRepository(dbContext);
             InventoryAnalyticsRepository = new InventoryAnalyticsRepository(dbContext);
@@ -44,7 +47,7 @@ namespace Persistence.Repositories
             SmartReorderRepository = new SmartReorderRepository(dbContext);
         }
 
-        // Core Business Repositories
+        // Repositories
         public ICustomerRepository CustomerRepository { get; }
         public IDeliveryRepository DeliveryRepository { get; }
         public IDeliveryDetailRepository DeliveryDetailRepository { get; }
@@ -59,53 +62,31 @@ namespace Persistence.Repositories
         public IReturnTransactionRepository ReturnTransactionRepository { get; }
         public ISupplierRepository SupplierRepository { get; }
         public IUserRepository UserRepository { get; }
-
-        // Enhanced Feature Repositories
         public IInventoryReportRepository InventoryReportRepository { get; }
         public INotificationRepository NotificationRepository { get; }
         public IAuditLogRepository AuditLogRepository { get; }
         public IAlertRuleRepository AlertRuleRepository { get; }
         public IBatchOperationRepository BatchOperationRepository { get; }
-
-        // Smart Inventory Management Repositories
         public IInventoryAlertRepository InventoryAlertRepository { get; }
         public IInventoryAnalyticsRepository InventoryAnalyticsRepository { get; }
         public IDemandForecastRepository DemandForecastRepository { get; }
         public ISmartReorderRepository SmartReorderRepository { get; }
 
-        public Task BeginTransactionAsync(CancellationToken cancellationToken = default)
+        // Transaction and Save Methods
+        public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            _currentTransaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
+            return _currentTransaction;
         }
 
-        public async Task CommitAsync(CancellationToken cancellationToken)
+        public async Task<int> CommitAsync(CancellationToken cancellationToken = default)
         {
-            await _dbContext.SaveChangesAsync(cancellationToken);
-        }
-
-        public Task CommitTransactionAsync(CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
+            return await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
         public void Dispose()
         {
             _dbContext.Dispose();
-        }
-
-        public Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> SaveAsync(CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
         }
     }
 }

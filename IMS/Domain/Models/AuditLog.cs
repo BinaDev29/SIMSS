@@ -5,6 +5,7 @@ namespace Domain.Models
 {
     public class AuditLog : BaseDomainEntity
     {
+
         public required string EntityName { get; set; }
         public required string EntityId { get; set; }
         public required string Action { get; set; } // "Create", "Update", "Delete"

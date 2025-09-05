@@ -1,3 +1,4 @@
+// Application/Services/AuditService.cs
 using Application.Contracts;
 using Application.DTOs.Audit;
 using Domain.Models;
@@ -12,10 +13,10 @@ namespace Application.Services
 {
     public class AuditService : IAuditService
     {
-        private readonly IGenericRepository<AuditLog> _auditRepository;
+        private readonly IAuditLogRepository _auditRepository;
         private readonly IMapper _mapper;
 
-        public AuditService(IGenericRepository<AuditLog> auditRepository, IMapper mapper)
+        public AuditService(IAuditLogRepository auditRepository, IMapper mapper)
         {
             _auditRepository = auditRepository;
             _mapper = mapper;
@@ -26,10 +27,10 @@ namespace Application.Services
             var auditLog = new AuditLog
             {
                 EntityName = entityName,
-                EntityId = entityId, // Ensure EntityId remains a string
+                EntityId = entityId,
                 Action = action,
                 UserId = userId,
-                UserName = userName, // Ensure UserName is set
+                UserName = userName,
                 Details = $"Old: {System.Text.Json.JsonSerializer.Serialize(oldValues)}, New: {System.Text.Json.JsonSerializer.Serialize(newValues)}",
                 Timestamp = DateTime.UtcNow
             };
@@ -38,33 +39,14 @@ namespace Application.Services
 
         public async Task<IEnumerable<AuditLogDto>> GetAuditLogsAsync(string? entityName = null, string? entityId = null, int pageNumber = 1, int pageSize = 50)
         {
-            var allLogs = await _auditRepository.GetAllAsync(CancellationToken.None);
-            var filteredLogs = allLogs.AsQueryable();
-
-            if (!string.IsNullOrEmpty(entityName))
-                filteredLogs = filteredLogs.Where(x => x.EntityName == entityName);
-
-            if (!string.IsNullOrEmpty(entityId))
-                filteredLogs = filteredLogs.Where(x => x.EntityId == entityId); // Ensure both operands are strings
-
-            var pagedLogs = filteredLogs
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
-
-            return _mapper.Map<IEnumerable<AuditLogDto>>(pagedLogs);
+            var filteredLogs = await _auditRepository.GetPagedAuditLogsAsync(pageNumber, pageSize, entityName, entityId, CancellationToken.None);
+            return _mapper.Map<IEnumerable<AuditLogDto>>(filteredLogs.Items);
         }
 
         public async Task<IEnumerable<AuditLogDto>> GetUserActivityAsync(string userId, int pageNumber = 1, int pageSize = 50)
         {
-            var allLogs = await _auditRepository.GetAllAsync(CancellationToken.None);
-            var userLogs = allLogs
-                .Where(x => x.UserId == userId)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
-
-            return _mapper.Map<IEnumerable<AuditLogDto>>(userLogs);
+            var userLogs = await _auditRepository.GetPagedUserLogsAsync(pageNumber, pageSize, userId, CancellationToken.None);
+            return _mapper.Map<IEnumerable<AuditLogDto>>(userLogs.Items);
         }
 
         public async Task<AuditSummaryDto> GetAuditSummaryAsync(DateTime fromDate, DateTime toDate)
@@ -83,7 +65,8 @@ namespace Application.Services
                 UniqueEntities = filteredLogs.Select(x => x.EntityName).Distinct().Count(),
                 ActionCounts = filteredLogs.GroupBy(x => x.Action).ToDictionary(g => g.Key, g => g.Count()),
                 EntityCounts = filteredLogs.GroupBy(x => x.EntityName).ToDictionary(g => g.Key, g => g.Count()),
-                UserActivityCounts = filteredLogs.GroupBy(x => x.UserId).ToDictionary(g => g.Key, g => g.Count())
+                // ???????? ??: ?userId ???? string ??
+                UserActivityCounts = filteredLogs.GroupBy(x => x.UserId).ToDictionary(g => g.Key!, g => g.Count())
             };
         }
     }

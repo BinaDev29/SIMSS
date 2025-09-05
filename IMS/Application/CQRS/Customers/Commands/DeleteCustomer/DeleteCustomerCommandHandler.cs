@@ -1,6 +1,12 @@
+﻿// Application/CQRS/Customers/Commands/DeleteCustomer/DeleteCustomerCommandHandler.cs
 using MediatR;
 using Application.Contracts;
 using Application.Responses;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Application.CQRS.Customers.Commands.DeleteCustomer
 {
@@ -41,7 +47,8 @@ namespace Application.CQRS.Customers.Commands.DeleteCustomer
                 }
 
                 await _customerRepository.DeleteAsync(customer, cancellationToken);
-                await _unitOfWork.SaveAsync(cancellationToken);
+                // እዚህ ላይ SaveAsyncን ወደ CommitAsync ቀይረናል
+                await _unitOfWork.CommitAsync(cancellationToken);
 
                 response.Success = true;
                 response.Message = "Customer deleted successfully.";
@@ -51,7 +58,7 @@ namespace Application.CQRS.Customers.Commands.DeleteCustomer
             {
                 response.Success = false;
                 response.Message = "An error occurred while deleting the customer.";
-                response.Errors.Add(ex.Message);
+                response.Errors = new List<string> { ex.Message };
             }
 
             return response;

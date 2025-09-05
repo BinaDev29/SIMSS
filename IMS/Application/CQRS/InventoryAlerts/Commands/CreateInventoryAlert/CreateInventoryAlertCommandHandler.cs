@@ -3,6 +3,8 @@ using Application.Contracts;
 using AutoMapper;
 using Domain.Models;
 using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.CQRS.InventoryAlerts.Commands.CreateInventoryAlert
 {
@@ -20,10 +22,11 @@ namespace Application.CQRS.InventoryAlerts.Commands.CreateInventoryAlert
         public async Task<int> Handle(CreateInventoryAlertCommand request, CancellationToken cancellationToken)
         {
             var inventoryAlert = _mapper.Map<InventoryAlert>(request.InventoryAlert);
-            
-            await _unitOfWork.InventoryAlertRepository.AddAsync(inventoryAlert);
+
+            // ???? 'cancellationToken' ??? ?? ??????
+            await _unitOfWork.InventoryAlertRepository.AddAsync(inventoryAlert, cancellationToken);
             await _unitOfWork.CommitAsync(cancellationToken);
-            
+
             return inventoryAlert.Id;
         }
     }

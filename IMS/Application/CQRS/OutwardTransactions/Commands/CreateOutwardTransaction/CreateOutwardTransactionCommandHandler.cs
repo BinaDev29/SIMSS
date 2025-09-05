@@ -1,3 +1,4 @@
+// Application/CQRS/OutwardTransactions/Commands/CreateOutwardTransaction/CreateOutwardTransactionCommandHandler.cs
 using Application.Contracts;
 using Application.CQRS.Transactions.Commands.CreateOutwardTransaction;
 using Application.DTOs.Transaction;
@@ -6,7 +7,9 @@ using Application.Responses;
 using Application.Services;
 using AutoMapper;
 using MediatR;
+using System;
 using System.Transactions;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -33,10 +36,11 @@ namespace Application.CQRS.OutwardTransactions.Commands.CreateOutwardTransaction
             }
 
             // Check for sufficient stock using the dedicated service.
+            // ??? GetValueOrDefault()? ?? ??? ???????
             var hasSufficientStock = await godownInventoryService.CheckSufficientStock(
-                request.OutwardTransactionDto.ItemId.GetValueOrDefault(),
-                request.OutwardTransactionDto.GodownId.GetValueOrDefault(),
-                request.OutwardTransactionDto.QuantityDelivered.GetValueOrDefault(),
+                request.OutwardTransactionDto.ItemId,
+                request.OutwardTransactionDto.GodownId,
+                request.OutwardTransactionDto.QuantityDelivered,
                 cancellationToken);
 
             if (!hasSufficientStock)
@@ -74,7 +78,7 @@ namespace Application.CQRS.OutwardTransactions.Commands.CreateOutwardTransaction
             {
                 response.Success = false;
                 response.Message = "Outward Transaction creation failed.";
-                response.Errors = [ex.Message];
+                response.Errors = new List<string> { ex.Message };
             }
 
             return response;

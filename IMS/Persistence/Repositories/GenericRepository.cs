@@ -3,6 +3,7 @@ using Application.Contracts;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq; // ??? using ???
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -46,19 +47,11 @@ namespace Persistence.Repositories
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public Task UpdateAsync(Notification notification, CancellationToken none)
+        // ?? method ? IGenericRepository ??? ???
+        // ?????? (queries) ????? ?????? ???
+        public IQueryable<T> Query()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(T entity)
-        {
-            throw new NotImplementedException();
+            return _dbContext.Set<T>();
         }
     }
 }

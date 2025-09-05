@@ -1,7 +1,9 @@
 // Persistence/Repositories/ReturnTransactionRepository.cs
 using Application.Contracts;
+using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,37 +18,14 @@ namespace Persistence.Repositories
             _context = dbContext;
         }
 
-        public async Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByGodownAsync(int godownId, CancellationToken cancellationToken)
-        {
-            return await _context.ReturnTransactions
-                .Include(rt => rt.Item)
-                .Include(rt => rt.Customer)
-                .Include(rt => rt.Employee)
-                .Where(rt => rt.GodownId == godownId)
-                .ToListAsync(cancellationToken);
-        }
+        // ... ??? methods ??? ??
 
-        public async Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByItemAsync(int itemId, CancellationToken cancellationToken)
-        {
-            return await _context.ReturnTransactions
-                .Include(rt => rt.Godown)
-                .Include(rt => rt.Customer)
-                .Include(rt => rt.Employee)
-                .Where(rt => rt.ItemId == itemId)
-                .ToListAsync(cancellationToken);
-        }
-
-        public async Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByCustomerAsync(int customerId, CancellationToken cancellationToken)
-        {
-            return await _context.ReturnTransactions
-                .Include(rt => rt.Item)
-                .Include(rt => rt.Godown)
-                .Include(rt => rt.Employee)
-                .Where(rt => rt.CustomerId == customerId)
-                .ToListAsync(cancellationToken);
-        }
-
-        public async Task<PagedResult<ReturnTransaction>> GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        // ? method ????? ???? ????????
+        public async Task<PagedResult<ReturnTransaction>> GetPagedReturnTransactionsAsync(
+            int pageNumber,
+            int pageSize,
+            string? searchTerm,
+            CancellationToken cancellationToken)
         {
             var query = _context.Set<ReturnTransaction>()
                 .Include(rt => rt.Item)
@@ -57,7 +36,7 @@ namespace Persistence.Repositories
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(rt => rt.Item!.ItemName.Contains(searchTerm) || 
+                query = query.Where(rt => rt.Item!.ItemName.Contains(searchTerm) ||
                                          rt.Customer!.CustomerName.Contains(searchTerm) ||
                                          rt.Reason.Contains(searchTerm));
             }
@@ -71,12 +50,22 @@ namespace Persistence.Repositories
             return new PagedResult<ReturnTransaction>(items, totalCount, pageNumber, pageSize);
         }
 
-        Task<Application.DTOs.Common.PagedResult<ReturnTransaction>> IReturnTransactionRepository.GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        public Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByCustomerAsync(int customerId, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
 
-        public Task BeginTransactionAsync(CancellationToken cancellationToken)
+        public Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByGodownAsync(int godownId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByItemAsync(int itemId, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Application.DTOs.Common.PagedResult<ReturnTransaction>> IReturnTransactionRepository.GetPagedReturnTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

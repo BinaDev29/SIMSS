@@ -1,3 +1,4 @@
+﻿// Application/Services/AuthService.cs
 using Application.Contracts;
 using Application.DTOs.Auth;
 using Application.DTOs.User;
@@ -7,6 +8,7 @@ using AutoMapper;
 using BCrypt.Net;
 using Domain.Models;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,12 +16,12 @@ namespace Application.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly IGenericRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IJwtTokenService _jwtTokenService;
 
         public AuthService(
-            IGenericRepository<User> userRepository,
+            IUserRepository userRepository,
             IMapper mapper,
             IJwtTokenService jwtTokenService)
         {
@@ -30,8 +32,7 @@ namespace Application.Services
 
         public async Task<AuthResponseDto> LoginAsync(LoginDto loginDto, CancellationToken cancellationToken = default)
         {
-            var users = await _userRepository.GetAllAsync(cancellationToken);
-            var user = users.FirstOrDefault(u => u.Username == loginDto.Username || u.Email == loginDto.Username);
+            var user = await _userRepository.GetUserByUsernameAsync(loginDto.Username, cancellationToken);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash))
             {
@@ -57,21 +58,18 @@ namespace Application.Services
                 UserId = user.Id,
                 Username = user.Username,
                 Email = user.Email,
-                Role = user.Role,
-                FullName = $"{user.FirstName} {user.LastName}"
+                Role = user.Role
             };
         }
 
         public async Task<AuthResponseDto> RegisterAsync(CreateUserDto createUserDto, CancellationToken cancellationToken = default)
         {
-            var users = await _userRepository.GetAllAsync(cancellationToken);
-            
-            if (users.Any(u => u.Username == createUserDto.Username))
+            if (await _userRepository.GetUserByUsernameAsync(createUserDto.Username) != null)
             {
                 throw new ValidationException("Username already exists");
             }
 
-            if (users.Any(u => u.Email == createUserDto.Email))
+            if (await _userRepository.GetUserByEmailAsync(createUserDto.Email) != null)
             {
                 throw new ValidationException("Email already exists");
             }
@@ -81,9 +79,7 @@ namespace Application.Services
                 Username = createUserDto.Username,
                 Email = createUserDto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(createUserDto.PasswordHash),
-               
                 Role = createUserDto.Role,
-                
                 IsActive = true,
                 CreatedDate = DateTime.UtcNow
             };
@@ -102,21 +98,17 @@ namespace Application.Services
                 Username = createdUser.Username,
                 Email = createdUser.Email,
                 Role = createdUser.Role,
-                
             };
         }
 
         public async Task<AuthResponseDto> RefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
         {
-            // Implementation for refresh token validation would go here
-            // For now, return a placeholder
             await Task.CompletedTask;
             throw new ValidationException("Invalid refresh token");
         }
 
         public async Task<bool> LogoutAsync(string token, CancellationToken cancellationToken = default)
         {
-            // Implementation for token blacklisting would go here
             await Task.CompletedTask;
             return true;
         }
@@ -143,16 +135,13 @@ namespace Application.Services
 
         public async Task<bool> ResetPasswordAsync(string email, CancellationToken cancellationToken = default)
         {
-            var users = await _userRepository.GetAllAsync(cancellationToken);
-            var user = users.FirstOrDefault(u => u.Email == email);
+            var user = await _userRepository.GetUserByEmailAsync(email, cancellationToken);
 
             if (user == null)
             {
-                // Don't reveal if email exists or not for security
                 return true;
             }
 
-            // Implementation for password reset email would go here
             await Task.CompletedTask;
             return true;
         }

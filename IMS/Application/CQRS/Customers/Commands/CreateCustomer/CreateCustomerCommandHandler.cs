@@ -1,9 +1,14 @@
+﻿// Application/CQRS/Customers/Commands/CreateCustomer/CreateCustomerCommandHandler.cs
 using MediatR;
 using Application.Contracts;
 using Application.DTOs.Customer.Validators;
 using Application.Responses;
 using AutoMapper;
 using Domain.Models;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System;
 
 namespace Application.CQRS.Customers.Commands.CreateCustomer
 {
@@ -14,7 +19,7 @@ namespace Application.CQRS.Customers.Commands.CreateCustomer
         private readonly IMapper _mapper;
 
         public CreateCustomerCommandHandler(
-            ICustomerRepository customerRepository, 
+            ICustomerRepository customerRepository,
             IUnitOfWork unitOfWork,
             IMapper mapper)
         {
@@ -50,7 +55,8 @@ namespace Application.CQRS.Customers.Commands.CreateCustomer
             {
                 var customer = _mapper.Map<Customer>(request.CustomerDto);
                 var addedCustomer = await _customerRepository.AddAsync(customer, cancellationToken);
-                await _unitOfWork.SaveAsync(cancellationToken);
+                // እዚህ ላይ SaveAsyncን ወደ CommitAsync ቀይረናል
+                await _unitOfWork.CommitAsync(cancellationToken);
 
                 response.Success = true;
                 response.Message = "Customer created successfully.";

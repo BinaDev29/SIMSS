@@ -12,7 +12,12 @@ namespace Application.Contracts
         Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByGodownAsync(int godownId, CancellationToken cancellationToken);
         Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByItemAsync(int itemId, CancellationToken cancellationToken);
         Task<IReadOnlyList<ReturnTransaction>> GetTransactionsByCustomerAsync(int customerId, CancellationToken cancellationToken);
-        Task<PagedResult<ReturnTransaction>> GetPagedTransactionsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken);
-        Task BeginTransactionAsync(CancellationToken cancellationToken);
+
+        // ?? ????? method ??
+        Task<PagedResult<ReturnTransaction>> GetPagedReturnTransactionsAsync(
+            int pageNumber,
+            int pageSize,
+            string? searchTerm,
+            CancellationToken cancellationToken);
     }
 }

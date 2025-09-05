@@ -60,7 +60,7 @@ namespace Application.CQRS.Customers.Commands.UpdateCustomer
 
                 _mapper.Map(request.CustomerDto, existingCustomer);
                 await _customerRepository.UpdateAsync(existingCustomer, cancellationToken);
-                await _unitOfWork.SaveAsync(cancellationToken);
+                await _unitOfWork.CommitAsync(cancellationToken);
 
                 response.Success = true;
                 response.Message = "Customer updated successfully.";

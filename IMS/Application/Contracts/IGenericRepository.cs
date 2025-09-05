@@ -1,6 +1,6 @@
 // Application/Contracts/IGenericRepository.cs
-using Domain.Models;
 using System.Collections.Generic;
+using System.Linq; // ??? using ???
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,9 +13,8 @@ namespace Application.Contracts
         Task<T> AddAsync(T entity, CancellationToken cancellationToken);
         Task UpdateAsync(T entity, CancellationToken cancellationToken);
         Task DeleteAsync(T entity, CancellationToken cancellationToken);
-        
-        // Add Update and Delete methods that are missing
-        void Update(T entity);
-        void Delete(T entity);
+
+        // ?? method ?????? ??? ?????? Generic ????? ?????
+        IQueryable<T> Query();
     }
 }

@@ -1,9 +1,14 @@
 // Persistence/Repositories/DeliveryRepository.cs
 using Application.Contracts;
+using Application.DTOs.Common;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Persistence.Repositories; // ???? ???
+using Persistence; // ???? ??? (? SIMSDbContext)
 
 namespace Persistence.Repositories
 {
@@ -49,9 +54,9 @@ namespace Persistence.Repositories
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                query = query.Where(d => d.TrackingNumber.Contains(searchTerm) || 
-                                        d.Customer!.CustomerName.Contains(searchTerm) ||
-                                        d.Status.Contains(searchTerm));
+                query = query.Where(d => d.TrackingNumber.Contains(searchTerm) ||
+                                         d.Customer!.CustomerName.Contains(searchTerm) ||
+                                         d.Status.Contains(searchTerm));
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
@@ -63,12 +68,16 @@ namespace Persistence.Repositories
             return new PagedResult<Delivery>(items, totalCount, pageNumber, pageSize);
         }
 
-        Task<Application.DTOs.Common.PagedResult<Delivery>> IDeliveryRepository.GetPagedDeliveriesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        public async Task<Delivery?> GetByIdWithDetailsAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _context.Deliveries
+                .Include(d => d.Customer)
+                .Include(d => d.DeliveryDetails)
+                    .ThenInclude(dd => dd.Item)
+                .FirstOrDefaultAsync(d => d.Id == id, cancellationToken);
         }
 
-        public Task GetByIdWithDetailsAsync(int id, CancellationToken cancellationToken)
+        Task<Application.DTOs.Common.PagedResult<Delivery>> IDeliveryRepository.GetPagedDeliveriesAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

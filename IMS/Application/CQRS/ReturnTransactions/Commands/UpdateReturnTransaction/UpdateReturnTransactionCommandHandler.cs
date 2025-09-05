@@ -1,4 +1,5 @@
-﻿using Application.Contracts;
+﻿// Application/CQRS/ReturnTransactions/Commands/UpdateReturnTransaction/UpdateReturnTransactionCommandHandler.cs
+using Application.Contracts;
 using Application.DTOs.Transaction;
 using Application.DTOs.Transaction.Validators;
 using Application.Responses;
@@ -11,6 +12,7 @@ using System.Linq;
 namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
 {
     public class UpdateReturnTransactionCommandHandler(
+        IUnitOfWork unitOfWork, // የ IUnitOfWork dependency ጨምረናል
         IReturnTransactionRepository returnTransactionRepository,
         IItemRepository itemRepository,
         IMapper mapper,
@@ -38,8 +40,8 @@ namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
                 return response;
             }
 
-            // Begin a transaction to ensure all operations are atomic
-            await using var transaction = await returnTransactionRepository.BeginTransactionAsync(cancellationToken);
+            // ትክክለኛው የግብይት ጅምር: በ unitOfWork ላይ
+            using var transaction = await unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
                 // Revert the old stock change before updating the transaction
@@ -50,7 +52,6 @@ namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
                 }
 
                 oldItem.StockQuantity -= existingTransaction.Quantity;
-                await itemRepository.UpdateAsync(oldItem, cancellationToken);
 
                 // Map the new DTO data to the existing transaction object
                 mapper.Map(request.ReturnTransactionDto, existingTransaction);
@@ -65,14 +66,10 @@ namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
                 // Apply the new stock change
                 newItem.StockQuantity += existingTransaction.Quantity;
 
-                await returnTransactionRepository.UpdateAsync(existingTransaction, cancellationToken);
+                // ለውጦችን በሙሉ በአንድ ጊዜ ለማስቀመጥ unitOfWorkን ተጠቀም
+                await unitOfWork.CommitAsync(cancellationToken);
 
-                // Update the new item's stock, only if different from the old item
-                if (oldItem.Id != newItem.Id)
-                {
-                    await itemRepository.UpdateAsync(newItem, cancellationToken);
-                }
-
+                // የ transactionን ግብይት አጠናቅቅ
                 await transaction.CommitAsync(cancellationToken);
 
                 response.Success = true;
@@ -81,6 +78,7 @@ namespace Application.CQRS.ReturnTransactions.Commands.UpdateReturnTransaction
             }
             catch (Exception ex)
             {
+                // ግብይቱን መልስ
                 await transaction.RollbackAsync(cancellationToken);
                 response.Success = false;
                 response.Message = "Return Transaction update failed.";

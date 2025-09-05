@@ -4,6 +4,10 @@ using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Linq;
+using Application.DTOs.Common;
+using System.Collections.Generic;
+using System;
 
 namespace Persistence.Repositories
 {
@@ -43,18 +47,31 @@ namespace Persistence.Repositories
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<PagedResult<InventoryAlert>> GetPagedAlertsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
+        // ? GetPagedAlertsAsync() ?? ???? ????? ?? ?????? parameters ?????
+        public async Task<PagedResult<InventoryAlert>> GetPagedInventoryAlertsAsync(
+            int pageNumber,
+            int pageSize,
+            string? alertType,
+            string? severity,
+            bool? isActive,
+            CancellationToken cancellationToken)
         {
             var query = _context.Set<InventoryAlert>()
                 .Include(ia => ia.Item)
                 .Include(ia => ia.Godown)
                 .AsQueryable();
 
-            if (!string.IsNullOrEmpty(searchTerm))
+            if (!string.IsNullOrEmpty(alertType))
             {
-                query = query.Where(ia => ia.Item!.ItemName.Contains(searchTerm) || 
-                                         ia.AlertType.Contains(searchTerm) ||
-                                         ia.Message.Contains(searchTerm));
+                query = query.Where(ia => ia.AlertType == alertType);
+            }
+            if (!string.IsNullOrEmpty(severity))
+            {
+                query = query.Where(ia => ia.Severity == severity);
+            }
+            if (isActive.HasValue)
+            {
+                query = query.Where(ia => ia.IsActive == isActive.Value);
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
@@ -67,17 +84,7 @@ namespace Persistence.Repositories
             return new PagedResult<InventoryAlert>(items, totalCount, pageNumber, pageSize);
         }
 
-        Task<Application.DTOs.Common.PagedResult<InventoryAlert>> IInventoryAlertRepository.GetPagedAlertsAsync(int pageNumber, int pageSize, string? searchTerm, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task AddAsync(InventoryAlert inventoryAlert)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task GetPagedInventoryAlertsAsync(int pageNumber, int pageSize, string? alertType, string? severity, bool? isActive, CancellationToken cancellationToken)
+        Task<Application.DTOs.Common.PagedResult<InventoryAlert>> IInventoryAlertRepository.GetPagedInventoryAlertsAsync(int pageNumber, int pageSize, string? alertType, string? severity, bool? isActive, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
